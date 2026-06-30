@@ -1,0 +1,4 @@
+baseURL = 'http://localhost:1313/'
+title = 'Noise From the Basement'
+theme = 'PaperMod'
+locale = 'en-us'

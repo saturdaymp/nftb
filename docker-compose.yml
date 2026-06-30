@@ -1,0 +1,35 @@
+services:
+  # Local dev server: http://localhost:1313 (live reload).
+  #   docker compose up hugo
+  hugo:
+    image: ghcr.io/gohugoio/hugo:v0.163.3
+    working_dir: /src
+    volumes:
+      - .:/src
+    ports:
+      - "1313:1313"
+    command: server --bind 0.0.0.0 --baseURL http://localhost:1313 --buildDrafts
+
+  # One-off static build into ./public (same as Cloudflare Pages runs).
+  #   docker compose run --rm build
+  build:
+    image: ghcr.io/gohugoio/hugo:v0.163.3
+    working_dir: /src
+    volumes:
+      - .:/src
+    command: --minify
+
+  # Convert images under content/ to WebP and rewrite references.
+  # Keeps Pillow out of the host: it is installed inside the container.
+  #   docker compose run --rm optimize-images            # convert everything
+  #   docker compose run --rm optimize-images --dry-run  # preview, no changes
+  optimize-images:
+    image: python:3.12-slim
+    working_dir: /src
+    volumes:
+      - .:/src
+    entrypoint:
+      - bash
+      - -c
+      - pip install --quiet --root-user-action=ignore Pillow && exec scripts/optimize_all_images.sh "$@"
+      - bash
