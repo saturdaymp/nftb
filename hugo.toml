@@ -1,4 +1,4 @@
 baseURL = 'http://localhost:1313/'
 title = 'Noise From the Basement'
-theme = 'PaperMod'
+theme = 'github.com/adityatelange/hugo-PaperMod'
 locale = 'en-us'

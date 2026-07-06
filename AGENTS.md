@@ -16,8 +16,10 @@ if you bump it.
 
 ## Non-obvious rules
 
-- `themes/PaperMod/` is vendored (committed, not a git submodule). Do not edit
-  theme files — override templates in the top-level `layouts/` directory instead.
+- PaperMod is a Hugo Module (see `go.mod`/`go.sum`), pinned by version — there
+  is no theme code in the repo. Do not edit theme files — override templates in
+  the top-level `layouts/` directory instead. Update with
+  `docker compose run --rm --entrypoint hugo build mod get -u ./...`.
 - `public/` is generated output and gitignored. Never edit or commit it.
 - Post URLs must keep the old WordPress permalink structure. Posts are page
   bundles at `content/posts/YYYY/MM/slug/index.md` with images beside the
