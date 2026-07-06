@@ -1,4 +1,4 @@
-baseURL = 'http://localhost:1313/'
+baseURL = 'https://nftb.saturdaymp.workers.dev/'
 title = 'Noise From the Basement'
 theme = 'github.com/adityatelange/hugo-PaperMod'
 locale = 'en-us'
