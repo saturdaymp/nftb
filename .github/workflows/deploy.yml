@@ -17,9 +17,11 @@ jobs:
         # runner-owned workspace.
         run: docker compose run --rm -u root build
 
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v4
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy public --project-name=nftb --branch=${{ github.head_ref || github.ref_name }}
+          # PRs upload a preview version (gets a preview URL, doesn't touch
+          # production); pushes to main deploy for real.
+          command: ${{ github.event_name == 'pull_request' && 'versions upload' || 'deploy' }}
