@@ -1,5 +1,5 @@
 ---
-title: "SaturdayMP Show 34: Upgrade Website from Rails 6 1 to 7 0 Part 6 (Merging &amp; Wrap Up)"
+title: "SaturdayMP Show 34: Upgrade Website from Rails 6 1 to 7 0 Part 6 (Merging & Wrap Up)"
 date: 2024-02-28
 categories: 
   - "saturday-mp-show"

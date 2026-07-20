@@ -98,9 +98,9 @@ I am using an old version of Advanced Installer (version 9.9, current version is
 
 Download the [Desktop App Converter and the wim image](https://www.microsoft.com/en-us/download/details.aspx?id=51691).  Then open a [PowerShell](https://msdn.microsoft.com/en-us/powershell/mt173057.aspx?f=255&MSPPError=-2147217396) as admin and type the following to setup the image:
 
-\[text\] PS C:\\&amp;amp;amp;gt; Set-ExecutionPolicy bypass
+\[text\] PS C:\\&gt; Set-ExecutionPolicy bypass
 
-PS C:\\&amp;amp;amp;gt; .\\DesktopAppConverter.ps1 -Setup -BaseImage .\\BaseImage-1XXXX.wim –Verbose \[/text\]
+PS C:\\&gt; .\\DesktopAppConverter.ps1 -Setup -BaseImage .\\BaseImage-1XXXX.wim –Verbose \[/text\]
 
 This can take a while and only needs to be done once.
 
@@ -108,7 +108,7 @@ This can take a while and only needs to be done once.
 
 Again in PowerShell run the following command:
 
-\[text\] PS C:&amp;amp;gt;.\\DesktopAppConverter.ps1 -Installer "&amp;amp;lt;path&amp;amp;gt;\\Mini-Compressor-9.9.9.9.exe" -InstallerArguments "/qn" -Destination "&amp;amp;lt;path&amp;amp;gt;\\MiniCompConverted" -PackageName "MiniCompressor" -Publisher "&amp;amp;lt;Full publisher name on your code signing certificate&amp;amp;gt;" -Version 9.9.9.9 -MakeAppx –Verbose \[/text\]
+\[text\] PS C:&gt;.\\DesktopAppConverter.ps1 -Installer "&lt;path&gt;\\Mini-Compressor-9.9.9.9.exe" -InstallerArguments "/qn" -Destination "&lt;path&gt;\\MiniCompConverted" -PackageName "MiniCompressor" -Publisher "&lt;Full publisher name on your code signing certificate&gt;" -Version 9.9.9.9 -MakeAppx –Verbose \[/text\]
 
 This command takes the existing installer exe and installs it in the wim image you setup earlier.  The process runs some tests on the install process and also notes what file and other install actions are taken.  It then creates a AppX install file.
 

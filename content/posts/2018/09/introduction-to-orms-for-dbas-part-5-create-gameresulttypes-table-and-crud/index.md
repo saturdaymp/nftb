@@ -99,9 +99,9 @@ public int KeyCode { get; set; }
 
 \[MaxLength(10)\] public string Type { get; set; }
 
-public static implicit operator GameResultType(GameResultTypeEnums @enum) =&amp;amp;gt; new GameResultType(@enum);
+public static implicit operator GameResultType(GameResultTypeEnums @enum) =&gt; new GameResultType(@enum);
 
-public static implicit operator GameResultTypeEnums(GameResultType gameResultType) =&amp;amp;gt; (GameResultTypeEnums)gameResultType.Id; } } \[/csharp\]
+public static implicit operator GameResultTypeEnums(GameResultType gameResultType) =&gt; (GameResultTypeEnums)gameResultType.Id; } } \[/csharp\]
 
 [![Complete Game Result Types Model](images/Complete-Game-Result-Types-Model.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Complete-Game-Result-Types-Model.png)
 
@@ -137,7 +137,7 @@ namespace SaturdayMP.GameTracker.Data { public static class DbInitializer {
 
 public static void Initialize(GameTrackerContext context) { if (context.GameResultTypes.Any()) { // DB has already been seeded. return; }
 
-// Seed the Game Type Enums. foreach(GameResultTypeEnums result in Enum.GetValues(typeof(GameResultTypeEnums))) { context.Add&amp;lt;GameResultType&amp;gt;(result); context.SaveChanges(); }
+// Seed the Game Type Enums. foreach(GameResultTypeEnums result in Enum.GetValues(typeof(GameResultTypeEnums))) { context.Add&lt;GameResultType&gt;(result); context.SaveChanges(); }
 
 } } } \[/csharp\]
 

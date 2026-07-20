@@ -1,5 +1,5 @@
 ---
-title: "SaturdayMP Show 104: picoCTF (Small Trouble &amp; Droids 4)"
+title: "SaturdayMP Show 104: picoCTF (Small Trouble & Droids 4)"
 date: 2026-06-23
 categories: 
   - "saturday-mp-show"

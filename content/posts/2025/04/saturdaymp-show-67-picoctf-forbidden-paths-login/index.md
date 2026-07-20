@@ -1,5 +1,5 @@
 ---
-title: "SaturdayMP Show 67: picoCTF (Forbidden Paths &amp; Login)"
+title: "SaturdayMP Show 67: picoCTF (Forbidden Paths & Login)"
 date: 2025-04-09
 categories: 
   - "saturday-mp-show"

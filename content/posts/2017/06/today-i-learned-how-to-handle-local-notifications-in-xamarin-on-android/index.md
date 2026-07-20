@@ -18,7 +18,7 @@ First override the [OnNewIntent](https://developer.xamarin.com/api/member/Androi
 
 \[csharp\] protected override void OnNewIntent(Intent intent) { // Let the parent do it's thing. base.OnNewIntent(intent);
 
-// Is this a notification intent? The action should look like: // // &amp;amp;lt;packagename&amp;amp;gt;.NOTIFICATION-&amp;amp;lt;ID&amp;amp;gt; // var expectedActionName = BuildActionName(""); if (intent.Action == null || !intent.Action.StartsWith(expectedActionName)) { // Not a notification intent. Do nothing. return; }
+// Is this a notification intent? The action should look like: // // &lt;packagename&gt;.NOTIFICATION-&lt;ID&gt; // var expectedActionName = BuildActionName(""); if (intent.Action == null || !intent.Action.StartsWith(expectedActionName)) { // Not a notification intent. Do nothing. return; }
 
 // Extract the notification information. var extractedNotification = new Notification { Id = intent.Action.Substring(intent.Action.IndexOf("-", StringComparison.Ordinal) + 1), // The ID is part of the action. Title = intent.GetStringExtra(TitleExtrasKey), // These fields are extras but should exist. Message = intent.GetStringExtra(MessageExtrasKey) // These fields are extras but should exist. };
 

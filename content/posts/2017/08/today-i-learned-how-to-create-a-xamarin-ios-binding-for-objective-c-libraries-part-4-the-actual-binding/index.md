@@ -44,15 +44,15 @@ Now it should look like:
 
 // More properties and methods... }
 
-// @interface BEMCheckBox : UIControl &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;CAAnimationDelegate&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; \[BaseType (typeof(UIControl))\] interface BEMCheckBox : ICAAnimationDelegate { \[Wrap ("WeakDelegate")\] \[NullAllowed\] BEMCheckBoxDelegate Delegate { get; set; }
+// @interface BEMCheckBox : UIControl &lt;CAAnimationDelegate&gt; \[BaseType (typeof(UIControl))\] interface BEMCheckBox : ICAAnimationDelegate { \[Wrap ("WeakDelegate")\] \[NullAllowed\] BEMCheckBoxDelegate Delegate { get; set; }
 
-// @property (nonatomic, weak) id&amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;BEMCheckBoxDelegate&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; \_Nullable delegate \_\_attribute\_\_((iboutlet)); \[NullAllowed, Export ("delegate", ArgumentSemantic.Weak)\] NSObject WeakDelegate { get; set; }
+// @property (nonatomic, weak) id&lt;BEMCheckBoxDelegate&gt; \_Nullable delegate \_\_attribute\_\_((iboutlet)); \[NullAllowed, Export ("delegate", ArgumentSemantic.Weak)\] NSObject WeakDelegate { get; set; }
 
 // @property (nonatomic) BOOL on; \[Export ("on")\] bool On { get; set; }
 
 // More properties and methods... }
 
-// @protocol BEMCheckBoxDelegate &amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;NSObject&amp;amp;amp;amp;amp;amp;amp;amp;amp;gt; \[Protocol, Model\] \[BaseType (typeof(NSObject))\] interface BEMCheckBoxDelegate { // @optional -(void)didTapCheckBox:(BEMCheckBox \* \_Nonnull)checkBox; \[Export ("didTapCheckBox:")\] void DidTapCheckBox (BEMCheckBox checkBox);
+// @protocol BEMCheckBoxDelegate &lt;NSObject&gt; \[Protocol, Model\] \[BaseType (typeof(NSObject))\] interface BEMCheckBoxDelegate { // @optional -(void)didTapCheckBox:(BEMCheckBox \* \_Nonnull)checkBox; \[Export ("didTapCheckBox:")\] void DidTapCheckBox (BEMCheckBox checkBox);
 
 // @optional -(void)animationDidStopForCheckBox:(BEMCheckBox \* \_Nonnull)checkBox; \[Export ("animationDidStopForCheckBox:")\] void AnimationDidStopForCheckBox (BEMCheckBox checkBox); } } \[/csharp\]
 
@@ -90,9 +90,9 @@ The second error occurs because there is no NSHashTable in Xamarin.  In this ca
 
 Finally to fix the last error just remove the ICAAnimationDelegate inheritance.  In this case we don't need it.  At least I don't think we do.  The checkboxes seem to work fine without it.
 
-\[csharp\] namespace BEMCheckBoxBinding { // @interface BEMCheckBox : UIControl &amp;amp;amp;amp;amp;amp;lt;CAAnimationDelegate&amp;amp;amp;amp;amp;amp;gt; \[BaseType(typeof(UIControl))\] interface BEMCheckBox { \[Wrap("WeakDelegate")\] \[NullAllowed\] BEMCheckBoxDelegate Delegate { get; set; }
+\[csharp\] namespace BEMCheckBoxBinding { // @interface BEMCheckBox : UIControl &lt;CAAnimationDelegate&gt; \[BaseType(typeof(UIControl))\] interface BEMCheckBox { \[Wrap("WeakDelegate")\] \[NullAllowed\] BEMCheckBoxDelegate Delegate { get; set; }
 
-// @property (nonatomic, weak) id&amp;amp;amp;amp;amp;amp;lt;BEMCheckBoxDelegate&amp;amp;amp;amp;amp;amp;gt; \_Nullable delegate \_\_attribute\_\_((iboutlet)); \[NullAllowed, Export("delegate", ArgumentSemantic.Weak)\] NSObject WeakDelegate { get; set; }
+// @property (nonatomic, weak) id&lt;BEMCheckBoxDelegate&gt; \_Nullable delegate \_\_attribute\_\_((iboutlet)); \[NullAllowed, Export("delegate", ArgumentSemantic.Weak)\] NSObject WeakDelegate { get; set; }
 
 // More properties and methods... } } \[/csharp\]
 

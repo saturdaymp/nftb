@@ -1,5 +1,5 @@
 ---
-title: "SaturdayMP Show 49: picoCTF Gym (Trickster &amp; Cookies)"
+title: "SaturdayMP Show 49: picoCTF Gym (Trickster & Cookies)"
 date: 2024-09-18
 categories: 
   - "saturday-mp-show"

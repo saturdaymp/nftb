@@ -21,7 +21,7 @@ Now say you list version 3.7.99 as shown below.  Now 3.7.99 does not exist so N
 
 When you compile you will see a message similar to the below.
 
-\[text\] Dependency specified was NUnit (&amp;amp;gt;= 3.7.99) but ended up with NUnit 3.8.0. \[/text\]
+\[text\] Dependency specified was NUnit (&gt;= 3.7.99) but ended up with NUnit 3.8.0. \[/text\]
 
 [![NuGet Dependency Resolution Message](images/NuGet-Dependency-Resolution-Message.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/09/NuGet-Dependency-Resolution-Message.png)
 
@@ -43,7 +43,7 @@ Let's try something that might actually happen.  Your project references a proj
 
 NUnitLite 3.8.1 references to NUnit 3.8.1.  If you compile you get the following warning:
 
-\[text\] Detected package downgrade: NUnit from 3.8.1 to 3.6.1&amp;amp;nbsp;&amp;amp;nbsp; ClassLibrary1 (&amp;amp;gt;= 1.0.0) -&amp;amp;gt; NUnitLite (&amp;amp;gt;= 3.8.1) -&amp;amp;gt; NUnit (= 3.8.1)&amp;amp;nbsp;&amp;amp;nbsp; ClassLibrary1 (&amp;amp;gt;= 1.0.0) -&amp;amp;gt; NUnit (= 3.6.1) \[/text\]
+\[text\] Detected package downgrade: NUnit from 3.8.1 to 3.6.1&nbsp;&nbsp; ClassLibrary1 (&gt;= 1.0.0) -&gt; NUnitLite (&gt;= 3.8.1) -&gt; NUnit (= 3.8.1)&nbsp;&nbsp; ClassLibrary1 (&gt;= 1.0.0) -&gt; NUnit (= 3.6.1) \[/text\]
 
 [![NuGet Dependency Warning Message](images/NuGet-Dependency-Warning-Message.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/09/NuGet-Dependency-Warning-Message.png)
 
@@ -53,7 +53,7 @@ That's good.  It's what we wanted.  Now what happens if we remove the square b
 
 Will it use NUnit 3.6.1 that we reference in the project or NUnit 3.8.1 referenced by NUnitLite?
 
-\[text\] Detected package downgrade: NUnit from 3.8.1 to 3.6.1&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; ClassLibrary1 (&amp;amp;amp;gt;= 1.0.0) -&amp;amp;amp;gt; NUnitLite (&amp;amp;amp;gt;= 3.8.1) -&amp;amp;amp;gt; NUnit (= 3.8.1)&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; ClassLibrary1 (&amp;amp;amp;gt;= 1.0.0) -&amp;amp;amp;gt; NUnit (= 3.6.1) \[/text\]
+\[text\] Detected package downgrade: NUnit from 3.8.1 to 3.6.1&nbsp;&nbsp; ClassLibrary1 (&gt;= 1.0.0) -&gt; NUnitLite (&gt;= 3.8.1) -&gt; NUnit (= 3.8.1)&nbsp;&nbsp; ClassLibrary1 (&gt;= 1.0.0) -&gt; NUnit (= 3.6.1) \[/text\]
 
 [![NuGet Dependency Warning Message](images/NuGet-Dependency-Warning-Message.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/09/NuGet-Dependency-Warning-Message.png)
 
