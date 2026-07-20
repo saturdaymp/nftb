@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Hugo blog (Noise From the Basement), mid-migration from WordPress to
-Cloudflare Pages. Theme is PaperMod.
+Cloudflare Workers (static assets, not Pages). Theme is PaperMod.
 
 ## Tooling — Docker only
 
@@ -13,6 +13,24 @@ Hugo and Python/Pillow are NOT installed on the host. Use docker compose:
 
 Hugo version is pinned in `docker-compose.yml`; keep the two services in sync
 if you bump it.
+
+## Deploy (`.github/workflows/deploy.yml`)
+
+One workflow handles both cases: push to `main` runs `wrangler deploy`
+(production); PRs run `wrangler versions upload --preview-alias <alias>`,
+which never touches production. Non-obvious details:
+
+- The preview alias is the branch name sanitized to a DNS label (lowercase
+  alphanumerics/hyphens, 40 chars max) because it becomes the hostname
+  `<alias>-nftb.saturdaymp.workers.dev`. PR builds pass that URL as
+  `--baseURL` so absolute links stay on the preview.
+- CI runs the Hugo container with `-u root`: the image's uid 1000 can't
+  write to the runner-owned workspace.
+- Args after the compose service name replace the whole `command`, so
+  `--minify` must be repeated when passing extra flags to `build`.
+- The worker serves `./public` as static assets only (`wrangler.jsonc`) —
+  there is no worker script.
+- Required repo secrets: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
 
 ## Non-obvious rules
 

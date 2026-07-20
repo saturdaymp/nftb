@@ -1,0 +1,63 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# pull-requests: write lets the PR job post the preview-URL comment.
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Compute preview alias
+        if: github.event_name == 'pull_request'
+        id: preview
+        # The alias becomes part of the preview hostname
+        # (<alias>-nftb.saturdaymp.workers.dev), so it must be a valid DNS
+        # label: lowercase alphanumerics and hyphens only.
+        run: |
+          alias=$(echo "$BRANCH" | tr '[:upper:]' '[:lower:]' | tr -c 'a-z0-9\n' '-' | cut -c1-40 | sed 's/^-*//; s/-*$//')
+          url="https://$alias-nftb.saturdaymp.workers.dev/"
+          echo "alias=$alias" >> "$GITHUB_OUTPUT"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Preview URL: $url" >> "$GITHUB_STEP_SUMMARY"
+        env:
+          BRANCH: ${{ github.head_ref }}
+
+      - name: Build site
+        # -u root: the hugo image runs as uid 1000, which can't write to the
+        # runner-owned workspace.
+        # Args after the service name replace the compose command, so --minify
+        # must be repeated. PRs build against the preview URL so absolute
+        # links stay on the preview instead of jumping to production.
+        run: docker compose run --rm -u root build --minify ${PREVIEW_URL:+--baseURL "$PREVIEW_URL"}
+        env:
+          PREVIEW_URL: ${{ steps.preview.outputs.url }}
+
+      - name: Deploy to Cloudflare Workers
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          # PRs upload a preview version at a deterministic URL (doesn't touch
+          # production); pushes to main deploy for real.
+          command: ${{ github.event_name == 'pull_request' && format('versions upload --preview-alias {0}', steps.preview.outputs.alias) || 'deploy' }}
+
+      - name: Comment preview URL on PR
+        if: github.event_name == 'pull_request'
+        # --edit-last --create-if-none: one comment per PR, updated on each
+        # push, instead of a new comment every run.
+        run: |
+          gh pr comment "$PR_NUMBER" --repo "$GITHUB_REPOSITORY" --edit-last --create-if-none --body "Preview: $PREVIEW_URL"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PREVIEW_URL: ${{ steps.preview.outputs.url }}
