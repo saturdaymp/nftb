@@ -1,7 +1,7 @@
 # AGENTS.md
 
 Hugo blog (Noise From the Basement), mid-migration from WordPress to
-Cloudflare Workers (static assets, not Pages). Theme is PaperMod.
+Cloudflare Workers (static assets, not Pages). Theme is Beautiful Hugo.
 
 ## Tooling — Docker only
 
