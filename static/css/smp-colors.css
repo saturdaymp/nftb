@@ -1,0 +1,107 @@
+/* Saturday Morning Productions palette (saturdaymp.com):
+ *   #007399  primary blue  (replaces theme link blue #0066CC and accent #0085a1)
+ *   #0098cd  light blue    (hover/interactive states)
+ * Loaded after the theme CSS via layouts/partials/head_custom.html,
+ * so equal-specificity rules here win the cascade. */
+
+/* --- Primary: links, badges, static accents --- */
+
+a,
+p a,
+.blog-tags a,
+.blog-categories a,
+.terms-item-page {
+  color: #007399;
+}
+
+::-moz-selection {
+  background: #007399;
+}
+
+::selection {
+  background: #007399;
+}
+
+.terms-item-count,
+.archive-year-btn.active {
+  background: #007399;
+  border-color: #007399;
+}
+
+.see-also-item,
+.archive-item,
+.terms-item {
+  border-left-color: #007399;
+}
+
+.details-shortcode[open] {
+  border-color: #007399;
+}
+
+.details-shortcode > summary::before {
+  border-right-color: #007399;
+  border-bottom-color: #007399;
+}
+
+.theme-toggle:focus,
+.archive-year-btn:focus-visible {
+  outline-color: #007399;
+}
+
+/* --- Light blue: hover and focus states --- */
+
+a:hover,
+a:focus,
+.navbar-custom .navbar-brand:hover,
+.navbar-custom .navbar-brand:focus,
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link:focus,
+.navbar-custom .dropdown-item:hover,
+.navbar-custom .dropdown-item:focus,
+.navbar-custom .dropdown-item.active,
+.navbar-custom .dropdown-item:active,
+.navbar-search-result-item:hover,
+.navbar-search-result-item:focus,
+.post-preview a:hover,
+.post-preview a:focus,
+.tabs-shortcode .nav-tabs .nav-link:hover,
+.tabs-shortcode .nav-tabs .nav-link:focus,
+.tabs-shortcode .nav-tabs .nav-link.active,
+.terms-item-header a:hover,
+.terms-item-header a:focus {
+  color: #0098cd;
+}
+
+.see-also-item:hover,
+.see-also-item:focus,
+.archive-item:hover,
+.archive-item:focus,
+.archive-year-btn:hover {
+  border-color: #0098cd;
+  color: #0098cd;
+}
+
+.terms-item:hover {
+  border-color: #0098cd;
+}
+
+.post-pager li a:hover,
+.post-pager li a:focus,
+.disqus-comments button:hover,
+.disqus-comments button:focus,
+.btn-view-source:hover,
+.btn-view-source:focus,
+.terms-item-page:hover,
+.terms-item-page:focus {
+  background: #0098cd;
+  border-color: #0098cd;
+  color: #fff;
+}
+
+/* --- Dark mode: theme exposes variables, so just retint them --- */
+
+[data-theme="dark"] {
+  --dark-link: #5cc4ea;
+  --dark-navbar-hover: #9adcf2;
+  --dark-accent: #0098cd;
+}
