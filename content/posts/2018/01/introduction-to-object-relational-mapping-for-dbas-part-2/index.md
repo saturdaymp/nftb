@@ -40,7 +40,9 @@ Now the application knows that ApplicationUser has a one-to-one relationship to 
 
 Now Bud can create a new migration for his new Player model.
 
-\[text\] Add-Migration CreatePlayerTable \[/text\]
+```text
+Add-Migration CreatePlayerTable
+```
 
  
 
@@ -54,7 +56,9 @@ This creates the <timestamp>\_CreatePlayerTable file.  If we open it up we see 
 
 Now that the migration file is created Bud runs the migration to add the Players table to his database.
 
-\[text\] Update-Database \[/text\]
+```text
+Update-Database
+```
 
  
 

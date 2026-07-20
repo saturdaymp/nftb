@@ -31,13 +31,25 @@ After completing Part 5 our database has the edge tables completed (Players, Gam
 
 As usual we will start by creating the model.
 
-\[csharp\] using System; using System.Collections.Generic; using System.ComponentModel.DataAnnotations.Schema;
+```csharp
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SaturdayMP.GameTracker.Models { \[Table("GamesPlayed")\] public class GamePlayed { public int Id { get; set; }
+namespace SaturdayMP.GameTracker.Models
+{
+    [Table("GamesPlayed")]
+    public class GamePlayed
+    {
+        public int Id { get; set; }
 
-public int GameId { get; set; } public Game Game { get; set; }
+        public int GameId { get; set; }
+        public Game Game { get; set; }
 
-public DateTime DatePlayed { get; set; } } } \[/csharp\]
+        public DateTime DatePlayed { get; set; }
+    }
+}
+```
 
 ![](images/Game-Played-Model.webp)
 
@@ -45,7 +57,10 @@ This should look similar to the other models we have created so far with one min
 
 The below line is what links our new model to the Games table.  It says a GamesPlayed record belongs to a Game record.
 
-\[csharp\] public int GameId { get; set; } public Game Game { get; set; } \[/csharp\]
+```csharp
+public int GameId { get; set; }
+public Game Game { get; set; }
+```
 
 ![](images/Game-Played-Model-Foreign-Key-Highlighted.webp)
 
@@ -53,13 +68,17 @@ Entity Framework, and most other ORMs, are smart enough to correctly map a refer
 
 This relationship goes both ways and the relationship needs to be added to the Games table as well.  In this case it says a Game record can have many GamesPlayed records which is why a list is used.
 
-\[csharp\] public ICollection GamesPlayed { get; set; } \[/csharp\]
+```csharp
+public ICollection<GamePlayed> GamesPlayed { get; set; }
+```
 
 ![](images/Games-Model-with-Foreign-Key-to-GamesPlayed.webp)
 
 With the model created lets generate the migration.  This command should be familiar by now if you have been following along since the beginning.
 
-\[text\] dotnet ef migrations add CreateGamesPlayedTable \[/text\]
+```text
+dotnet ef migrations add CreateGamesPlayedTable
+```
 
 ![](images/Create-GamesPlayed-Table-Cmd.webp)
 
@@ -69,13 +88,17 @@ Checking the created migration we can see the foreign key created.
 
 Run the migration on the database to create the new table.
 
-\[text\] dotnet ef database update \[/text\]
+```text
+dotnet ef database update
+```
 
 ![](images/Update-Database-with-GamesPlayed-Table-Cmd.webp)
 
 Next lets create the CRUD.
 
-\[text\]dotnet aspnet-codegenerator controller -name GamesPlayedController -outDir Controllers -m GamePlayed -dc GameTrackerContext -udl\[/text\]
+```text
+dotnet aspnet-codegenerator controller -name GamesPlayedController -outDir Controllers -m GamePlayed -dc GameTrackerContext -udl
+```
 
 ![](images/Generate-GamesPlayed-Scaffolding-Cmd.webp)
 
@@ -85,10 +108,9 @@ Remember if the files don't appear in the solution you might need to close the s
 
 To see our new CRUD methods we need to add the menu item to Layout.cshtml file.
 
-\[csharp\]
-
-- Games Played
-\[/csharp\]
+```csharp
+<li><a asp-area="" asp-controller="GamesPlayed" asp-action="Index">Games Played</a></li>
+```
 
 ![Add Games Played Menu to Layout](images/Add-GamesPlayed-Menu-to-Layout.webp)
 
@@ -104,7 +126,9 @@ Lets start with the Index page.  Open up the page can change the following line
 
 NOTE: you don't need to stop running the application.  After your change you can just reload the page in your browser and see you changes.  Just make sure you have saved your changes you might have to hold down the Shift key when reloading the browser.
 
-\[csharp\]@Html.DisplayFor(modelItem => item.Game.Name)\[/csharp\]
+```csharp
+@Html.DisplayFor(modelItem => item.Game.Name)
+```
 
 ![](images/Games-Played-Index-Changed-to-Name.webp)
 

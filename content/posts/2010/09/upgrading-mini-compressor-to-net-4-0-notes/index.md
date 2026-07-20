@@ -17,23 +17,29 @@ My notes on upgrading Mini-Compressor from .NET 3.5 to .NET 4.0 (Visual Studio 2
 
 3) Get some errors about  "The parameter to the compiler is invalid, '/define:=' will be ignored.".  After some digging find out the Compressor project contains the following in the "Conditional Compilation Symbols:
 
-\[sourcecode language="csharp"\] StreamReader reader = new StreamReader(project.Properties\[&quot;install-proj-file&quot;\]); \[/sourcecode\]
+```csharp
+StreamReader reader = new StreamReader(project.Properties["install-proj-file"]);
+```
 
 That is weird but I delete it and try compiling again.
 
 4) Only 2 warnings now and both related to the installer project.  First one is:
 
-\[sourcecode\] Build input parameter 'SupportUrl=www.saturdaymp.com' is not a web url or UNC share.
+```text
+Build input parameter 'SupportUrl=www.saturdaymp.com' is not a web url or UNC share.
 
-C:UsersthedudeDesktopMiniCompSourceMiniCompMiniCompInstaller32MiniCompInstaller.vdproj&lt;em&gt; \[/sourcecode\]
+C:UsersthedudeDesktopMiniCompSourceMiniCompMiniCompInstaller32MiniCompInstaller.vdproj<em>
+```
 
 I wonder if I got that error in VS 2008?  I'm too lazy to check.  Add "http://" to the front of the url and error goes away.
 
 5) One warning left, will this be the last warning?  One can hope.  The warning is:
 
-\[sourcecode\] The target version of the .NET Framework in the project does not match the .NET Framework launch condition version '3.5 SP1 Client'. Update the version of the .NET Framework launch condition to match the target version of the.NET Framework in the Advanced Compile Options Dialog Box (VB) or the Application Page (C#, F#).
+```text
+The target version of the .NET Framework in the project does not match the .NET Framework launch condition version '3.5 SP1 Client'.  Update the version of the .NET Framework launch condition to match the target version of the.NET Framework in the Advanced Compile Options Dialog Box (VB) or the Application Page (C#, F#).
 
-C:UsersthedudeDesktopMiniCompSourceMiniCompMiniCompInstaller32MiniCompInstaller.vdproj \[/sourcecode\]
+C:UsersthedudeDesktopMiniCompSourceMiniCompMiniCompInstaller32MiniCompInstaller.vdproj
+```
 
 So I go into all the projects and update the targeted version to .NET 4.0 Client Profile:
 
@@ -49,9 +55,11 @@ I also update the installer to use .NET 4.0 in the Prerequisites and Launch Cond
 
 6) Try a recompile and get the same error.  Wait, it is slightly different.  It is complaining that one of the projects doesn't target .NET 4.0 Client Profile:
 
-\[sourcecode\] The target version of the .NET Framework in the project does not match the .NET Framework launch condition version '.NET Framework 4 Client Profile'. Update the version of the .NET Framework launch condition to match the target version of the.NET Framework in the Advanced Compile Options Dialog Box (VB) or the Application Page (C#, F#).
+```text
+The target version of the .NET Framework in the project does not match the .NET Framework launch condition version '.NET Framework 4 Client Profile'.  Update the version of the .NET Framework launch condition to match the target version of the.NET Framework in the Advanced Compile Options Dialog Box (VB) or the Application Page (C#, F#).
 
-C:UsersthedudeDesktopMiniCompSourceMiniCompMiniCompInstaller32MiniCompInstaller.vdproj \[/sourcecode\]
+C:UsersthedudeDesktopMiniCompSourceMiniCompMiniCompInstaller32MiniCompInstaller.vdproj
+```
 
 Double check all the projects target framework values are set correctly.  Find out that my one C++ project also has a .NET target and it is set to .NET 4.0 but without the client project part:
 
@@ -85,13 +93,37 @@ Commit my changes.
 
 Read-up on the differences between the NAnt versions and find out that NAnt 0.90 no longer loads the System.Text.RegularExpressions namespace by default as shown in the script task documentation for [0.86](http://nant.sourceforge.net/release/0.86-beta1/help/tasks/script.html) and [0.90](http://nant.sourceforge.net/release/0.90/help/tasks/script.html).  To get around this problem I add both the reference and imports sections.  Both are needed, if you try just the imports, like I did at first, it dosen't work.  The updated NAnt script looks like:
 
-\[sourcecode language="xml" warplines="false"\] <script language="C#" failonerror="false"> <references> <include name="System.dll" /> </references> <imports> <import namespace="System.Text.RegularExpressions" /> </imports> <code> ... </code> </script> \[/sourcecode\]
+```xml
+<script language="C#" failonerror="false">
+  <references>
+    <include name="System.dll" />
+  </references>
+  <imports>
+    <import namespace="System.Text.RegularExpressions" />
+  </imports>
+  <code>
+    ...
+  </code>
+</script>
+```
 
 11) Try a another build and get an error about the VS 2010 path.  Update the path and notice the NUnit path is also incorrect so I fix that as well.
 
-\[sourcecode language="xml" wraplines="false"\] <!-- Compiles Mini-Comp. --> <target name=&quot;compile&quot; description=&quot;Compiles the code.&quot;&gt; <exec program=&quot;Devenv.com&quot; basedir=&quot;C:Program Files (x86)Microsoft Visual Studio 10.0Common7IDE&quot;&gt; <arg line='/rebuild &quot;${slnconfig}&quot; &quot;MiniComp.sln&quot;' /&gt; </exec&gt; </target&gt;
+```xml
+<!-- Compiles Mini-Comp. -->
+<target name="compile" description="Compiles the code.">
+  <exec program="Devenv.com" basedir="C:Program Files (x86)Microsoft Visual Studio 10.0Common7IDE">
+    <arg line='/rebuild "${slnconfig}" "MiniComp.sln"' />
+  </exec>
+</target>
 
-<!-- Run the NUnit tests. -->; <target name="tests" description="Run the unit tests."> <exec program="NUnit-Console.exe" basedir="C:Program Files (x86)NUnit 2.5.7binnet-2.0" /> <arg line='MiniComp.nunit /config:Release' /> </exec> </target> \[/sourcecode\]
+<!-- Run the NUnit tests. -->;
+<target name="tests" description="Run the unit tests.">
+  <exec program="NUnit-Console.exe" basedir="C:Program Files (x86)NUnit 2.5.7binnet-2.0" />
+    <arg line='MiniComp.nunit /config:Release' />
+  </exec>
+</target>
+```
 
 12) Build again and it appears everything works.  Virtual high-five to me but just a small one as I have to test the build on the various versions of Windows.
 
@@ -101,6 +133,12 @@ Read-up on the differences between the NAnt versions and find out that NAnt 0.90
 
 The XAML code should look like:
 
-\[sourcecode language="xml" wraplines="false"\] <Image Name="displayImage" Grid.Column="2" Opacity="0" Width="97" Height="97"> <Image.Effect> <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="30" /> </Image.Effect> </Image> \[/sourcecode\]
+```xml
+<Image Name="displayImage" Grid.Column="2" Opacity="0" Width="97" Height="97">
+  <Image.Effect>
+    <DropShadowEffect ShadowDepth="0" Color="White" BlurRadius="30" />
+  </Image.Effect>
+</Image>
+```
 
 **Update Nov 11, 2010:** You can find an addendum [here](http://nftb.saturdaymp.com/2010/11/03/upgrading-mini-compressor-to-net-40-notes-addendum/).

@@ -10,21 +10,46 @@ tags:
 
 A common unit test assert I need to do is compare all the property values of one object to another.  For example:
 
-\[csharp\] \[Test\] public void TestSaveWorks() { // Create a value to save. var expectedDto = new SomeDto() {ValueOne = 1, ValueTwo = "Blah"};
+```csharp
+[Test]
+public void TestSaveWorks()
+{
+  // Create a value to save.
+  var expectedDto = new SomeDto() {ValueOne = 1, ValueTwo = "Blah"};
 
-// Save the value. \_someDbService.Save(dtoToSave);
+  // Save the value.
+  _someDbService.Save(dtoToSave);
 
-// Load the value from the database. The DTO ID // should have been set by the save. var actualDto = \_someDbService.Find(expectedDto.Id); Assert.That(expectedDto.ValueOne, Is.EqualTo(actualDto.ValueOne)); Assert.That(expectedDto.ValueTwo, Is.EqualTo(actualDto.ValueTwo)); } \[/csharp\]
+  // Load the value from the database.  The DTO ID
+  // should have been set by the save.
+  var actualDto = _someDbService.Find(expectedDto.Id);
+  
+  Assert.That(expectedDto.ValueOne, Is.EqualTo(actualDto.ValueOne));
+  Assert.That(expectedDto.ValueTwo, Is.EqualTo(actualDto.ValueTwo));
+}
+```
 
 In this test we only have two properties to test but if the object has 10 plus properties to test that would be quite onerous.   I often forget to update the tests after I add a new property to the object.
 
 To fix this problem I created a [custom constraint](https://github.com/nunit/docs/wiki/Custom-Constraints) for [NUnit](http://nunit.org/) called EquivalentProperyWiseTo that compares all the property values of two objects.   Now the above tests looks like:
 
-\[csharp\] \[Test\] public void TestSaveWorks() { // Create a value to save. var expectedDto = new SomeDto() {ValueOne = 1, ValueTwo = "Blah"};
+```csharp
+[Test]
+public void TestSaveWorks()
+{
+ // Create a value to save.
+ var expectedDto = new SomeDto() {ValueOne = 1, ValueTwo = "Blah"};
 
-// Save the value. \_someDbService.Save(dtoToSave);
+ // Save the value.
+ _someDbService.Save(dtoToSave);
 
-// Load the value from the database. The DTO ID // should have been set by the save. var actualDto = \_someDbService.Find(expectedDto.Id); Assert.That(expectedDto, Is.EquivalentPropertyWiseTo(actualDto)); } \[/csharp\]
+ // Load the value from the database. The DTO ID
+ // should have been set by the save.
+ var actualDto = _someDbService.Find(expectedDto.Id);
+ 
+ Assert.That(expectedDto, Is.EquivalentPropertyWiseTo(actualDto));
+}
+```
 
 Notice you don't need to test each property value independently.  Just pass in the two objects you want to test and you are done.  High Five!
 

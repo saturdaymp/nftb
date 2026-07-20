@@ -39,11 +39,23 @@ One problem developers and report writers have with type tables is determine wha
 
 One possible way is to query on the string column:
 
-\[sql\] Select \* From GamesPlayed gp Inner Join GameResultTypes grt On gp.GameResultTypeId = grt.Id Where gp.PlayerId = # And grt.Type = 'Won' \[/sql\]
+```sql
+Select *
+From GamesPlayed gp
+Inner Join GameResultTypes grt On gp.GameResultTypeId = grt.Id
+Where gp.PlayerId = #
+And grt.Type = 'Won'
+```
 
 This is a bad idea as the text could change.  How about the ID?
 
-\[sql\] Select \* From GamesPlayed gp Inner Join GameResultTypes grt On gp.GameResultTypeId = grt.Id Where gp.PlayerId = # And grt.ID = 10 \[/sql\]
+```sql
+Select *
+From GamesPlayed gp
+Inner Join GameResultTypes grt On gp.GameResultTypeId = grt.Id
+Where gp.PlayerId = #
+And grt.ID = 10
+```
 
 Using an auto-increment ID as the identifier is a bad idea as it is set by the database and can change.  This is especially problematic as the database is migrated between environments such as from test to production.
 
@@ -51,7 +63,13 @@ How about not auto-incrementing the ID field?  That would work but I'm not a fa
 
 My preference is to have a field called KeyCode.  This is a unique integer field with a value that is set when the record is entered and never changed.  It can then be used whenever you need to access that particular type.  For example, if we assign the Win Game Result Type a Key Code of 10 then we can find all the games a player won by:
 
-\[sql\] Select \* From GamesPlayed gp Inner Join GameResultTypes grt On gp.GameResultTypeId = grt.Id Where gp.PlayerId = # And grt.KeyCode = 10 \[/sql\]
+```sql
+Select *
+From GamesPlayed gp
+Inner Join GameResultTypes grt On gp.GameResultTypeId = grt.Id
+Where gp.PlayerId = #
+And grt.KeyCode = 10
+```
 
 That means our GameResultTypes table now looks like:
 
@@ -59,13 +77,22 @@ That means our GameResultTypes table now looks like:
 
 Lets create a Game Result Type model for what we have so far.
 
-\[csharp\] using System.ComponentModel.DataAnnotations;
+```csharp
+using System.ComponentModel.DataAnnotations;
 
-namespace SaturdayMP.GameTracker.Models { public class GameResultType { public int Id { get; set; }
+namespace SaturdayMP.GameTracker.Models
+{
+  public class GameResultType
+  {
+    public int Id { get; set; }
 
-public int KeyCode { get; set; }
+    public int KeyCode { get; set; }
 
-\[MaxLength(10)\] public string Type { get; set; } } } \[/csharp\]
+    [MaxLength(10)]
+    public string Type { get; set; }
+  }
+}
+```
 
 [![Initial Game Result Type Model](images/Inital-Game-Result-Type-Model.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Inital-Game-Result-Type-Model.png)
 
@@ -73,11 +100,25 @@ Another common feature of type table is we sometimes know all the records they w
 
 In software if we have a set amount of known types we can wrap them in an enum.  At it's core an enum is really an integer but it only allows certain values.  For example, we can have colour enum that only allows certain colours:
 
-\[csharp\] public enum Colors { Red, Blue, Green } \[/csharp\]
+```csharp
+public enum Colors
+{
+  Red,
+  Blue,
+  Green
+}
+```
 
 Lets create an enum for our game result types in our model.  We could put in a seperate file but in this case the enum only exists because of the GameResultTypes so lets add it in the same file.
 
-\[csharp\] public enum GameResultTypes { Win = 10, Loss = 11, Tie = 12 } \[/csharp\]
+```csharp
+public enum GameResultTypes
+{
+Win = 10,
+Loss = 11,
+Tie = 12
+}
+```
 
 [![Game Result Type Model with Enum](images/Game-Result-Type-Model-with-Enum.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Game-Result-Type-Model-with-Enum.png)
 
@@ -85,23 +126,43 @@ If we don't assign numbers to the enums they will be auto assigned.  In this ca
 
 Now that we have the enum lets update our model with some syntatic sugar to make it easier to work with the enums.
 
-\[csharp\] using System.ComponentModel.DataAnnotations;
+```csharp
+using System.ComponentModel.DataAnnotations;
 
-namespace SaturdayMP.GameTracker.Models { public enum GameResultTypeEnums { Win = 10, Loss = 11, Tie = 12 }
+namespace SaturdayMP.GameTracker.Models
+{
+  public enum GameResultTypeEnums
+  {
+    Win = 10,
+    Loss = 11,
+    Tie = 12
+  }
 
-public class GameResultType { public GameResultType() { }
+  public class GameResultType
+  {
+    public GameResultType()
+    {
+    }
 
-public GameResultType(GameResultTypeEnums @enum) { KeyCode = (int)@enum; Type = @enum.ToString(); }
+  public GameResultType(GameResultTypeEnums @enum)
+  {
+    KeyCode = (int)@enum;
+    Type = @enum.ToString();
+  }
 
-public int Id { get; set; }
+  public int Id { get; set; }
 
-public int KeyCode { get; set; }
+  public int KeyCode { get; set; }
 
-\[MaxLength(10)\] public string Type { get; set; }
+  [MaxLength(10)]
+  public string Type { get; set; }
 
-public static implicit operator GameResultType(GameResultTypeEnums @enum) =&gt; new GameResultType(@enum);
+  public static implicit operator GameResultType(GameResultTypeEnums @enum) => new GameResultType(@enum);
 
-public static implicit operator GameResultTypeEnums(GameResultType gameResultType) =&gt; (GameResultTypeEnums)gameResultType.Id; } } \[/csharp\]
+  public static implicit operator GameResultTypeEnums(GameResultType gameResultType) => (GameResultTypeEnums)gameResultType.Id;
+  }
+}
+```
 
 [![Complete Game Result Types Model](images/Complete-Game-Result-Types-Model.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Complete-Game-Result-Types-Model.png)
 
@@ -109,13 +170,19 @@ Notice that we still have the KeyCode field as a integer.  Some ORMs allow you 
 
 The couple lines at the bottom simplify the conversion of the GameResultTypeEnums to the GameResultType object so we can write something like:
 
-\[csharp\] // Convert enum to model object. GameResultType gameResultObject = GameResultTypeEnums.Win;
+```csharp
+// Convert enum to model object.
+GameResultType gameResultObject = GameResultTypeEnums.Win;
 
-// Convert model object to enum. GameResultTypeEnums gameResultTypeEnum = gameResultObject; \[/csharp\]
+// Convert model object to enum.
+GameResultTypeEnums gameResultTypeEnum = gameResultObject;
+```
 
 Now that the model is complete we can create the actual table in the database using this now familiar commands to create the migration:
 
-\[text\] dotnet ef migrations add CreateGameResultTypesTable \[/text\]
+```text
+dotnet ef migrations add CreateGameResultTypesTable
+```
 
 [![Create Game Result Types Migration](images/Create-Game-Result-Types-Migration.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/08/Create-Game-Result-Types-Migration.png)
 
@@ -123,7 +190,9 @@ Now that the model is complete we can create the actual table in the database us
 
 Then apply the migration:
 
-\[text\] dotnet ef database update \[/text\]
+```text
+dotnet ef database update
+```
 
 [![Update Database with Game Result Types Table](images/Update-Database-with-Game-Result-Types-Table.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/08/Update-Database-with-Game-Result-Types-Table.png)
 
@@ -131,15 +200,35 @@ Then apply the migration:
 
 Since we know that this table will only hold 3 records and we know what they are lets seed them.  To do this create a new class in the Data folder and call it DbInitializer.  In our new class create the Initialize method that will seed the data.
 
-\[csharp\] using System; using System.Linq; using SaturdayMP.GameTracker.Models;
+```csharp
+using System;
+using System.Linq;
+using SaturdayMP.GameTracker.Models;
 
-namespace SaturdayMP.GameTracker.Data { public static class DbInitializer {
+namespace SaturdayMP.GameTracker.Data
+{
+  public static class DbInitializer
+  {
 
-public static void Initialize(GameTrackerContext context) { if (context.GameResultTypes.Any()) { // DB has already been seeded. return; }
+    public static void Initialize(GameTrackerContext context)
+    {
+      if (context.GameResultTypes.Any())
+      {
+        // DB has already been seeded.
+        return;
+      }
 
-// Seed the Game Type Enums. foreach(GameResultTypeEnums result in Enum.GetValues(typeof(GameResultTypeEnums))) { context.Add&lt;GameResultType&gt;(result); context.SaveChanges(); }
+      // Seed the Game Type Enums.
+      foreach(GameResultTypeEnums result in Enum.GetValues(typeof(GameResultTypeEnums)))
+      {
+        context.Add<GameResultType>(result);
+        context.SaveChanges();
+      }
 
-} } } \[/csharp\]
+    }
+  }
+}
+```
 
 [![DbInitializer Class](images/DbInitializer-Class.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/08/DbInitializer-Class.png)
 
@@ -147,7 +236,10 @@ The first if statement checks if the data has already been seeded.  If it has, 
 
 Now we need to call our DbInitializer.  Lets do this when our application starts up in the Main:
 
-\[csharp\] var context = services.GetRequiredService&lt;SaturdayMP.GameTracker.Data.GameTrackerContext&gt;(); DbInitializer.Initialize(context); \[/csharp\]
+```csharp
+var context = services.GetRequiredService<SaturdayMP.GameTracker.Data.GameTrackerContext>();
+DbInitializer.Initialize(context);
+```
 
 [![Initialize Database in Main](images/Initialize-Database-in-Main.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/08/Initialize-Database-in-Main.png)
 
@@ -157,7 +249,9 @@ Now if you start the application the GameResultTypes table will be populated.
 
 Notice that we don't have any screens to edit GameResultTypes.  Lets stop the application and add our CRUD methods. Again this command should now be familiar:
 
-\[text\] dotnet aspnet-codegenerator controller -name GameResultsTypeController -outDir Controllers -m GameResultType -dc GameTrackerContext -udl \[/text\]
+```text
+dotnet aspnet-codegenerator controller -name GameResultsTypeController -outDir Controllers -m GameResultType -dc GameTrackerContext -udl
+```
 
 [![Command to Add Game Result Type CRUD](images/Command-to-Add-Game-Result-Type-CRUD.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/09/Command-to-Add-Game-Result-Type-CRUD.png)
 

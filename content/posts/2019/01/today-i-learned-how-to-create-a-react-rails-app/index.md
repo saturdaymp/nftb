@@ -16,17 +16,30 @@ First thing you need to do is create a basic Rails app as outlined in my [previo
 
 Once your basic Rails app is up and running you can add React.  This example uses [React-Rails](https://github.com/reactjs/react-rails).  First, you need to update the Docker file to install Node JS and Yarn.  Open up the DockerFile and change it so it looks like the below.
 
-\[text\] FROM ruby:2.5.3
+```text
+FROM ruby:2.5.3
 
-\# To install a later version of Node JS and Yarn. RUN curl -sL https://deb.nodesource.com/setup\_10.x | bash - RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+# To install a later version of Node JS and Yarn.
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-\# Install the needed software. RUN apt-get update -qq &amp;&amp; apt-get install -y build-essential libpq-dev nodejs yarn
+# Install the needed software.
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs yarn
 
-\# Create the website folder and map the Gemfiles. RUN mkdir /website WORKDIR /website COPY Gemfile /website/Gemfile COPY Gemfile.lock /website/Gemfile.lock
+# Create the website folder and map the Gemfiles.
+RUN mkdir /website
+WORKDIR /website
+COPY Gemfile /website/Gemfile
+COPY Gemfile.lock /website/Gemfile.lock
 
-\# Update the bundler then install the gems. RUN gem install bundler RUN bundle install
+# Update the bundler then install the gems.
+RUN gem install bundler
+RUN bundle install
 
-\# Copy our files to the website. COPY . /website \[/text\]
+# Copy our files to the website.
+COPY . /website
+```
 
 [![Changes to Docker file.](images/Updates-to-Docker-File.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/12/Updates-to-Docker-File.png)
 
@@ -34,21 +47,31 @@ Actually only the top of the file is changed, the bottom is the same just with b
 
 Next add the required Gems: [webpacker](https://github.com/rails/webpacker) and react-rails:
 
-\[text\] # React gem 'webpacker' gem 'react-rails' \[/text\]
+```text
+# React
+gem 'webpacker'
+gem 'react-rails'
+```
 
 ![](images/Add-react-gems-to-gemfile.webp)
 
 Now that the Docker and Gemfile is updated we can rebuild the container:
 
-\[text\]docker-compose build web\[/text\]
+```text
+docker-compose build web
+```
 
 [![Rebuilding the Docker container with Node and Yarn.](images/Rebuilding-Docker-container-with-Node-and-Yarn.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/12/Rebuilding-Docker-container-with-Node-and-Yarn.png)
 
 A couple final steps.  Run the newly build container and run the following commands:
 
-\[text\] docker-compose run web bash
+```text
+docker-compose run web bash
 
-rails webpacker:install rails webpacker:install:react rails g react:install \[/text\]
+rails webpacker:install
+rails webpacker:install:react
+rails g react:install
+```
 
 [![Installing Webpacker.](images/Installing-webpacker.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/12/Installing-webpacker.png)
 
@@ -60,25 +83,33 @@ The Rails app should be React ready.  To smoke test we need a view and controll
 
 Generate the home controller by executing the following:
 
-\[text\]rails g controller Home index\[/text\]
+```text
+rails g controller Home index
+```
 
 [![Generate home controller and view.](images/Generate-home-page..webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/12/Generate-home-page..png)
 
 Then generate a basic React component:
 
-\[text\]rails g react:component HelloWorld greeting:string\[/text\]
+```text
+rails g react:component HelloWorld greeting:string
+```
 
 [![Generate React Hello World component.](images/Generate-React-Hellow-World-component.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/12/Generate-React-Hellow-World-component.png)
 
 Then add the following line to the application layout file:
 
-\[html\]<%= javascript\_pack\_tag 'application' %>\[/html\]
+```html
+<%= javascript_pack_tag 'application' %>
+```
 
 [![Add React application to layout.](images/Add-React-to-Layout.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/12/Add-React-to-Layout.png)
 
 Finally add the following line to the home view:
 
-\[html\]<%= react\_component("HelloWorld", { greeting: "Hello from react-rails." }) %>\[/html\]
+```html
+<%= react_component("HelloWorld", { greeting: "Hello from react-rails." }) %>
+```
 
 [![Add React component to Home page.](images/Add-React-component-to-home-page.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/12/Add-React-component-to-home-page.png)
 

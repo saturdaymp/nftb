@@ -34,13 +34,17 @@ Now that the OpenSSH key is saved copy it over to your Mac.  Since this is a pr
 
 Then run the command to add the key.  Use the capital -K option to add the key to the Mac KeyChain so you don't have to keep entering your passphrase.  The first password prompt is the Sudo password and the second is the passphrase for the private key.
 
-\[text\] sudo ssh-add -K <key file> \[/text\]
+```text
+sudo ssh-add -K <key file>
+```
 
 [![Add Key to Keychain](images/AddKeyToKeyChain-1.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/02/AddKeyToKeyChain-1.png)
 
 Now you can see that the key has been added by running the following command.
 
-\[text\] sudo ssh-add -l \[/text\]
+```text
+sudo ssh-add -l
+```
 
 [![Show Added Key](images/ShowAddedKey.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/02/ShowAddedKey.png)
 

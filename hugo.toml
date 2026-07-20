@@ -7,6 +7,10 @@ locale = 'en-us'
 [pagination]
   pagerSize = 5
 
+# Class-based syntax highlighting styled by the theme's syntax.css.
+[markup.highlight]
+  noClasses = false
+
 [Params]
   subtitle = "Saturday Morning Production's behind the scenes blog."
   mainSections = ['posts']

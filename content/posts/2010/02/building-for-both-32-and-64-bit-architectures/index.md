@@ -32,6 +32,12 @@ Finally adjust your C++ projects settings as shown below.  When the Release Con
 
 Now you can compile both a 32 and 64 bit application.  Mini-Compressor uses an NAnt build script and the compile target looks like:
 
-\[sourcecode language="xml" wraplines="false"\] <target name="compile" description="Compiles the code."> <exec program="Devenv.com" basedir="C:Program Files (x86)Microsoft Visual Studio 9.0Common7IDE"> <arg line='/rebuild "${slnconfig}" "MiniComp.sln"' /> </exec> </target> \[/sourcecode\]
+```xml
+<target name="compile" description="Compiles the code.">
+  <exec program="Devenv.com" basedir="C:Program Files (x86)Microsoft Visual Studio 9.0Common7IDE">
+    <arg line='/rebuild "${slnconfig}" "MiniComp.sln"' />
+   </exec>
+ </target>
+```
 
 During the automated build the NAnt script is called twice. Once with ${slnconfig} set to Release and then to Release-64.

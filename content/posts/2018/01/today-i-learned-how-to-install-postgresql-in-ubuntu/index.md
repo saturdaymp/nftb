@@ -19,33 +19,47 @@ Anyway, let's get to installing Postgresql in a Ubuntu development environment.�
 
 First create a file that will point to the PostgreSQL Apt Repository:
 
-\[text\] sudo nano /etc/apt/sources.list.d/pgdg.list \[/text\]
+```text
+sudo nano /etc/apt/sources.list.d/pgdg.list
+```
 
 Then add the following to the file:
 
-\[text\] deb http://apt.postgresql.org/pub/repos/apt/ -pgdg main \[/text\]
+```text
+deb http://apt.postgresql.org/pub/repos/apt/ -pgdg main
+```
 
 Finally import the repository signing key:
 
-\[text\] wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - \[/text\]
+```text
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+```
 
 Now do a apt update and you should see the PostgreSQL listed:
 
-\[text\] sudo apt update \[/text\]
+```text
+sudo apt update
+```
 
 Finally install it:
 
-\[text\] sudo apt install postgresql \[/text\]
+```text
+sudo apt install postgresql
+```
 
 You can check if PostgreSQL was installed correctly by trying to connect to it:
 
-\[text\] sudo su - postgres psql \[/text\]
+```text
+sudo su - postgres psql
+```
 
 Notice you had to switch to the postgres user before attempting to connect.  This is a new user that was created during the PostgreSQL installation and is the default user for new database installs.
 
 By default PostgreSQL does not have a [default password](https://stackoverflow.com/questions/7695962/postgresql-password-authentication-failed-for-user-postgres/7696398#7696398) in Ubuntu.  You can only login via the above command and can't connect using other methods, such as DataGrip.  To change the postgres default user password run the following command when logged into PostgreSQL:
 
-\[text\] ALTER USER postgres PASSWORD 'password'; \[/text\]
+```text
+ALTER USER postgres PASSWORD 'password';
+```
 
 Once that is done you can logout of PostgreSQL by typing "\\q".
 

@@ -22,7 +22,13 @@ NO! you shout, hopefully just in your head, glancing around just to be sure.  Y
 
 The query looks like:
 
-\[sql\] Select so.name From syscomments sc Inner Join sysobjects so ON sc.id = so.id Where text Like '%{0}%' And so.Name &lt;&gt; '{0}' \[/sql\]
+```sql
+Select so.name
+From syscomments sc
+Inner Join sysobjects so ON sc.id = so.id
+Where text Like '%{0}%'
+And so.Name <> '{0}'
+```
 
 It says to replace the "{0}" with the name of the view, stored procedure, table, etc. and the query will return you all the names of all the database objects that depend on "{0}".  You type in "vwCustomersGH" and the query returns you one record: vwClientsGH.  Darn it, you were sure it was unused.  Wait a minute, what depends on vwClientsGH and less important, what is with the GH suffix?  You run the query again with vwClientsGH and this time the query returns nothing.  A quick Ctrl-F shows the wvClientsGH view is not referenced in the code either.  Satisfied you can delete the two views, you do, run your unit tests (which Fresh-Faced didn't have), and commit your changes.  Your QA team finds no issues with your change and the next version of the project is released.
 

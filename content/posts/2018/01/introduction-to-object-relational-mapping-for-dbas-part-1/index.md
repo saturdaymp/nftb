@@ -51,13 +51,19 @@ Following the advice he runs the migration.  Actually before he runs the migrat
 
 [![Connection String In App Settings](images/ConnectionStringInApSettings.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/01/ConnectionStringInApSettings.png)
 
-\[text\] "Server=(localdb)\\\\mssqllocaldb;Database=aspnet-SaturdayMP.BuddiesGameTracker-1CDAB6F6-EB6A-4A5D-B6A9-8CD3DC4B3B07;Trusted\_Connection=True;MultipleActiveResultSets=true" \[/text\]
+```text
+"Server=(localdb)\\mssqllocaldb;Database=aspnet-SaturdayMP.BuddiesGameTracker-1CDAB6F6-EB6A-4A5D-B6A9-8CD3DC4B3B07;Trusted_Connection=True;MultipleActiveResultSets=true"
+```
 
-\[text\] "Server=localhost;Database=BuddiesGameTracker;Trusted\_Connection=True;" \[/text\]
+```text
+"Server=localhost;Database=BuddiesGameTracker;Trusted_Connection=True;"
+```
 
 Then Bud runs the command to update the database:
 
-\[text\] Update-Database \[/text\]
+```text
+Update-Database
+```
 
  
 

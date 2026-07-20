@@ -19,69 +19,117 @@ Not as funny as the first time?  Not funny at all?  I won't use that joke agai
 
 The example for this blog post is from the [NConstraint](https://github.com/saturdaymp/NConstraints) project.  It shows how I created a custom constraint to compare the property values or two objects.  In my case I wanted to write something like:
 
-\[csharp\] var expected = new MyClass() { SomeProperty = 1};
+```csharp
+var expected = new MyClass() { SomeProperty = 1};
 
-// Property values match. var actual = new MyClass() { SomeProperty = 1 }; Assert.That(expected, Is.EquivalentPropertyWiseTo(actual));
+// Property values match.
+var actual = new MyClass() { SomeProperty = 1 };
+Assert.That(expected, Is.EquivalentPropertyWiseTo(actual));
 
-// Property values don't match. actual.SomeProperty = 2 Assert.That(expected, Is.Not.EquivalentPropertyWiseTo(actual)); \[/csharp\]
+// Property values don't match.
+actual.SomeProperty = 2
+Assert.That(expected, Is.Not.EquivalentPropertyWiseTo(actual));
+```
 
 Lets start.  First you need to override the [Constraint](https://github.com/nunit/nunit/blob/master/src/NUnitFramework/framework/Constraints/Constraint.cs) class.
 
-\[csharp\] public class EquivalentPropertyWiseToConstraint : Constraint { } \[/csharp\]
+```csharp
+public class EquivalentPropertyWiseToConstraint : Constraint
+{
+}
+```
 
 Then create a constructor that accepts the expected value for the test.  In our case it's the object you want to compare but it could be anything.
 
-\[csharp\] public EquivalentPropertyWiseToConstraint(object expected) { Expected = expected; }
+```csharp
+public EquivalentPropertyWiseToConstraint(object expected)
+{
+  Expected = expected;
+}
 
-public object Expected { get; } \[/csharp\]
+public object Expected { get; }
+```
 
 Notice that we save the expected object.  In my case I saved it to a public property for unit testing purposes but it could be a private variable.  I know, unit testing a new unit test constraint, very meta.
 
 The next thing we have to implement is the logic for the constraint by overriding the ApplyTo method.
 
-\[csharp\] public override ConstraintResult ApplyTo<TActual>(TActual actual) { } \[/csharp\]
+```csharp
+public override ConstraintResult ApplyTo<TActual>(TActual actual)
+{
+}
+```
 
 This method takes a the actual value from the test that you want to compare to the expected.  It returns a [ConstraintResult](https://github.com/nunit/nunit/blob/master/src/NUnitFramework/framework/Constraints/ConstraintResult.cs) contains a reference to the constraint, the actual value, and if the constraint passed or not.
 
 Add whatever logic you need to to the ApplyTo method.  In my case I wrote some logic that loops through all the properties of both objects and compares the values.  It's a bit long so I won't include it in this blog post.  In general your method will look something like:
 
-\[csharp\] public override ConstraintResult ApplyTo<TActual>(TActual actual) { // You code to do the comparison.
+```csharp
+public override ConstraintResult ApplyTo<TActual>(TActual actual)
+{
+  // You code to do the comparison.
 
-// If the comparison succeeds. return new ConstraintResult(this, actual, true);
+  // If the comparison succeeds.
+  return new ConstraintResult(this, actual, true);
 
-// If the comparison fails. return new ConstraintResult(this, actual, false); } \[/csharp\]
+  // If the comparison fails.
+  return new ConstraintResult(this, actual, false);
+}
+```
 
 Now you should be able to run your tests by instanciating your constraint or using the Matches syntax.
 
-\[csharp\] // Instantiate the constraint. Assert.That(expected, new EquivalentPropertyWiseToConstraint(actual));
+```csharp
+ 
+// Instantiate the constraint.
+Assert.That(expected, new EquivalentPropertyWiseToConstraint(actual));
 
-// Matches syntax. Assert.That(expected, Is.Not.Matches(new EquivalentPropertyWiseToConstraint(actual))); \[/csharp\]
+// Matches syntax.
+Assert.That(expected, Is.Not.Matches(new EquivalentPropertyWiseToConstraint(actual)));
+```
 
 One thing you might notice is the error message is not very descriptive if the test fails.
 
-\[text\] Expected: But was: 1 \[/text\]
+```text
+Expected: 
+But was: 1
+```
 
 The "But was" part is the actual value you passed into the constraint.  In my case I passed in the property value, which was an integer, hence the 1.  Your actual value might be different.
 
 To get a better expected message you need to set the description value in the Constraint class.  If you have a simple test you could hard code the description.  For example the built in [TrueConstraint](https://github.com/nunit/nunit/blob/master/src/NUnitFramework/framework/Constraints/TrueConstraint.cs) always sets the description to "True" in the constructor.
 
-\[csharp\] public TrueConstraint() { Description = "True"; } \[/csharp\]
+```csharp
+public TrueConstraint()
+{
+  Description = "True";
+}
+```
 
 In my case I needed to set the description in the [ApplyTo](https://github.com/saturdaymp/NConstraints/blob/master/Source/SaturdayMP.NConstraints/EquivalentPropertyWiseToConstraint.cs) method.  For example if a property does not exist then we set a different description then if the property values don't match.
 
-\[csharp\] // Property does not exist message. Description = $"expected property {expectedProperty.Name} does not exist.";
+```csharp
+// Property does not exist message.
+Description = $"expected property {expectedProperty.Name} does not exist.";
 
-// Property values don't match message Description = $"property {expectedProperty.Name} value to be {expectedValue}"; \[/csharp\]
+// Property values don't match message
+Description = $"property {expectedProperty.Name} value to be {expectedValue}";
+```
 
 Once I set the descriptions my test failed messages looked better:
 
-\[text\] Expected: property IntegerProperty value to be 2 But was: 1 \[/text\]
+```text
+Expected: property IntegerProperty value to be 2
+But was: 1
+```
 
 You can find the entire [EquivalentPropertyWiseToConstraint](https://github.com/saturdaymp/NConstraints/blob/master/Source/SaturdayMP.NConstraints/EquivalentPropertyWiseToConstraint.cs) class and example test client at the [NConstraint](https://github.com/saturdaymp/NConstraints) project.
 
 Now your custom constraint is complete but you might notice is that you can't use the NUnit built in "Is" syntax.  For example, you currently can't write:
 
-\[csharp\] Assert.That(expected, Is.EquivalentPropertyWiseTo(actual)); \[/csharp\]
+```csharp
+Assert.That(expected, Is.EquivalentPropertyWiseTo(actual));
+```
 
 I'll cover how to do this in a [future post](https://nftb.saturdaymp.com/today-i-learned-how-to-create-custom-nunit-constraints-part-2-constraint-usage-syntax/).  End of blog post.  No joke, this is really the end.  Unless you count the P.S. video.
 

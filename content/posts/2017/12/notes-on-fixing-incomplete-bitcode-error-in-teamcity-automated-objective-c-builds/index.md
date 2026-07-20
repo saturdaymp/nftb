@@ -52,11 +52,17 @@ After compiling for the device and the simulator the builds need to be combined 
 
 The current script looks like:
 
-\[text\] cp -r Sample\\ Project/build/Release-iphoneos/BEMCheckBox.framework . lipo -create -output BEMCheckBox.framework/BEMCheckBox Sample\\ Project/build/Release-iphoneos/BEMCheckBox.framework/BEMCheckBox Sample\\ Project/build/Release-iphonesimulator/BEMCheckBox.framework/BEMCheckBox \[/text\]
+```text
+cp -r Sample\ Project/build/Release-iphoneos/BEMCheckBox.framework .
+lipo -create -output BEMCheckBox.framework/BEMCheckBox Sample\ Project/build/Release-iphoneos/BEMCheckBox.framework/BEMCheckBox Sample\ Project/build/Release-iphonesimulator/BEMCheckBox.framework/BEMCheckBox
+```
 
 It now looks like:
 
-\[text\] cp -r build/Release-iphoneos/BEMCheckBox.framework . lipo -create -output BEMCheckBox.framework/BEMCheckBox build/Release-iphoneos/BEMCheckBox.framework/BEMCheckBox Sample\\ Project/build/Release-iphonesimulator/BEMCheckBox.framework/BEMCheckBox \[/text\]
+```text
+cp -r build/Release-iphoneos/BEMCheckBox.framework .
+lipo -create -output BEMCheckBox.framework/BEMCheckBox build/Release-iphoneos/BEMCheckBox.framework/BEMCheckBox Sample\ Project/build/Release-iphonesimulator/BEMCheckBox.framework/BEMCheckBox
+```
 
 Notice the path for the device build has been changed.  It no longer gets put in the Sample Project folder.  I couldn't figure out a way to get the paths the same for both build so I just gave up.
 

@@ -26,29 +26,58 @@ When you click the Install Agent button you will get prompted for some config se
 
 A successful install should end with:
 
-\[text\] Done \[729\], see log at /Users/username/BuildAgent/logs/teamcity-agent.log WARNING: The TeamCity Agent installed as standalone application and will not start automatically on machine reboot. Cleaning temporary installation's resources... Removing './bootstrapper.sh' Successfully installed build agent on 'computername.local' to '/Users/username/BuildAgent' \[/text\]
+```text
+ 
+Done [729], see log at /Users/username/BuildAgent/logs/teamcity-agent.log
+WARNING: The TeamCity Agent installed as standalone application and will not start automatically on machine reboot.
+Cleaning temporary installation's resources...
+Removing './bootstrapper.sh'
+Successfully installed build agent on 'computername.local' to '/Users/username/BuildAgent'
+```
 
 If you get any errors it's probably related to your firewall settings and/or user permissions.
 
 Once the agent is installed you should take a quick look at the conf/buildAgent.properties file and make sure it's correct.  In my case I had to fix the serverUrl and set the name properties.  For some reason it's duplicated.  The initial file looked like:
 
-\[text\] ## TeamCity build agent configuration file
+```text
+## TeamCity build agent configuration file
 
-###################################### # Required Agent Properties # ###################################### ## The address of the TeamCity server. The same as is used to open TeamCity web interface in the browser. serverUrl=http://123.123.123.123serverUrl=http://123.123.123.123
+######################################
+# Required Agent Properties #
+######################################
+## The address of the TeamCity server. The same as is used to open TeamCity web interface in the browser.
+serverUrl=http://123.123.123.123serverUrl=http://123.123.123.123
 
-\## The unique name of the agent used to identify this agent on the TeamCity server ## Use blank name to let server generate it. ## By default, this name would be created from the build agent's host name name= \[/text\]
+## The unique name of the agent used to identify this agent on the TeamCity server
+## Use blank name to let server generate it.
+## By default, this name would be created from the build agent's host name
+name=
+```
 
 I updated the file to:
 
-\[text\] ## TeamCity build agent configuration file
+```text
+## TeamCity build agent configuration file
 
-###################################### # Required Agent Properties # ###################################### ## The address of the TeamCity server. The same as is used to open TeamCity web interface in the browser. serverUrl=http://123.123.123.123
+######################################
+# Required Agent Properties #
+######################################
+## The address of the TeamCity server. The same as is used to open TeamCity web interface in the browser.
+serverUrl=http://123.123.123.123
 
-\## The unique name of the agent used to identify this agent on the TeamCity server ## Use blank name to let server generate it. ## By default, this name would be created from the build agent's host name name=MyMacBuildMachineName \[/text\]
+## The unique name of the agent used to identify this agent on the TeamCity server
+## Use blank name to let server generate it.
+## By default, this name would be created from the build agent's host name
+name=MyMacBuildMachineName
+```
 
 Once you have updated the properties file create the logs folder.  Then get the build agent to connected to the TeamCity server and update it's self.  This might take several minutes and you can watch the progress in the log file.
 
-\[text\] mkdir BuildAgent/logs sh BuildAgent/bin/mac.launchd.sh load tail -f BuildAgent/logs/teamcity-agent.log \[/text\]
+```text
+mkdir BuildAgent/logs
+sh BuildAgent/bin/mac.launchd.sh load
+tail -f BuildAgent/logs/teamcity-agent.log
+```
 
 If this command fails then it's likely the build agent can't connect to TeamCity.  Make sure the serverUrl property is correct and double check your firewall ports.  Once it's done the agent should appear in the TeamCity interface as a unauthorized agent.
 

@@ -27,7 +27,9 @@ _If you skipped the previous post but want to follow along open up [04 - Create 
 
 Lets get right into it and create the CRUD scaffolding to access the games table.  I'll create the scaffolding using the same command line I used to the create the Players CRUD scaffolding.
 
-\[text\] dotnet aspnet-codegenerator controller -name GamesController -outDir Controllers -m Game -dc GameTrackerContext -udl \[/text\]
+```text
+dotnet aspnet-codegenerator controller -name GamesController -outDir Controllers -m Game -dc GameTrackerContext -udl
+```
 
 [![Create Game CRUD](images/Create-Game-CRUD.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/06/Create-Game-CRUD.png)
 
@@ -43,7 +45,9 @@ Back to the command.  The "outDir" argument says where we want the controller t
 
 Back to our application, we should run it to make sure it works but before we do that lets add the menu item to the Games page.  Open up the \_Layout.cshtml file and add the following line:
 
-\[html\] <li><a asp-area="" asp-controller="Games" asp-action="Index">Games</a></li> \[/html\]
+```html
+<li><a asp-area="" asp-controller="Games" asp-action="Index">Games</a></li>
+```
 
 [![Add Games Menu](images/Add-Games-Menu.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/06/Add-Games-Menu.png)
 
@@ -61,9 +65,22 @@ Now that everything works lets get back to talking about the code and the ORM me
 
 First up the Edit methods.  Notice I said methods as there are two Edit methods.  One Edit method to get the information about the game to be edited and the other saves the changes.  Lets start with the Get Edit method.
 
-\[csharp\] public async Task<IActionResult> Edit(int? id) { if (id == null) { return NotFound(); }
+```csharp
+public async Task<IActionResult> Edit(int? id)
+{
+  if (id == null)
+  {
+    return NotFound();
+  }
 
-var game = await \_context.Games.SingleOrDefaultAsync(m => m.Id == id); if (game == null) { return NotFound(); } return View(game); } \[/csharp\]
+  var game = await _context.Games.SingleOrDefaultAsync(m => m.Id == id);
+  if (game == null)
+  {
+    return NotFound();
+  }
+  return View(game);
+}
+```
 
  
 
@@ -71,21 +88,62 @@ var game = await \_context.Games.SingleOrDefaultAsync(m => m.Id == id); if (game
 
 The id argument passed into the method is the ID of the game to be displayed.  There is some error checking to make sure the id is not NULL.  Remember this is a website on the Internet and the Internet will often send you garbage (i.e. IDs that are not numbers).
 
-\[csharp\] if (id == null) { return NotFound(); } \[/csharp\]
+```csharp
+if (id == null)
+{
+  return NotFound();
+}
+```
 
 Assuming the id is a number we use Entity Framework to try and find the game in the database.
 
-\[csharp\] var game = await \_context.Games.SingleOrDefaultAsync(m => m.Id == id); \[/csharp\]
+```csharp
+var game = await _context.Games.SingleOrDefaultAsync(m => m.Id == id);
+```
 
 This line of code tells Entity Framework to look in the games table and find any records that has the match the ID we are looking for.  The SingleOrDefaultAsync returns the game record if found or NULL if no record is found.  If multiple records are found then an exception is raised.  Basically it generates the following query:
 
-\[sql\] Select \* From Games Where Id = # \[/sql\]
+```sql
+Select *
+From Games
+Where Id = #
+```
 
 The found game record is then displayed to the user via the web page.  The user makes changes to the game, in this case changing the name, then submits the changes.  This submit calls the second Edit method which we call the Post Edit method.
 
-\[csharp\] \[HttpPost\] \[ValidateAntiForgeryToken\] public async Task<IActionResult> Edit(int id, \[Bind("Id,Name")\] Game game) { if (id != game.Id) { return NotFound(); }
+```csharp
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Game game)
+{
+  if (id != game.Id)
+  {
+    return NotFound();
+  }
 
-if (ModelState.IsValid) { try { \_context.Update(game); await \_context.SaveChangesAsync(); } catch (DbUpdateConcurrencyException) { if (!GameExists(game.Id)) { return NotFound(); } else { throw; } } return RedirectToAction(nameof(Index)); } return View(game); } \[/csharp\]
+  if (ModelState.IsValid)
+  {
+    try
+    {
+      _context.Update(game);
+      await _context.SaveChangesAsync();
+    }
+    catch (DbUpdateConcurrencyException)
+    {
+      if (!GameExists(game.Id))
+      {
+        return NotFound();
+      }
+      else
+      {
+        throw;
+      }
+    }
+    return RedirectToAction(nameof(Index));
+  }
+  return View(game);
+}
+```
 
 [![Post Edit Game Code](images/Post-Edit-Game-Code.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/06/Post-Edit-Game-Code.png)
 
@@ -93,7 +151,9 @@ Quick aside, why am I calling the [methods Get and Post](https://www.w3schools.c
 
 Back to the code.  First off what do these arguments mean?
 
-\[csharp\] public async Task<IActionResult> Edit(int id, \[Bind("Id,Name")\] Game game) \[/csharp\]
+```csharp
+public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Game game)
+```
 
  
 
@@ -101,23 +161,46 @@ This first argument is the ID of the game we want to edit.  The second argument
 
 Like the Get Edit method this method starts with some basic error handling.  First making sure the ID of the object to edit and the ID in the game object with the updated values are the same.  Remember we are dealing with Internet requests that might not be valid.
 
-\[csharp\] if (id != game.Id) { return NotFound(); } \[/csharp\]
+```csharp
+if (id != game.Id) 
+{
+  return NotFound(); 
+}
+```
 
 Then it checks to make sure the updated values in the Game object are valid.  This is where you could also do business logic checking.
 
-\[csharp\] if (ModelState.IsValid) \[/csharp\]
+```csharp
+if (ModelState.IsValid)
+```
 
 Assuming all the error handling passes then the Game record in the database is updated.  The first line adds the updated Game object to the context.  Remember that changes to the context are written to the database when a save method is called.  In this case there is only one change.
 
-\[csharp\] \_context.Update(game); await \_context.SaveChangesAsync(); \[/csharp\]
+```csharp
+_context.Update(game); 
+await _context.SaveChangesAsync();
+```
 
 The actual saving is wrapped in a Try-Catch block to handle any errors in saving the edits.
 
 That is it for the Edit methods.  Let us move on to the Delete methods.  First up the Get Delete method.
 
-\[csharp\] public async Task<IActionResult> Delete(int? id) { if (id == null) { return NotFound(); }
+```csharp
+public async Task<IActionResult> Delete(int? id)
+{
+  if (id == null)
+  {
+    return NotFound();
+  }
 
-var game = await \_context.Games.SingleOrDefaultAsync(m => m.Id == id); if (game == null) { return NotFound(); } return View(game); } \[/csharp\]
+  var game = await _context.Games.SingleOrDefaultAsync(m => m.Id == id);
+  if (game == null)
+  {
+    return NotFound();
+  }
+  return View(game);
+}
+```
 
  
 
@@ -125,7 +208,17 @@ var game = await \_context.Games.SingleOrDefaultAsync(m => m.Id == id); if (game
 
 Similar to the Get Edit method the Get Delete method simply finds the game we want to delete and returns it.  Presumably so the user can view the game before it's deleted.  Nothing new to say so lets jump to the Post Delete method.
 
-\[csharp\] \[HttpPost, ActionName("Delete")\] \[ValidateAntiForgeryToken\] public async Task<IActionResult> DeleteConfirmed(int id) { var game = await \_context.Games.SingleOrDefaultAsync(m => m.Id == id); \_context.Games.Remove(game); await \_context.SaveChangesAsync(); return RedirectToAction(nameof(Index)); } \[/csharp\]
+```csharp
+[HttpPost, ActionName("Delete")]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> DeleteConfirmed(int id)
+{
+  var game = await _context.Games.SingleOrDefaultAsync(m => m.Id == id);
+  _context.Games.Remove(game);
+  await _context.SaveChangesAsync();
+  return RedirectToAction(nameof(Index));
+}
+```
 
  
 
@@ -135,6 +228,9 @@ Again the Post Delete method is very similar to the Post Edit method but in this
 
 The SQL generated would look something like:
 
-\[sql\] Delete From Games Where Id = # \[/sql\]
+```sql
+Delete From Games
+Where Id = #
+```
 
 _That is all for now.  In the next part we will create a table that has a one-to-many relationship and talk creating one-to-many ORM models.   If you got stuck you can find completed Part 4 [here](https://github.com/saturdaymp/IntroductionToORMForDBAs/tree/master/Source/05-CreateGamesResultsTable).  Finally if you have any questions or spot an issue in the code I would prefer if you opened a [issue](https://github.com/saturdaymp/IntroductionToORMForDBAs/issues) in GitHub but you can e-mail (chris.cumming@saturdaymp.com) me as well._

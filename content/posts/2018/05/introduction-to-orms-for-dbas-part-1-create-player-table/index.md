@@ -31,7 +31,10 @@ If we run the application we will a home page where we eventually want to displa
 
 Now lets make sure our database is up and running.  Since we running the demo on a Mac we need to run SQL Server inside Docker.  There is Docker Compose file in the root folder so we can run the below command to start SQL Server:
 
-\[text\] $ docker-compose up \[/text\]
+```text
+ 
+$ docker-compose up
+```
 
 [![Bring Up SQL Server](images/BringUpSQLServer.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/BringUpSQLServer.png)
 
@@ -53,9 +56,17 @@ Define the Player model by creating a new class in the Models folder called Play
 
 This class is our model and represents the Players table in the database.  Since this is a simple application used by friends we only need their name.   So our model will look like:
 
-\[csharp\] namespace SaturdayMP.GameTracker.Models { public class Player { public int Id { get; set; }
+```csharp
+namespace SaturdayMP.GameTracker.Models
+{
+  public class Player
+  {
+    public int Id { get; set; }
 
-public string Name { get; set; } } } \[/csharp\]
+    public string Name { get; set; }
+  }
+}
+```
 
  
 
@@ -69,11 +80,22 @@ The model is now defined but before we can create the table we need a way for ou
 
 The first step is to create the database context.  The database context is how most of our code will interact with the database.  We will put the context class in the a new folder called Data and call our context GameTrackerContext.  If your application accesses more then one database you will have multiple contexts.
 
-\[csharp\] using SaturdayMP.GameTracker.Models; using Microsoft.EntityFrameworkCore;
+```csharp
+using SaturdayMP.GameTracker.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace SaturdayMP.GameTracker.Data { public class GameTrackerContext : DbContext { public GameTrackerContext(DbContextOptions<GameTrackerContext> options) : base(options) { }
+namespace SaturdayMP.GameTracker.Data
+{
+  public class GameTrackerContext : DbContext
+  {
+    public GameTrackerContext(DbContextOptions<GameTrackerContext> options) : base(options)
+    {
+    }
 
-public DbSet<Player> Players { get; set; } } } \[/csharp\]
+    public DbSet<Player> Players { get; set; }
+  }
+}
+```
 
 [![Game Tracker Context](images/GameTrackerContext.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/GameTrackerContext.png)
 
@@ -81,13 +103,20 @@ The important part is the [DBSet](https://docs.microsoft.com/en-us/ef/core/api/m
 
 Next lets set the connection string.  Do DBAs have to deal with connection strings or is it a developer thing?  Anyway, the connection string is set in the aspsettings.json file:
 
-\[csharp\] "ConnectionStrings": { "DefaultConnection": "Server=(local);Database=GameTrackerDemo;Trusted\_Connection=False;User ID=sa;Password=Password1234!" } \[/csharp\]
+```csharp
+"ConnectionStrings": {
+  "DefaultConnection": "Server=(local);Database=GameTrackerDemo;Trusted_Connection=False;User ID=sa;Password=Password1234!"
+}
+```
 
 [![Setting Connection String](images/SettingConnectionString.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/SettingConnectionString.png)
 
 We won't see the effects of this next step till later but we will do it now as we are doing all our setup now.  We need to tell the website that we have a database context and that it should automatically include it in controllers.  This is done in the Startup.cs file.  Add the following to the ConfigureServices method.
 
-\[csharp\] services.AddDbContext&lt;SaturdayMP.GameTracker.Data.GameTrackerContext&gt;( options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))); \[/csharp\]
+```csharp
+services.AddDbContext<SaturdayMP.GameTracker.Data.GameTrackerContext>(
+ options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+```
 
 [![Adding DB Context To Service](images/AddingDbContextToService.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/AddingDbContextToService.png)
 
@@ -101,9 +130,17 @@ Close Visual Studio then find the SaturdayMP.GameTracker project file and open i
 
 Then add the following two lines, one to the PackageReference ItemGroup and the other to the DotNetCliToolReference ItemGroup:
 
-\[csharp\] <ItemGroup> <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" /> <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.2" /> </ItemGroup>
+```csharp
+<ItemGroup>
+  <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.2" />
+</ItemGroup>
 
-<ItemGroup> <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" /> <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" /> </ItemGroup> \[/csharp\]
+<ItemGroup>
+  <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.2" />
+</ItemGroup>
+```
 
  
 
@@ -113,11 +150,17 @@ Now reopen the the solution in Visual Studio and rebuild the solution.  If you 
 
 Open up a new terminal and navigate to the folder where your project is located.  Then run the following command to make sure the command line tools are loaded and installed:
 
-\[text\] $ dotnet restore \[/text\]
+```text
+ 
+$ dotnet restore
+```
 
 To test if everything works run the below command.  It should show something similar to the screenshot below.
 
-\[text\] $ dotnet ef \[/text\]
+```text
+ 
+$ dotnet ef
+```
 
  
 
@@ -127,7 +170,9 @@ To test if everything works run the below command.  It should show something si
 
 Now we can generate the Player table.  Actually we will generate a migration that will generate the Player table.  A migration is file that contains changes we want to make to the database such as creating tables, add/removing columns on existing tables, adding indexes, etc.
 
-\[text\] dotnet ef migrations add CreatePlayerTable \[/text\]
+```text
+dotnet ef migrations add CreatePlayerTable
+```
 
 [![Create Player Migration File](images/CreatePlayerMigrationFile.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/CreatePlayerMigrationFile.png)
 
@@ -143,7 +188,9 @@ A migration file contains contains changes you want to apply to a database.  Th
 
 Now we can run the migration to create the table in the database.
 
-\[text\] dotnet ef database update \[/text\]
+```text
+dotnet ef database update
+```
 
 [![Run Player Table Migration](images/RunPlayerTableMigration.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/RunPlayerTableMigration.png)
 
@@ -165,7 +212,9 @@ If you remember the migration file had an up and a down.  The down part is run 
 
 Lets ask Entity Framework to unapply our migration.  In the below example we say we want to undo all the migrations but you can specify specific migrations to undo.
 
-\[text\] dotnet ef database update 0 \[/text\]
+```text
+dotnet ef database update 0
+```
 
 [![Reversing Create Player Migration](images/ReversingCreatePlayerMigration.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/ReversingCreatePlayerMigration.png)
 
@@ -175,7 +224,9 @@ Now if we refresh in our SQL Client the database still exists but the Players ta
 
 The Player table has been removed from the database but we still need to remove the migration.  It's best if we let Entity Framework remove the migration for us.  The below command will remove the last migration file created.
 
-\[text\] dotnet ef migrations remove \[/text\]
+```text
+dotnet ef migrations remove
+```
 
 [![Remove Create Player Migration](images/RemoveCreatePlayerMigration.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/RemoveCreatePlayerMigration.png)
 
@@ -185,7 +236,10 @@ Since it was the only migration file the Migrations folder was also removed.  I
 
 Now that we have cleaned everything up go to the Player model and set the max length to 50 and save your changes.
 
-\[csharp\] \[MaxLength(50)\] public string Name {get; set; } \[/csharp\]
+```csharp
+[MaxLength(50)]
+public string Name {get; set; }
+```
 
  
 
@@ -193,7 +247,10 @@ Now that we have cleaned everything up go to the Player model and set the max le
 
 Now recreate the migration file.
 
-\[text\] dotnet ef migrations add CreatePlayerTable \[/text\]
+```text
+ 
+dotnet ef migrations add CreatePlayerTable
+```
 
 [![Create Player Table Migration With Max Length](images/CreatePlayerTableMigrationWithMaxLength-1.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/CreatePlayerTableMigrationWithMaxLength-1.png)
 
@@ -201,7 +258,9 @@ Now recreate the migration file.
 
 Notice that the max length is set in the migration file?  Now apply this migration.
 
-\[text\] dotnet ef database update \[/text\]
+```text
+dotnet ef database update
+```
 
 [![Run Create Player Migration With Max Length](images/RunCreatePlayerMigrationWithMaxLength.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/RunCreatePlayerMigrationWithMaxLength.png)
 
