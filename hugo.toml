@@ -26,3 +26,8 @@ locale = 'en-us'
   name = 'Categories'
   url = 'categories/'
   weight = 2
+
+[[menu.main]]
+  name = 'Archives'
+  url = 'archives/'
+  weight = 3
