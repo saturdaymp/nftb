@@ -1,8 +1,125 @@
-/* Saturday Morning Productions palette (saturdaymp.com):
+/* Saturday Morning Productions look (saturdaymp.com):
  *   #007399  primary blue  (replaces theme link blue #0066CC and accent #0085a1)
  *   #0098cd  light blue    (hover/interactive states)
+ *   #ffcc33  yellow        (footer social icon circles)
+ *   #666666  footer gray, #3f3f3f nav text — plus Montserrat everywhere.
  * Loaded after the theme CSS via layouts/partials/head_custom.html,
  * so equal-specificity rules here win the cascade. */
+
+/* --- Typography: Montserrat, like the main site ---
+ * The theme hardcodes Lora (body) and Open Sans (UI) on the selectors
+ * below; everything else inherits from body. */
+
+body,
+h1, h2, h3, h4, h5, h6,
+.main-explain-area,
+.navbar-custom,
+.navbar-custom .dropdown-menu,
+.post-preview .post-entry,
+.intro-header .page-heading .page-subheading,
+.intro-header .post-heading .post-subheading,
+.intro-header.big-img .img-desc,
+.blog-tags,
+.blog-categories,
+.post-pager li a,
+footer .copyright,
+footer div.disclaimer,
+.tabs-shortcode .nav-tabs .nav-link,
+.details-shortcode > summary,
+.content-section,
+div.card-body a.list-group-item,
+.navbar-search-input,
+.navbar-search-result-title,
+.navbar-search-no-results,
+.disqus-comments button,
+.btn-view-source,
+h4.see-also,
+.see-also-item-title,
+.see-also-item-subtitle,
+.archive-year-btn,
+.archive-year-heading,
+.archive-item-title,
+.archive-item-subtitle,
+.archive-item-date,
+.terms-item-header a,
+.terms-item-count,
+.terms-item-page {
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+/* --- Navbar: mixed-case 600-weight links like the main site
+ * (theme default is uppercase 12px letterspaced) --- */
+
+.navbar-custom .nav-link {
+  text-transform: none;
+  font-size: 1.05rem;
+  letter-spacing: normal;
+  font-weight: 600;
+}
+
+.navbar-custom .dropdown-item {
+  text-transform: none;
+  font-size: 1rem;
+  letter-spacing: normal;
+  font-weight: 600;
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: 600;
+  color: #007399;
+}
+
+/* --- Footer: dark gray with yellow social icon circles, like the
+ * main site. Dark mode keeps the theme's own footer colors (its
+ * [data-theme="dark"] rules are more specific). --- */
+
+footer {
+  background: #666666;
+  border-top: none;
+}
+
+/* The copyright links sit inside <p>, so the `p a` blue above also
+ * targets them — `footer p a` outranks it by specificity so the
+ * result doesn't depend on rule order. Blue is unreadable on the
+ * gray footer. */
+footer a,
+footer p a,
+footer .copyright {
+  color: #F7F7F7;
+}
+
+/* Theme strips underlines globally; restore them on the footer text
+ * links (all inside <p>) or the light-on-gray links are
+ * indistinguishable from plain text. Icon links stay bare. */
+footer p a {
+  text-decoration: underline;
+}
+
+/* Same story for hover: the global a:hover rule outranks `footer a`
+ * (pseudo-class beats element selector), so re-pin it here. */
+footer a:hover,
+footer a:focus,
+footer p a:hover,
+footer p a:focus {
+  color: #ffcc33;
+}
+
+footer .text-muted {
+  color: #F7F7F7 !important;
+}
+
+footer .fa-circle {
+  color: #ffcc33;
+}
+
+footer .fa-inverse {
+  --fa-inverse: #3f3f3f;
+  color: #3f3f3f;
+}
 
 /* --- Primary: links, badges, static accents --- */
 
