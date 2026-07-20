@@ -1,4 +1,4 @@
 baseURL = 'https://nftb.saturdaymp.workers.dev/'
 title = 'Noise From the Basement'
-theme = 'github.com/adityatelange/hugo-PaperMod'
+theme = 'github.com/halogenica/beautifulhugo'
 locale = 'en-us'
