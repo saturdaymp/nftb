@@ -1,5 +1,5 @@
 baseURL = 'https://nftb.saturdaymp.workers.dev/'
-title = 'Noise From the Basement'
+title = 'Noise from the Basement'
 theme = 'github.com/halogenica/beautifulhugo'
 DefaultContentLanguage = 'en'
 locale = 'en-us'
@@ -12,7 +12,7 @@ locale = 'en-us'
   noClasses = false
 
 [Params]
-  subtitle = "Saturday Morning Production's behind the scenes blog."
+  subtitle = "Behind the scenes of Saturday Morning Productions"
   mainSections = ['posts']
   dateFormat = ':date_long'
   rss = true
@@ -20,7 +20,11 @@ locale = 'en-us'
   wordCount = true
 
 [Params.author]
-  name = 'Chris Cumming'
+  name = 'Saturday Morning Productions'
+  youtube = 'https://www.youtube.com/@saturdaymp'
+  linkedin = 'https://www.linkedin.com/company/saturdaymp'
+  github = 'https://github.com/saturdaymp'
+  mastodon = 'https://hachyderm.io/@chrisc'
 [[menu.main]]
   name = 'Tags'
   url = 'tags/'
