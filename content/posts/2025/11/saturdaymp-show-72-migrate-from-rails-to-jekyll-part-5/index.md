@@ -15,7 +15,7 @@ tags:
 
 In this episode I fix the SASS depreciation warnings for @import and other statements. By fix I mean just ignore them as Bootstrap does not yet support the new @use and @forward.
 
-https://youtu.be/eRCGlsGHNNM
+{{< youtube "eRCGlsGHNNM" >}}
 
 Part 4:  
 [https://youtu.be/eJbMn75dQKo Jekyll: https://jekyllrb.com/](<https://youtu.be/eJbMn75dQKo Jekyll: https://jekyllrb.com/>)

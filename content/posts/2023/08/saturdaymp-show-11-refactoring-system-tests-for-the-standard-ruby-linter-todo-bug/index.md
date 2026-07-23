@@ -13,7 +13,7 @@ tags:
   - "standard-ruby"
 ---
 
-https://youtu.be/ObcBwXaFux0
+{{< youtube "ObcBwXaFux0" >}}
 
 The system test is finally working!! I go over, again, why it's important to make sure your tests fail. Now that the test is working I start refactoring it to remove duplicate code.
 

@@ -11,7 +11,7 @@ tags:
 
 I, Chris, spend a lot longer then I anticipated filling out the [JetBrains](https://www.jetbrains.com/) Developer Ecosystem [Survey](https://blog.jetbrains.com/blog/2023/06/08/take-part-in-the-developer-ecosystem-survey-2023) 2023. Thought it would be a quick half-hour but turned into 2 hours. Sorry in advance for the long video.
 
-https://youtu.be/io5HwCsFclQ
+{{< youtube "io5HwCsFclQ" >}}
 
 If you use the link below to take the survey I might win a prize:
 

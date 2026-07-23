@@ -24,4 +24,4 @@ To do the things you want to do, once you find them
 I've looked around enough to know  
 That you're the one I want to go through time with_
 
-https://www.youtube.com/watch?v=dO1rMeYnOmM
+{{< youtube "dO1rMeYnOmM" >}}

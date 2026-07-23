@@ -12,7 +12,7 @@ tags:
   - "what-does-it-look-like-im-doing"
 ---
 
-https://www.youtube.com/watch?v=\_UZFI-8D5uA
+{{< youtube "_UZFI-8D5uA" >}}
 
 In the above video you can replace the question with:
 

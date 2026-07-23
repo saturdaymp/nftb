@@ -63,4 +63,4 @@ You're a sunflower, I think your love would be too much
 Or you'll be left in the dust, unless I stuck by ya  
 You're the sunflower, you're the sunflower_
 
-https://www.youtube.com/watch?v=ApXoWvfEYVU
+{{< youtube "ApXoWvfEYVU" >}}

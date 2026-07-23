@@ -186,4 +186,4 @@ For a complete example please check out the [Example Client](https://github.com/
 
 P.S. - Today's programming song is about communication.  Make sure you communicate with those important to you.  Also yelling "Say something, I'm giving up on you" at your phone when your notification code is not working is therapeutic.
 
-https://www.youtube.com/watch?v=VVgixOjGhVU
+{{< youtube "VVgixOjGhVU" >}}

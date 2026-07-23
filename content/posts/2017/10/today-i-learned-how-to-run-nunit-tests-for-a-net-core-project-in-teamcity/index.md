@@ -77,4 +77,4 @@ As I said at the beginning I'm sure the NUnit Runner will be updated to handle .
 
 P.S. - R.I.P. Tom Petty.
 
-https://www.youtube.com/watch?v=Y1D3a5eDJIs
+{{< youtube "Y1D3a5eDJIs" >}}

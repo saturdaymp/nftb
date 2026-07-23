@@ -16,7 +16,7 @@ coverImage: "SaturdayMP-Show-0026-Thumbnail-small.png"
 
 In this episode I play [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) by [Tomorrow Corporation](https://tomorrowcorporation.com/), a game that simulates programming in assembly. Anyone have any suggestions for optimizing the number of steps in the Fibonacci Visitor (Year 22)?
 
-https://youtu.be/xQXHTrzqPwI
+{{< youtube "xQXHTrzqPwI" >}}
 
 Thanks to the person on the [Dev Edmonton](https://devedmonton.com/) Slack you asked about the game. I didn't review it but hopefully this video helps you decide if you should buy it or not.
 

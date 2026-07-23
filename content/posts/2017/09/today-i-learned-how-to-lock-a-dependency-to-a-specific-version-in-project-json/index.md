@@ -105,4 +105,4 @@ P.S. - I'm glad [Barenaked Ladies](http://www.barenakedladies.com/) (it's a Can
 > 
 > I couldn't tell you That you were right So instead I looked in the mirror Watched TV, laid awake all night
 
-https://www.youtube.com/watch?v=\_i0yZTeTZ4Q
+{{< youtube "_i0yZTeTZ4Q" >}}

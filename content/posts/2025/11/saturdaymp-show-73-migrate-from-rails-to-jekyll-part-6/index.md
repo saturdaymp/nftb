@@ -17,10 +17,10 @@ No major hiccups in this episode, just several small tasks such as migrating the
 
 Only one more step to update DNS entries, which I think I'll make a video for. If you want to see the DNS entries update video, let me know.
 
-https://youtu.be/bR1E1FdoTSM
+{{< youtube "bR1E1FdoTSM" >}}
 
 Part 5:  
-[https://youtu.be/eRCGlsGHNNM](https://youtu.be/eRCGlsGHNNM)
+{{< youtube "eRCGlsGHNNM" >}}
 
 Jekyll:  
 [https://jekyllrb.com/](https://jekyllrb.com/)

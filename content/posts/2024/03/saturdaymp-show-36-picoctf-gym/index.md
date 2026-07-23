@@ -15,7 +15,7 @@ coverImage: "SaturdayMP-Show-0036-Thumbnail.png"
 
 In this episode I do some [picoCTF](https://picoctf.org/) exercises inspired by the picoCTF 2024 competition starting. The last [problem](https://play.picoctf.org/practice/challenge/104) was a [Unicode](https://home.unicode.org/) byte problem that I figured out with help from [GitHub Copilot](https://github.com/features/copilot). I don't fully understand the solution so let me know if you do. Figuring out the bit math seems like a good future video.
 
-https://youtu.be/sj\_UvIzkMHY
+{{< youtube "sj_UvIzkMHY" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

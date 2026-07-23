@@ -76,4 +76,4 @@ P.S. - Another post about communication and another music video about communicat
 
 P.P.S. - This is the only song I can play on guitar and sing at the same time.  Both poorly.
 
-https://www.youtube.com/watch?v=IbLz9-riRGM
+{{< youtube "IbLz9-riRGM" >}}

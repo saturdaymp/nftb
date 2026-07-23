@@ -62,4 +62,4 @@ P.S. - Another [key blog post](https://nftb.saturdaymp.com/today-i-learned-how-t
 
 _And following our will and wind We may just go where no one's been. We'll ride the spiral to the end And may just go where no one's been._
 
-https://www.youtube.com/watch?v=wS7CZIJVxFY
+{{< youtube "wS7CZIJVxFY" >}}

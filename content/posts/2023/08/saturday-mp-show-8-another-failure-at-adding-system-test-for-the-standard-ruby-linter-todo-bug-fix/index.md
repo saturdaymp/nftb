@@ -12,7 +12,7 @@ tags:
   - "standard-ruby"
 ---
 
-https://youtu.be/GgScoD\_VgDM
+{{< youtube "GgScoD_VgDM" >}}
 
 Similar to the previous episode I fail at adding a system test. Should I be live coding all these failures? I think so. Maybe? Do they make boring videos? Probably. Should I say "ummm" less? Most definitely.
 
@@ -26,7 +26,7 @@ Read about the bug I'm trying to fix [here](https://github.com/standardrb/standa
 
 See my previous fail adding a system test in the previous episode 7:
 
-https://youtu.be/RnVacVOmEwg
+{{< youtube "RnVacVOmEwg" >}}
 
 Thanks to [Test Double](https://testdouble.com/) for creating [Standard](https://github.com/standardrb/standard)! It is a great linter for [Ruby](https://www.ruby-lang.org/en/) projects.
 

@@ -13,13 +13,13 @@ tags:
 
 I add a unit test for the [Standard Ruby](https://github.com/standardrb/standard) linter bug fix done in the last episode. When adding the unit test I find out someone has improved the todo generation logic. Thank you. I also find a remove a redundant test.
 
-https://youtu.be/Il48t9afdwI
+{{< youtube "Il48t9afdwI" >}}
 
 Read about the bug being fixed [here.](https://github.com/standardrb/standard/issues/565)
 
 Checkout episode 5 where the bug was actually fixed:
 
-https://youtu.be/xaoD2r6tCc0
+{{< youtube "xaoD2r6tCc0" >}}
 
 Thanks to [Test Double](https://testdouble.com/) for creating [Standard Ruby](https://github.com/standardrb/standard)! I use it whenever I can.
 

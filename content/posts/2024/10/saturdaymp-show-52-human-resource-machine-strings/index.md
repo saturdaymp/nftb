@@ -12,7 +12,7 @@ coverImage: "Thumbnail.png"
 
 In this video I solve a couple string problems in the [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) game by Tomorrow Corporation. The problems are a good way to explain null terminated strings.
 
-https://youtu.be/V0FklnR3r-A
+{{< youtube "V0FklnR3r-A" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

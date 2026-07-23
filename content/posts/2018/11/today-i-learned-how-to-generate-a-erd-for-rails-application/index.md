@@ -83,4 +83,4 @@ _And sometimes love bloomed and sometimes dreams die
 By the glow of the kerosene light._  
 _By the glow of the kerosene light._
 
-https://www.youtube.com/watch?v=Ij2Oq54nlec
+{{< youtube "Ij2Oq54nlec" >}}

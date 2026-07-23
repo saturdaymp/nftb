@@ -145,4 +145,4 @@ You can read how to manually use BEMCheckBox in Xamarin in [part 3](https://nftb
 
 P.S. - I'm re-watching [Stranger Things Season 1](https://www.youtube.com/watch?v=XWxyRG_tckY) in anticipation of [season 2](https://www.youtube.com/watch?v=vgS2L7WPIO4).  One of the more memorable scenes is the [end of episode 3 (spoilers)](https://www.youtube.com/watch?v=oqWKNn59JgQ) when the Heroes song plays.  In the show the song is preformed by [Peter Gabriel](https://en.wikipedia.org/wiki/Scratch_My_Back) but below is the original extended version sung by [David Bowie](https://en.wikipedia.org/wiki/%22Heroes%22_\(David_Bowie_song\)).
 
-https://www.youtube.com/watch?v=jBuwC4VJi50
+{{< youtube "jBuwC4VJi50" >}}

@@ -95,4 +95,4 @@ P.S. - Spotify listed Bored to Death by Blink 182 as my most played song of 2017
 
 _Life is too short to last long_
 
-https://www.youtube.com/watch?v=lic0oCDMfwk
+{{< youtube "lic0oCDMfwk" >}}

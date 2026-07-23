@@ -11,17 +11,17 @@ tags:
 
 I duplicate a todo file generation bug in the [Standard](https://github.com/standardrb/standard) ([Ruby](https://www.ruby-lang.org/en/) [linter](https://en.wikipedia.org/wiki/Lint_\(software\))) and come up with a possible fix but don't actually get to the fix.
 
-https://youtu.be/IbNpsEMtqLc
+{{< youtube "IbNpsEMtqLc" >}}
 
 Read about the bug [here](https://github.com/standardrb/standard/issues/565).
 
 See episode #1 where I create a [Docker](https://www.docker.com/) development environment for Standard:
 
-https://youtu.be/nIlgI5yoB5k
+{{< youtube "nIlgI5yoB5k" >}}
 
 As a bonus at the beginning of the video I upgrade [RubyMine](https://www.jetbrains.com/ruby/) to fix the bug we encountered in episode 2:
 
-https://youtu.be/WiQFsJ0La9M
+{{< youtube "WiQFsJ0La9M" >}}
 
 Thanks to [Test Double](https://testdouble.com/) for creating Standard! I use it whenever I can.
 

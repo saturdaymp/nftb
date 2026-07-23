@@ -12,4 +12,4 @@ tags:
 
 [Birm](https://twitter.com/waisideas) shows [Chris](https://saturdaymp.com/) how to secure a [React](https://www.reactiveui.net/) page so only authorized users can view it. Have a question or a topic you would like us to talk about then give a us a shout.
 
-https://www.youtube.com/watch?v=yT6RlyAO3\_k
+{{< youtube "yT6RlyAO3_k" >}}

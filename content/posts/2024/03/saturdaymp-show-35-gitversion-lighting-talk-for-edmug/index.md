@@ -17,7 +17,7 @@ coverImage: "SaturdayMP-Show-0035-Thumbnail.png"
 
 This episode is a preview of a lighting talk I was giving later that day at the Edmonton .NET Users Group ([EDMUG](https://www.meetup.com/Edmonton-NET-User-Group/)) about [GitVersion](https://gitversion.net/). It's a quick overview of GitVersion and how I use it in my [projects](https://github.com/saturdaymp).
 
-https://youtu.be/a7crfoMEhos
+{{< youtube "a7crfoMEhos" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

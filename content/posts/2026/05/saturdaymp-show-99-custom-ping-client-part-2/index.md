@@ -16,7 +16,7 @@ tags:
 
 In this live episode Omar and myself get the ping application working. Not the best written C code, but it works, after I figured out we need to run the application as root.
 
-https://youtube.com/live/LwfpJnPJP3w
+{{< youtube "LwfpJnPJP3w" >}}
 
 Ping – Manually create and send ICMP/IP packets:  
 [https://inc0x0.com/icmp-ip-packets-ping-manually-create-and-send-icmp-ip-packets/](https://inc0x0.com/icmp-ip-packets-ping-manually-create-and-send-icmp-ip-packets/)

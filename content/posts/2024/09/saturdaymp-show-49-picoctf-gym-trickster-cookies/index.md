@@ -14,7 +14,7 @@ coverImage: "SaturdayMP-Show-0049-Thumbnail.png"
 
 In this episode I show how to solve the Trickster [picoCTF](https://picoctf.com/) challenge which I got stuck on in the last video. I got some help from [Weekly Dev Chat](https://weeklydevchat.com/) participants. I also solve the Cookies challenge.
 
-https://youtu.be/q\_M-Gkcw9e0
+{{< youtube "q_M-Gkcw9e0" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

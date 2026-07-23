@@ -21,7 +21,7 @@ In this episode I tackle the famous [Gilded Rose](https://github.com/emilybache/
 
 Slides and source code for the presentation can be found [here](https://github.com/saturdaymp-examples/a-refactoring-tale).
 
-https://youtu.be/0bTbXpXUhmk
+{{< youtube "0bTbXpXUhmk" >}}
 
 I'm posting this the day after the EDMUG presentation. Thank you to EDMUG for allowing me to present and special thank you to the attendees who braved the snow and bad driving conditions.
 

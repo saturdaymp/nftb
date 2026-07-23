@@ -24,7 +24,7 @@ Spoiler: When using the Passenger Docker image it's really important you don't [
 RUN rm -f /etc/service/nginx/down
 ```
 
-https://youtu.be/IL6jnyoLwYw
+{{< youtube "IL6jnyoLwYw" >}}
 
 Found this video useful? Then help others find it by liking, subscribing, and sharing.
 

@@ -12,7 +12,7 @@ tags:
 
 In this episode I find the user flag for the [Busqueda](https://app.hackthebox.com/machines/Busqueda) machine on [Hack the Box](https://www.hackthebox.com/). Perhaps with a little help from the walkthrough and [Chat GPT](https://openai.com/chatgpt) to assist with my lack of [Python](https://www.python.org/) knowledge.
 
-https://youtu.be/mSG0Fj-qwyY
+{{< youtube "mSG0Fj-qwyY" >}}
 
 Thanks to Hack the Box for creating a playground for myself, and others, to learn cyber security skills. Thanks to [kavigihan](https://app.hackthebox.com/users/389926) for creating the [Busqueda](https://app.hackthebox.com/machines/Busqueda) machine.
 

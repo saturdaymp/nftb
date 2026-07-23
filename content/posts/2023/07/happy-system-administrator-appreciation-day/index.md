@@ -14,7 +14,7 @@ It was during one of my first paid technical positions that I realized that sys 
 
 During university I had a summer job as a Systems Analyst Trainee at [TELUS](https://en.wikipedia.org/wiki/Telus) Advertising Services (TAS). TAS was division of TELUS that created the [phone books](https://en.wikipedia.org/wiki/Telephone_directory), both white (residential) and [yellow](https://en.wikipedia.org/wiki/Yellow_pages) (businesses) pages. I did typical IT tasks at the time such as setting up new computers with token ring network cards and helping staff issues such as accessing email. Also lots of printer issues.
 
-https://youtu.be/9E\_SDwUM4kM
+{{< youtube "9E_SDwUM4kM" >}}
 
 I did get some thank-yous when I helped someone but most of the time it was complaints. Something was not working and it was causing the person stress, which is understandable, but did lead negative interactions. It wares you down when you have more negative then positive interactions.
 

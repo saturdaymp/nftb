@@ -18,7 +18,7 @@ In this episode I (Chris), sorry no Omar, attempt some picoCTF (now CyLab) chall
 
 It was interesting to watch the clanker parse out the .so file. Have you used a clanker for cyber security? If so, what are your thoughts?
 
-https://youtube.com/live/ZbICRF3bQbA
+{{< youtube "ZbICRF3bQbA" >}}
 
 CyLab:  
 [https://cylabacademy.org/](https://cylabacademy.org/)

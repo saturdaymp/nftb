@@ -14,11 +14,11 @@ coverImage: "SaturdayMP-Show-0018-Thumbnail.png"
 
 In this episode I get a reverse shell working and make some progress on capturing the root flag. Spoiler: There is a self hosted GitHub like website.
 
-https://youtu.be/x7oDT3eYqyI
+{{< youtube "x7oDT3eYqyI" >}}
 
 Watch part 1 of me hacking the Busqueda machine at:
 
-https://youtu.be/mSG0Fj-qwyY
+{{< youtube "mSG0Fj-qwyY" >}}
 
 Thanks to [Hack The Box](https://www.hackthebox.com/) for creating a playground for myself, and others, to learn cyber security skills. Thanks to [kavigihan](https://app.hackthebox.com/users/389926) for creating the [Busqueda](https://app.hackthebox.com/machines/Busqueda) machine:
 

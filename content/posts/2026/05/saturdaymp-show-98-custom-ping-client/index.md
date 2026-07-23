@@ -17,7 +17,7 @@ In this live episode Omar and myself try to write a low-level C app that does a 
 
 We do an OK job of explaining networking but a better job of explaining hex and how numbers are represented by bits (base 2) and bit shifting.
 
-https://youtube.com/live/Uv3LOT9b\_sg
+{{< youtube "Uv3LOT9b_sg" >}}
 
 Hex and binary math:  
 [https://www.youtube.com/live/Uv3LOT9b\_sg?t=4675s](https://www.youtube.com/live/Uv3LOT9b_sg?t=4675s)

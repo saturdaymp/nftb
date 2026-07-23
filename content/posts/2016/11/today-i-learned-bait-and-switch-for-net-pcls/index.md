@@ -21,7 +21,7 @@ For now I won't use that technique but I reserve the right to change my mind.  
 
 P.S. - My programming music this time is the [Okeefe music](http://www.okmusicfoundation.org/).  It's kids playing rock songs, such as [Slipknot](http://www.slipknot1.com/).  The kids are talented and this video is funny.
 
-https://www.youtube.com/watch?v=ZObLwDczJAQ
+{{< youtube "ZObLwDczJAQ" >}}
 
  
 
