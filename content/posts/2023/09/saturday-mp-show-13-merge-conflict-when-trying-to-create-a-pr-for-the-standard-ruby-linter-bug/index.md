@@ -14,7 +14,7 @@ tags:
 
 I attempted to create a pull request (PR) for the Standard Ruby Linter bug I've fixed but ran into a merge conflict. Didn't create the PR but did figure out the solution to the merge conflict that will be fixed in the next video.
 
-https://youtu.be/3EPNI5ge90g
+{{< youtube "3EPNI5ge90g" >}}
 
 Read about the bug I'm trying to fix [here](https://github.com/standardrb/standard/issues/565). Other videos fixing the Standard Ruby Linter Todo Bug:
 

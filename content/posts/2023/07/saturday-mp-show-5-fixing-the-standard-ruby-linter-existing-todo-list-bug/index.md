@@ -11,7 +11,7 @@ tags:
 
 In this episode I implement a fix for the todo file generation bug in the Standard (Ruby linter) and do some manual testing. Also use [ChatGPT](https://openai.com/chatgpt) to explain some code that [GitHub Copilot](https://github.com/features/copilot) generated.
 
-https://youtu.be/xaoD2r6tCc0
+{{< youtube "xaoD2r6tCc0" >}}
 
 Read about the bug being fixed [here.](https://github.com/standardrb/standard/issues/565)
 

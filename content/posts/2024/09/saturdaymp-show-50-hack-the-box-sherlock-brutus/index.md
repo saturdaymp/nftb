@@ -12,7 +12,7 @@ tags:
 
 In this episode I solve the Brutus Sherlock on [Hack the Box](https://www.hackthebox.com/) with only minimal help from the walkthrough.
 
-https://youtu.be/K78TJuSNm4Y
+{{< youtube "K78TJuSNm4Y" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

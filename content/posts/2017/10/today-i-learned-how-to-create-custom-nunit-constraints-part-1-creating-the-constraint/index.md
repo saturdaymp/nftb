@@ -139,4 +139,4 @@ P.S. - [R.I.P. Gord Downie](http://www.cbc.ca/news/entertainment/gord-downie-obi
 
 _So I'm at your house this morning_ _Just a little after nine_ _'Cause it was in Bobcaygeon, where I saw the constellations_ _Reveal themselves one star at a time_
 
-https://www.youtube.com/watch?v=o6QDjDPRF5c
+{{< youtube "o6QDjDPRF5c" >}}

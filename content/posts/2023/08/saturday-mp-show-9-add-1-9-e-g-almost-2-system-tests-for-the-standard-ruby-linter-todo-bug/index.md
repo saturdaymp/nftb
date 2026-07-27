@@ -14,7 +14,7 @@ tags:
   - "standard-ruby"
 ---
 
-https://youtu.be/ZaALe-2iZa0
+{{< youtube "ZaALe-2iZa0" >}}
 
 I get one system test working for generating the todo file and almost get the second test working. The second test that actually tests the bug we fixed. Went down a bit of rabbit hole trying to get the optimal Ruby file/directory manipulation code.
 

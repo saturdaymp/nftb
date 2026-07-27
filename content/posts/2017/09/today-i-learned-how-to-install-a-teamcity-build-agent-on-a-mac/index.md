@@ -89,4 +89,4 @@ To authorize this agent click on the Unauthorized link and it will be authorized
 
 P.S. - Thought this [song](https://en.wikipedia.org/wiki/The_Rising_\(Bruce_Springsteen_song\)) might be appropriate [today](https://en.wikipedia.org/wiki/September_11_attacks).
 
-https://www.youtube.com/watch?v=jLcjii3ljuQ
+{{< youtube "jLcjii3ljuQ" >}}

@@ -15,7 +15,7 @@ coverImage: "SaturdayMP-Show-0053-Thumbnail.png"
 
 In this video I solve the Inventory Report problem in [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) game by Tomorrow Corporation. It simulates finding characters in a null terminated string.
 
-https://youtu.be/Bbnn8ms322U
+{{< youtube "Bbnn8ms322U" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

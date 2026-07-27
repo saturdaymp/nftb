@@ -128,6 +128,6 @@ Don't forget you can find a working example of BEMCheckBox in Xamarin iOS [here]
 
 P.S. - A classic Cookie Monster song about up and down.  Can you figure out what happened to Cookie Monster's cookie before the end of the song?
 
-https://www.youtube.com/watch?v=AGsKPE3dk4k
+{{< youtube "AGsKPE3dk4k" >}}
 
 Save

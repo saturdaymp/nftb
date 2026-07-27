@@ -14,7 +14,7 @@ tags:
 
 In this episode I show how to run a local LLM, in this case Gemma4, using Ollama. Thanks to the Weekly Dev Chat folks for the help and inspiration.
 
-https://youtu.be/ppGwcLcgeNk
+{{< youtube "ppGwcLcgeNk" >}}
 
 Ollama:  
 [https://ollama.com/](https://ollama.com/)

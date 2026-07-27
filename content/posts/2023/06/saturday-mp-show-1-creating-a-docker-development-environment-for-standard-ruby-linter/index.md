@@ -15,7 +15,7 @@ tags:
 
 If you have any questions you would like answered or constructive feedback please send an email to [ask@saturdaymp.com](mailto:ask@saturdaymp.com).
 
-https://youtu.be/nIlgI5yoB5k
+{{< youtube "nIlgI5yoB5k" >}}
 
 You can find my fork of the Standard repo [here](https://github.com/mrbiggred/standard). Ideally all the files in the video would be in the repo but since we ignored the Docker files at a local level, they are listed below.
 

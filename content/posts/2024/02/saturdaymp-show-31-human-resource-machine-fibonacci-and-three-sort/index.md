@@ -14,7 +14,7 @@ In this episode I try [Endede](https://www.youtube.com/@Endede)'s solution to th
 
 You can stop watching the video after the Fibonacci section, unless you like watching me struggle, as I attempt the Size or Speed Challenge for the Three Sort problem and fail at both. Ping me if you have suggestions for solving the Three Sort challenges.
 
-https://youtu.be/dBs9YDmucTI
+{{< youtube "dBs9YDmucTI" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

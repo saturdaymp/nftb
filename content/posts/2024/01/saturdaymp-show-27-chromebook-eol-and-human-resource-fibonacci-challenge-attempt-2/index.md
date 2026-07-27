@@ -12,7 +12,7 @@ tags:
 
 In this episode I answer my own question about how to determine the [EOL](https://support.google.com/chromebook/answer/9367166?hl=en) for Chromebooks. I then try [Endede](https://www.youtube.com/@Endede) 's solution for doing the the [Human Resource Machine](https://tomorrowcorporation.com/humanresourcemachine) Fibonacci problem in 19 or less steps.
 
-https://youtu.be/pdBHw\_SDZYc
+{{< youtube "pdBHw_SDZYc" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), and sharing.
 

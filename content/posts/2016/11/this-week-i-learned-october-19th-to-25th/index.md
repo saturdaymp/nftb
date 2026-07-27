@@ -19,4 +19,4 @@ My guess is that most users would call toasts notifications.  I think I'll defi
 
 P.S. - I also learned that the new [DOOM (2016) soundtrack](https://www.youtube.com/watch?v=Jm932Sqwf5E) is excellent music to program to.  Best song, in my humble opinion, is Rip and Tear.
 
-https://www.youtube.com/watch?v=zZMg9ryeWOw
+{{< youtube "zZMg9ryeWOw" >}}

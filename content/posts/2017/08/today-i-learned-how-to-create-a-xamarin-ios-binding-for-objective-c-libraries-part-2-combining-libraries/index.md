@@ -73,4 +73,4 @@ We now have one library that will work with Xamarin and both iOS simulators and 
 
 P.S. - Not a song this time but a cookie monster skit that makes me laugh.
 
-https://www.youtube.com/watch?v=k6OWSf8\_5J4
+{{< youtube "k6OWSf8_5J4" >}}

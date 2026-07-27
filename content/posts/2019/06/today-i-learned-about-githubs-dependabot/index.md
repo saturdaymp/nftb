@@ -52,4 +52,4 @@ Now we can squash and merge this commit and we are all done. At least for exampl
 
 P.S. - Robot Rock.
 
-https://www.youtube.com/watch?v=HdeYwObD-j4
+{{< youtube "HdeYwObD-j4" >}}

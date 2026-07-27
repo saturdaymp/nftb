@@ -23,6 +23,6 @@ All that pain and blood was worth it as we did finally get the lesson 10 (Zoetro
 
 With help from this [article (with a handy diagram)](https://itp.nyu.edu/physcomp/labs/motors-and-transistors/dc-motor-control-using-an-h-bridge/) we figured out the H Bridge and got the motor to spin.
 
-https://www.youtube.com/watch?v=XF\_zx\_lF2AA
+{{< youtube "XF_zx_lF2AA" >}}
 
 Special thanks to [Startup Edmonton](http://www.startupedmonton.com/) for hosting us on their [Monthly Hack Day](http://www.startupedmonton.com/new-events/2017/9/9/monthly-hack-day).

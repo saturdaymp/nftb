@@ -134,4 +134,4 @@ It ain't always greener on the other side, you know
 We ain't rich but we're worth a lot, babe  
 I wanna see the world with your hand in mine, you know_
 
-https://www.youtube.com/watch?v=XCSM3-mdSdA
+{{< youtube "XCSM3-mdSdA" >}}

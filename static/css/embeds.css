@@ -1,0 +1,9 @@
+/* Spacing for Hugo's built-in {{< youtube >}} shortcode. Its wrapper
+ * div carries only inline positioning styles (no class, no margin),
+ * so post text sits flush against the player. Target the wrapper via
+ * its embed iframe; :has() is fine for the browsers this blog serves,
+ * and older ones just fall back to the flush layout. */
+
+div:has(> iframe[src^="https://www.youtube.com/embed/"]) {
+  margin: 1.5rem 0;
+}

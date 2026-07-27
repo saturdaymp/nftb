@@ -90,4 +90,4 @@ P.S. - Another of my favourite [Tragically Hip](http://www.thehip.com/) songs. 
 
 _Everything is bleak It's the middle of the night You're all alone and The dummies might be right You feel like a jerk My music at work My music at work_
 
-https://www.youtube.com/watch?v=BN9i5Z01kFI
+{{< youtube "BN9i5Z01kFI" >}}

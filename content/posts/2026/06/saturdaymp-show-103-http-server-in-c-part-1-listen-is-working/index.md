@@ -14,7 +14,7 @@ In this episode we start writing a custom HTTP Server in C because Omar wanted t
 
 Part 2, if it happens, we will add an HTTP response. We are not very consistent.
 
-https://youtube.com/live/tC3X3xE3n0g
+{{< youtube "tC3X3xE3n0g" >}}
 
 How I Built a Simple HTTP Server from Scratch using C:  
 [https://dev.to/jeffreythecoder/how-i-built-a-simple-http-server-from-scratch-using-c-739](https://dev.to/jeffreythecoder/how-i-built-a-simple-http-server-from-scratch-using-c-739)

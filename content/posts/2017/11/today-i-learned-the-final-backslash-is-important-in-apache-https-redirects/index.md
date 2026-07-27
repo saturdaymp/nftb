@@ -47,4 +47,4 @@ After you add the backslash don't forget to reboot your webserver, which I did.�
 
 P.S. - For those not into 80's hair bands [Slash](https://en.wikipedia.org/wiki/Slash_\(musician\)) is the one with hat, curly hair, and memorable guitar licks.  The opening to [Sweet Child O' Mine](https://en.wikipedia.org/wiki/Sweet_Child_o%27_Mine) is actually a guitar exercise Slash used for practice and warm-up.  Finally make sure you listen to the uncut version.  In the cut version almost a minute of Slash's guitar solo is missing.
 
-https://www.youtube.com/watch?v=YFQaUA-vBbI
+{{< youtube "YFQaUA-vBbI" >}}
