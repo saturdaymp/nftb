@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #94: Debugging Git HTTP 400 curl 22 Error"
+author: "Chris C"
 date: 2026-04-22
 categories: 
   - "saturday-mp-show"

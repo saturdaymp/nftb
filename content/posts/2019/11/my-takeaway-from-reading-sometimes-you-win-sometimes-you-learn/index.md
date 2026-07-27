@@ -1,5 +1,6 @@
 ---
 title: "My Takeaway from Reading Sometimes you Win, Sometimes you Learn"
+author: "Chris C"
 date: 2019-11-29
 categories: 
   - "takeaways"

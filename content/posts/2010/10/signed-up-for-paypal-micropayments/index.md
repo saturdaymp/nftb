@@ -1,5 +1,6 @@
 ---
 title: "Signed up for PayPal Micropayments"
+author: "Chris C"
 date: 2010-10-28
 categories: 
   - "business-side"

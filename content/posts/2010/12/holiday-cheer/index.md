@@ -1,5 +1,6 @@
 ---
 title: "Holiday Cheer"
+author: "Ada CC"
 date: 2010-12-11
 categories: 
   - "fun"

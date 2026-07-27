@@ -1,5 +1,6 @@
 ---
 title: "Fixing MSBuild not Exiting"
+author: "Chris C"
 date: 2016-06-22
 categories: 
   - "code-examples"

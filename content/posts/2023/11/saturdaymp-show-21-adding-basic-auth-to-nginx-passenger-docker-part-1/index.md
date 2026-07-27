@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #21: Adding Basic Auth to NGINX Passenger Docker (Part 1)"
+author: "Chris C"
 date: 2023-11-29
 categories: 
   - "saturday-mp-show"

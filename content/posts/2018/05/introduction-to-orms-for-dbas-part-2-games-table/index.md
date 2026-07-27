@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 2 – Games Table"
+author: "Chris C"
 date: 2018-05-28
 categories: 
   - "introduction-to-orms-for-dbas"

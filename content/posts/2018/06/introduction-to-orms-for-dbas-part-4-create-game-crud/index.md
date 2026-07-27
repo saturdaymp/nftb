@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 4 – Create Game CRUD"
+author: "Chris C"
 date: 2018-06-27
 categories: 
   - "code-examples"

@@ -1,5 +1,6 @@
 ---
 title: "Thank You Liv"
+author: "Chris C"
 date: 2017-09-05
 categories: 
   - "business-side"

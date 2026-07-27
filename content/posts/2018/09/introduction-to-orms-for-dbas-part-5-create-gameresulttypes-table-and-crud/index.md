@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 5 - Create GameResultTypes Table and CRUD"
+author: "Chris C"
 date: 2018-09-14
 categories: 
   - "code-examples"

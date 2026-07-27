@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 79: Creating PostCast (Part 1 – Setting up Go Environment)"
+author: "Chris C"
 date: 2026-01-07
 categories: 
   - "code-examples"

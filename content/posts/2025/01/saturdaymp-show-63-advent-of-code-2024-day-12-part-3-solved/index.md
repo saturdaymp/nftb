@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 63: Advent of Code 2024 Day 12 (Part 3 - Solved!)"
+author: "Chris C"
 date: 2025-01-22
 categories: 
   - "code-examples"

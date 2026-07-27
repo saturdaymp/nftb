@@ -1,5 +1,6 @@
 ---
 title: "Blast from the Past: New Tools Require New Standards"
+author: "Chris C"
 date: 2018-01-20
 categories: 
   - "blast-from-the-past"

@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #10: Finally get the System Test Working for the Standard Ruby Linter ToDo Bug"
+author: "Chris C"
 date: 2023-08-17
 categories: 
   - "code-examples"

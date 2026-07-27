@@ -1,5 +1,6 @@
 ---
 title: "Notes on Fixing Incomplete Bitcode Error in TeamCity Automated Objective-c Builds"
+author: "Chris C"
 date: 2017-12-05
 categories: 
   - "notes"

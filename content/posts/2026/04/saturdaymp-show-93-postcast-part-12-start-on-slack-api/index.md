@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 93: PostCast (Part 12 - Start on Slack API)"
+author: "Chris C"
 date: 2026-04-15
 categories: 
   - "code-examples"

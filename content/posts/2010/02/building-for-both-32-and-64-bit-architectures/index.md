@@ -1,5 +1,6 @@
 ---
 title: "Building for Both 32 and 64 Bit Architectures"
+author: "Chris C"
 date: 2010-02-25
 tags: 
   - "build"

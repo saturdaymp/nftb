@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #90: Claude Code Plugin Marketplace"
+author: "Chris C"
 date: 2026-03-25
 categories: 
   - "code-examples"

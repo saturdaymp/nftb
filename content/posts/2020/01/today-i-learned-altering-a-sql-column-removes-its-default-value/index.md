@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned Altering a SQL Column Removes it's Default Value"
+author: "Chris C"
 date: 2020-01-12
 categories: 
   - "today-i-learned"

@@ -1,5 +1,6 @@
 ---
 title: "Back and Forth #7: Secure React Page"
+author: "Chris C"
 date: 2021-09-17
 categories: 
   - "back-and-forth"

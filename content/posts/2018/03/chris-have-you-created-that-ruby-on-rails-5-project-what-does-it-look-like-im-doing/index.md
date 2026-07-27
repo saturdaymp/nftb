@@ -1,5 +1,6 @@
 ---
 title: "Chris, have you created that Ruby on Rails 5 project?  What Does it Look Like I'm Doing!"
+author: "Chris C"
 date: 2018-03-21
 categories: 
   - "code-examples"

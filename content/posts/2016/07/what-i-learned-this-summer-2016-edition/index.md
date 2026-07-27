@@ -1,5 +1,6 @@
 ---
 title: "What I Learned this Summer - 2016 Edition"
+author: "Ada CC"
 date: 2016-07-30
 categories: 
   - "business-side"

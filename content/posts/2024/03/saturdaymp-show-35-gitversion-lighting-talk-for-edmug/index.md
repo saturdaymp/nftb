@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 35: GitVersion Lighting Talk for EDMUG"
+author: "Chris C"
 date: 2024-03-06
 categories: 
   - "edmonton-net-user-group"

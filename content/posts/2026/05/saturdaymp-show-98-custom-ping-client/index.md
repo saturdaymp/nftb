@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #98: Custom Ping Client"
+author: "Chris C"
 date: 2026-05-12
 categories: 
   - "saturday-mp-show"

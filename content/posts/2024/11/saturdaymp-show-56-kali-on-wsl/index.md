@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 56: Kali on WSL"
+author: "Chris C"
 date: 2024-11-13
 categories: 
   - "saturday-mp-show"

@@ -1,5 +1,6 @@
 ---
 title: "Notes on Converting Mini-Compressor to UWP Application (Trying to at Least)"
+author: "Chris C"
 date: 2016-10-23
 categories: 
   - "business-side"

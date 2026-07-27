@@ -1,5 +1,6 @@
 ---
 title: "Life in the Basement – Olympic Edition"
+author: "Ada CC"
 date: 2014-02-06
 categories: 
   - "fun"

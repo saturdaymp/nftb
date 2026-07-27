@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 104: picoCTF (Small Trouble & Droids 4)"
+author: "Chris C"
 date: 2026-06-23
 categories: 
   - "saturday-mp-show"

@@ -1,5 +1,6 @@
 ---
 title: "Back and Forth #3: Docker Image for Node React Application"
+author: "Chris C"
 date: 2021-07-01
 categories: 
   - "back-and-forth"

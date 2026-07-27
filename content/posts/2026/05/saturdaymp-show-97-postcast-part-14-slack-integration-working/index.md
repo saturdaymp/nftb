@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #97: PostCast Part 14 (Slack Integration Working)"
+author: "Chris C"
 date: 2026-05-12
 categories: 
   - "saturday-mp-show"

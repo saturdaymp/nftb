@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show 2: Struggling to get the RubyMine Debugger Working"
+author: "Chris C"
 date: 2023-06-24
 categories: 
   - "code-examples"

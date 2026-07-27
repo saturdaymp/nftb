@@ -1,5 +1,6 @@
 ---
 title: "Back and Forth #6: Add Google Authentication to React App Using Firebase"
+author: "Chris C"
 date: 2021-08-13
 categories: 
   - "back-and-forth"

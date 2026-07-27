@@ -1,5 +1,6 @@
 ---
 title: "Working Together – Part 1"
+author: "Ada CC"
 date: 2012-10-30
 categories: 
   - "business-side"

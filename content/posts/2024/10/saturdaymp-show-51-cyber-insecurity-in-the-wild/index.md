@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 51: Cyber Insecurity in the Wild"
+author: "Chris C"
 date: 2024-10-02
 categories: 
   - "saturday-mp-show"

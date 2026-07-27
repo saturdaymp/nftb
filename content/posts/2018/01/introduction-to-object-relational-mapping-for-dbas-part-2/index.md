@@ -1,5 +1,6 @@
 ---
 title: "Introduction to Object-Relational Mapping for DBAs – Part 2"
+author: "Chris C"
 date: 2018-01-11
 categories: 
   - "code-examples"

@@ -1,5 +1,6 @@
 ---
 title: "Starting Any Method in a New Thread Using .NET"
+author: "Chris C"
 date: 2010-04-02
 categories: 
   - "code-examples"

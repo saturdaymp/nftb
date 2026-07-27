@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 83: Creating PostCast (Part 5 – Go PoC for LinkedIn API)"
+author: "Chris C"
 date: 2026-02-04
 categories: 
   - "code-examples"

@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compressor Version 1.4 just Sprouted"
+author: "Chris C"
 date: 2013-06-27
 categories: 
   - "mini-compressor"

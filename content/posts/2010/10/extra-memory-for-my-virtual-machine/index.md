@@ -1,5 +1,6 @@
 ---
 title: "Extra Memory for my Virtual Machine"
+author: "Chris C"
 date: 2010-10-24
 categories: 
   - "hardware"

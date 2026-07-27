@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #31: Human Resource Machine Fibonacci and Three Sort"
+author: "Chris C"
 date: 2024-02-07
 categories: 
   - "fun"

@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create a Local Notification in Xamarin Android"
+author: "Chris C"
 date: 2016-12-14
 categories: 
   - "goal-app"

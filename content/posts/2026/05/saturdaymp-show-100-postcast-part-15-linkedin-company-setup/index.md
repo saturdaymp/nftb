@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 100: PostCast Part 15 (LinkedIn Company Setup)"
+author: "Chris C"
 date: 2026-05-26
 categories: 
   - "saturday-mp-show"

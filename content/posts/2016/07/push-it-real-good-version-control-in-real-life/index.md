@@ -1,5 +1,6 @@
 ---
 title: "Push It Real Good - Version Control in Real Life"
+author: "Ada CC"
 date: 2016-07-21
 categories: 
   - "fun"

@@ -1,5 +1,6 @@
 ---
 title: "Math is hard."
+author: "Ada CC"
 date: 2016-09-18
 categories: 
   - "fun"

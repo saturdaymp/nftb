@@ -1,5 +1,6 @@
 ---
 title: "Installing Ruby on Rails 3.1 on Mac OS X 10.6 Notes"
+author: "Chris C"
 date: 2011-12-07
 categories: 
   - "notes"

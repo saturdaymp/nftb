@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 57: Something's Rotten at the Gilded Rose: A Refactoring Tale"
+author: "Chris C"
 date: 2024-11-22
 categories: 
   - "code-examples"

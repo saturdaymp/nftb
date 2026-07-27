@@ -1,5 +1,6 @@
 ---
 title: "SQL Server Dependency Query"
+author: "Chris C"
 date: 2011-02-09
 categories: 
   - "code-examples"

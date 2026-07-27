@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned about Docker Compose Watch"
+author: "Chris C"
 draft: true
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "My Takeaway from Reading Option B"
+author: "Chris C"
 date: 2017-09-22
 categories: 
   - "takeaways"

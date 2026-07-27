@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #27: Chromebook EOL and Human Resource Fibonacci Challenge Attempt 2"
+author: "Chris C"
 date: 2024-01-10
 categories: 
   - "fun"

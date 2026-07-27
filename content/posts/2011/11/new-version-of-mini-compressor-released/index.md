@@ -1,5 +1,6 @@
 ---
 title: "New Version of Mini-Compressor Released"
+author: "Chris C"
 date: 2011-11-30
 ---
 

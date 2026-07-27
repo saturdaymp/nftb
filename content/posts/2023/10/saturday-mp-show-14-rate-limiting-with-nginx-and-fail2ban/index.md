@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #14: Rate Limiting with NGINX and Fail2Ban"
+author: "Chris C"
 date: 2023-10-11
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 89: PostCast (Part 10 – Integration Tests and Keyring Saving)"
+author: "Chris C"
 date: 2026-03-18
 categories: 
   - "code-examples"

@@ -1,5 +1,6 @@
 ---
 title: "Rate Limiting Using Nginx and Fail2Ban - BSides Edmonton 2022"
+author: "Chris C"
 date: 2022-11-25
 categories: 
   - "code-examples"

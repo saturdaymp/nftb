@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 62: Advent of Code 2024 Day 12 (Part 2 - Area Calculated)"
+author: "Chris C"
 date: 2025-01-17
 categories: 
   - "code-examples"

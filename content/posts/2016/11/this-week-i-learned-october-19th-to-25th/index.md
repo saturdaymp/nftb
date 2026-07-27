@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned Xamarin Push Notification Plugins"
+author: "Chris C"
 date: 2016-11-04
 categories: 
   - "today-i-learned"

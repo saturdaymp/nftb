@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compress Weeds"
+author: "Ada CC"
 date: 2011-06-08
 categories: 
   - "fun"

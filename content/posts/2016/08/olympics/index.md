@@ -1,5 +1,6 @@
 ---
 title: "The Olympics versus Accountability"
+author: "Ada CC"
 date: 2016-08-26
 categories: 
   - "fun"

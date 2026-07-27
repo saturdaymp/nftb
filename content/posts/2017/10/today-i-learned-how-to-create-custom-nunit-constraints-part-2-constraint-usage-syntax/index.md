@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create Custom NUnit Constraints – Part 2: Constraint Usage Syntax"
+author: "Chris C"
 date: 2017-10-24
 categories: 
   - "code-examples"

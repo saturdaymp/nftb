@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #24: Can you use Docker Compose Watch without a Dockerfile?"
+author: "Chris C"
 date: 2023-12-20
 categories: 
   - "saturday-mp-show"

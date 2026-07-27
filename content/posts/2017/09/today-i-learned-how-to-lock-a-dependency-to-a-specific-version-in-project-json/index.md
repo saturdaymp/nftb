@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Lock a Dependency to a Specific Version in Project JSON"
+author: "Chris C"
 date: 2017-09-26
 ---
 

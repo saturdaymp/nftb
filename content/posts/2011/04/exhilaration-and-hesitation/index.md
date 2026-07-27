@@ -1,5 +1,6 @@
 ---
 title: "Exhilaration and Hesitation"
+author: "Ada CC"
 date: 2011-04-27
 categories: 
   - "business-side"

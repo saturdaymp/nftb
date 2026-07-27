@@ -1,5 +1,6 @@
 ---
 title: "Odds Are you Work for a Small Business"
+author: "Chris C"
 date: 2017-10-11
 categories: 
   - "business-side"

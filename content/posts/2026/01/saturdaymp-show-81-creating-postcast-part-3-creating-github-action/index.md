@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 81: Creating PostCast (Part 3 – Creating GitHub Action)"
+author: "Chris C"
 date: 2026-01-21
 ---
 

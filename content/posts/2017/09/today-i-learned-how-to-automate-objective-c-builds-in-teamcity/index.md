@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Automate Objective-c Builds in TeamCity"
+author: "Chris C"
 date: 2017-09-15
 categories: 
   - "today-i-learned"

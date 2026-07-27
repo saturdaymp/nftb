@@ -1,5 +1,6 @@
 ---
 title: "New Measure of Cha-Ching"
+author: "Ada CC"
 date: 2012-05-28
 categories: 
   - "business-side"

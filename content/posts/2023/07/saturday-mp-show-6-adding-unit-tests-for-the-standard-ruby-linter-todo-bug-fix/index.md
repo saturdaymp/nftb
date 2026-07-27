@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #6: Adding Unit Tests for the Standard Ruby Linter ToDo Bug Fix"
+author: "Chris C"
 date: 2023-07-18
 categories: 
   - "code-examples"

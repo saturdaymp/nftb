@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 1 – Create Player Table"
+author: "Chris C"
 date: 2018-05-22
 categories: 
   - "code-examples"

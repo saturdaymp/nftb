@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 80: Creating PostCast (Part 2 – Testing Fyne Packaging)"
+author: "Chris C"
 date: 2026-01-14
 categories: 
   - "code-examples"

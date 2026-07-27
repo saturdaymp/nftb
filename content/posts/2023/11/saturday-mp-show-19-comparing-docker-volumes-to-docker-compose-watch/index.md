@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #19: Comparing Docker Volumes to Docker Compose Watch"
+author: "Chris C"
 date: 2023-11-15
 categories: 
   - "saturday-mp-show"

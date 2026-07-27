@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compressor Monday: Thanksgiving Edition"
+author: "Ada CC"
 date: 2013-10-14
 categories: 
   - "mini-compressor-monday"

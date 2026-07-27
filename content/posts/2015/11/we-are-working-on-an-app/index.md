@@ -1,5 +1,6 @@
 ---
 title: "We are working on an app!"
+author: "Ada CC"
 date: 2015-11-24
 categories: 
   - "fun"

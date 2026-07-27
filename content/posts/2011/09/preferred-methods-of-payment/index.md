@@ -1,5 +1,6 @@
 ---
 title: "Preferred Methods of Payment"
+author: "Ada CC"
 date: 2011-09-15
 categories: 
   - "fun"

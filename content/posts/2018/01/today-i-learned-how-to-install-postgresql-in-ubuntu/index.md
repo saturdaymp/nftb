@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Install PostgreSQL in Ubuntu"
+author: "Chris C"
 date: 2018-01-25
 categories: 
   - "code-examples"

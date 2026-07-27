@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #30: Upgrading Website from Rails 6.1 to 7.0 Part 3 (Testing & Merging)"
+author: "Chris C"
 date: 2024-01-31
 categories: 
   - "saturday-mp-show"

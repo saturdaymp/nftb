@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 7 - Create GamePlayers Table"
+author: "Chris C"
 date: 2019-01-20
 categories: 
   - "code-examples"

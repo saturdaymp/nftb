@@ -1,5 +1,6 @@
 ---
 title: "Happy System Administrator Appreciation Day!"
+author: "Chris C"
 date: 2023-07-28
 categories: 
   - "fun"

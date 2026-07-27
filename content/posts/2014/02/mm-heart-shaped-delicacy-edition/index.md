@@ -1,5 +1,6 @@
 ---
 title: "MM – Heart-shaped Delicacy Edition"
+author: "Ada CC"
 date: 2014-02-14
 categories: 
   - "fun"

@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #18: Hack the Box - Busqueda Part 2 (Reverse Shell)"
+author: "Chris C"
 date: 2023-11-08
 categories: 
   - "saturday-mp-show"

@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compressor and Windows 10 Upgrade"
+author: "Ada CC"
 date: 2016-01-28
 categories: 
   - "business-side"

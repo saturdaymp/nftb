@@ -1,5 +1,6 @@
 ---
 title: "My Takeaway from Reading Meatball Sundae"
+author: "Chris C"
 date: 2017-09-27
 categories: 
   - "takeaways"

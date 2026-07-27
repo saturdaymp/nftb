@@ -1,5 +1,6 @@
 ---
 title: "Weekly Dev Chat IRL: Advent of Code/Cyber"
+author: "Chris C"
 date: 2025-12-12
 tags: 
   - "weeklydevchat"

@@ -1,5 +1,6 @@
 ---
 title: "Just Enjoy the Show"
+author: "Chris C"
 date: 2018-02-28
 categories: 
   - "fun"

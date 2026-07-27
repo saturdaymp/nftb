@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 96: PostCast Part 13 (Save Slack Token Using TDD)"
+author: "Chris C"
 date: 2026-05-12
 categories: 
   - "saturday-mp-show"

@@ -1,5 +1,6 @@
 ---
 title: "PSA: Arduino H Bridge is Sharp and Pointy"
+author: "Chris C"
 date: 2017-09-18
 categories: 
   - "fun"

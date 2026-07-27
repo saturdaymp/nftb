@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 91: PostCast (Part 11 - Saving LinkedIn Token)"
+author: "Chris C"
 date: 2026-04-01
 categories: 
   - "code-examples"

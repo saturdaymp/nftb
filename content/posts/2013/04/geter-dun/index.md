@@ -1,5 +1,6 @@
 ---
 title: "Get’er Dun"
+author: "Ada CC"
 date: 2013-04-06
 categories: 
   - "business-side"

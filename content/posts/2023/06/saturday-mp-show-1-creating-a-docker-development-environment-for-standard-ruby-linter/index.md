@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #1: Creating a Docker Development Environment for Standard (Ruby Linter)"
+author: "Chris C"
 date: 2023-06-21
 categories: 
   - "code-examples"

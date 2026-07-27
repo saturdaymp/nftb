@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Handle Local Notifications in Xamarin on Android"
+author: "Chris C"
 date: 2017-06-21
 categories: 
   - "code-examples"

@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 49: picoCTF Gym (Trickster & Cookies)"
+author: "Chris C"
 date: 2024-09-18
 categories: 
   - "saturday-mp-show"

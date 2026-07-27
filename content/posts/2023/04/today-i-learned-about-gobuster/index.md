@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned about Gobuster"
+author: "Chris C"
 date: 2023-04-12
 categories: 
   - "security"

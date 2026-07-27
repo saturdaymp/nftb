@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create Custom NUnit Constraints - Part 1: Creating the Constraint"
+author: "Chris C"
 date: 2017-10-19
 categories: 
   - "code-examples"

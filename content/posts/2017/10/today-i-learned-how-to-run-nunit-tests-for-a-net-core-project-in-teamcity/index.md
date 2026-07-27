@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Run NUnit Tests for a .NET Core Project in TeamCity"
+author: "Chris C"
 date: 2017-10-12
 categories: 
   - "code-examples"

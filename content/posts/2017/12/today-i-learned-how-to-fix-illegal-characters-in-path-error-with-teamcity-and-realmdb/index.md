@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Fix Illegal Characters in Path Error with TeamCity and RealmDB"
+author: "Chris C"
 date: 2017-12-14
 categories: 
   - "software-development"

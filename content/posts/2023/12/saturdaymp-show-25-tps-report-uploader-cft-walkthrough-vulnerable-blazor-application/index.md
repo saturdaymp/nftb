@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #25: TPS Report Uploader CFT Walkthrough (Vulnerable Blazor Application)"
+author: "Chris C"
 date: 2023-12-27
 categories: 
   - "saturday-mp-show"

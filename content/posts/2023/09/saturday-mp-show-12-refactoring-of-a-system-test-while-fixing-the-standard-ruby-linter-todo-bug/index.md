@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #12: Refactoring of a System Test While Fixing the Standard Ruby Linter ToDo Bug"
+author: "Chris C"
 date: 2023-09-15
 categories: 
   - "code-examples"

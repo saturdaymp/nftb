@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 64: picoCTF Format String 3 (Part 1 - Watch me Fail)"
+author: "Chris C"
 date: 2025-01-29
 categories: 
   - "saturday-mp-show"

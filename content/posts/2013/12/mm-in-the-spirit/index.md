@@ -1,5 +1,6 @@
 ---
 title: "MM – In the Spirit"
+author: "Ada CC"
 date: 2013-12-10
 categories: 
   - "mini-compressor-monday"

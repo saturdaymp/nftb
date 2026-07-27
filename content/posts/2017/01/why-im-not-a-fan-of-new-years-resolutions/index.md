@@ -1,5 +1,6 @@
 ---
 title: "Why I'm not a fan of New Year's Resolutions"
+author: "Ada CC"
 date: 2017-01-09
 categories: 
   - "fun"

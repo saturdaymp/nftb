@@ -1,5 +1,6 @@
 ---
 title: "MM – Ringing in the Year of the Horse"
+author: "Ada CC"
 date: 2014-01-29
 categories: 
   - "fun"

@@ -1,5 +1,6 @@
 ---
 title: "Kids Thinking Outside the Box - Who to Invite to Your Birthday?"
+author: "Chris C"
 date: 2010-11-30
 categories: 
   - "fun"

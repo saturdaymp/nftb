@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compressor Monday – Spring Edition continued"
+author: "Ada CC"
 date: 2014-06-10
 categories: 
   - "mini-compressor-monday"

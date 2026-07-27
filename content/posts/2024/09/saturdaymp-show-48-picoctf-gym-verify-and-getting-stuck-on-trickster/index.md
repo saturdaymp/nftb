@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 48: picoCTF Gym (Verify and Getting Stuck on Trickster)"
+author: "Chris C"
 date: 2024-09-11
 categories: 
   - "saturday-mp-show"

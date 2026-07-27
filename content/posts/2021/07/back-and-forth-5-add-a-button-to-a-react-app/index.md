@@ -1,5 +1,6 @@
 ---
 title: "Back and Forth #5: Add a Button to a React App"
+author: "Chris C"
 date: 2021-07-31
 categories: 
   - "back-and-forth"

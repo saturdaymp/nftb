@@ -1,5 +1,6 @@
 ---
 title: "Stats tell you a lot...or do they?"
+author: "Ada CC"
 date: 2016-03-01
 categories: 
   - "fun"

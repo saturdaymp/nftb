@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 87: Creating PostCast (Part 9 – Figuring Out Testing in Go)"
+author: "Chris C"
 date: 2026-03-04
 categories: 
   - "saturday-mp-show"

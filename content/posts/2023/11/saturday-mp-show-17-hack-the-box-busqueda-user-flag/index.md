@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #17: Hack the Box - Busqueda (User Flag)"
+author: "Chris C"
 date: 2023-11-02
 categories: 
   - "saturday-mp-show"

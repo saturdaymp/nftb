@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 3 – Player CRUD"
+author: "Chris C"
 date: 2018-06-13
 categories: 
   - "code-examples"

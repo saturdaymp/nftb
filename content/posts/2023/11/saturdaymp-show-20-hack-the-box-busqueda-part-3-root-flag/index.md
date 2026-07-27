@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #20: Hack the Box - Busqueda Part 3 (Root Flag)"
+author: "Chris C"
 date: 2023-11-22
 categories: 
   - "saturday-mp-show"

@@ -1,5 +1,6 @@
 ---
 title: "Welcome, Alice!"
+author: "Ada CC"
 date: 2015-02-23
 categories: 
   - "business-side"

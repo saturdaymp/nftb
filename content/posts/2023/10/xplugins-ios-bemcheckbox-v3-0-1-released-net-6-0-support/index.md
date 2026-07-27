@@ -1,5 +1,6 @@
 ---
 title: "XPlugins.iOS.BEMCheckBox v3.0.1 Released (.NET 6.0+ Support)!"
+author: "Chris C"
 date: 2023-10-17
 categories: 
   - "releases"

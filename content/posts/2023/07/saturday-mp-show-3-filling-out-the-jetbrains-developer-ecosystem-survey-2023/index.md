@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #3: Filling out the JetBrains Developer Ecosystem Survey 2023"
+author: "Chris C"
 date: 2023-07-02
 categories: 
   - "saturday-mp-show"

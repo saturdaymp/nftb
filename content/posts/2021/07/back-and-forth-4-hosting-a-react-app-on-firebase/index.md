@@ -1,5 +1,6 @@
 ---
 title: "Back and Forth #4: Hosting a React App on Firebase"
+author: "Chris C"
 date: 2021-07-07
 categories: 
   - "back-and-forth"

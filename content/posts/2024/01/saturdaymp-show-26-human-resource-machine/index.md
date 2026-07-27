@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #26: Human Resource Machine"
+author: "Chris C"
 date: 2024-01-03
 categories: 
   - "fun"

@@ -1,5 +1,6 @@
 ---
 title: "Cheque or Credit Card?"
+author: "Chris C"
 date: 2011-04-08
 ---
 

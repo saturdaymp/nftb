@@ -1,5 +1,6 @@
 ---
 title: "NUnit Error \"Attempted to access an unloaded AppDomain\""
+author: "Chris C"
 date: 2010-11-11
 categories: 
   - "code-examples"

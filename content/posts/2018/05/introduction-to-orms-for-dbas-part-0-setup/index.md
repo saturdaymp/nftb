@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 0 - Setup"
+author: "Chris C"
 date: 2018-05-14
 categories: 
   - "code-examples"

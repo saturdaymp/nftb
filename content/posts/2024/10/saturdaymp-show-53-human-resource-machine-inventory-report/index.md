@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 53: Human Resource Machine (Inventory Report)"
+author: "Chris C"
 date: 2024-10-23
 categories: 
   - "fun"

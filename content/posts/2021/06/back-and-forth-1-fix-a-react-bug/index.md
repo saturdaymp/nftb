@@ -1,5 +1,6 @@
 ---
 title: "Back and Forth #1: Fix a React Bug"
+author: "Chris C"
 date: 2021-06-25
 categories: 
   - "back-and-forth"

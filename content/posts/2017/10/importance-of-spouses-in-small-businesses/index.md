@@ -1,5 +1,6 @@
 ---
 title: "Importance of Spouses in Small Businesses"
+author: "Chris C"
 date: 2017-10-04
 categories: 
   - "business-side"

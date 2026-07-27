@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 103: HTTP Server in C (Part 1 - Listen is Working)"
+author: "Chris C"
 date: 2026-06-16
 categories: 
   - "saturday-mp-show"

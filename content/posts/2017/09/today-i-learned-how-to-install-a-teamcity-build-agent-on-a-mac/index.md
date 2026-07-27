@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Install a TeamCity Build Agent on a Mac"
+author: "Chris C"
 date: 2017-09-11
 categories: 
   - "today-i-learned"

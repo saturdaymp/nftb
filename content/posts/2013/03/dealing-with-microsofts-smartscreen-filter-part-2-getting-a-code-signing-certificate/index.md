@@ -1,5 +1,6 @@
 ---
 title: "Dealing with Microsoft's SmartScreen Filter Part 2: Getting a Code Signing Certificate"
+author: "Chris C"
 date: 2013-03-15
 categories: 
   - "business-side"

@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Run SQL Server on a Mac using Docker"
+author: "Chris C"
 date: 2018-04-30
 categories: 
   - "software-development"

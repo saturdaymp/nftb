@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned The Final Backslash is Important in Apache HTTPS Redirects"
+author: "Chris C"
 date: 2017-11-02
 categories: 
   - "today-i-learned"

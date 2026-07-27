@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 82: Creating PostCast (Part 4 – Figuring out LinkedIn API)"
+author: "Chris C"
 date: 2026-01-28
 categories: 
   - "saturday-mp-show"

@@ -1,5 +1,6 @@
 ---
 title: "Connect to Android Emulator from VirtualBox"
+author: "Chris C"
 date: 2016-02-23
 categories: 
   - "code-examples"

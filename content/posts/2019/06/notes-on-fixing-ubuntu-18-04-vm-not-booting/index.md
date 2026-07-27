@@ -1,5 +1,6 @@
 ---
 title: "Notes on Fixing Ubuntu 18.04 VM not Booting"
+author: "Chris C"
 date: 2019-06-18
 categories: 
   - "notes"

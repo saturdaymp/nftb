@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 36: picoCTF Gym"
+author: "Chris C"
 date: 2024-03-13
 categories: 
   - "code-examples"

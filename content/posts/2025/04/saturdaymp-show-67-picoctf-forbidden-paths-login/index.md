@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 67: picoCTF (Forbidden Paths & Login)"
+author: "Chris C"
 date: 2025-04-09
 categories: 
   - "saturday-mp-show"

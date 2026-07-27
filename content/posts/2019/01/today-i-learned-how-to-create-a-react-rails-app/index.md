@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create a React-Rails App"
+author: "Chris C"
 date: 2019-01-07
 categories: 
   - "code-examples"

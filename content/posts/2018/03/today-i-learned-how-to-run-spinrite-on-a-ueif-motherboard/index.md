@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Run SpinRite on a UEIF Motherboard"
+author: "Chris C"
 date: 2018-03-15
 categories: 
   - "hardware"

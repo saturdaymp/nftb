@@ -1,5 +1,6 @@
 ---
 title: "Upgrading Mini-Compressor to .NET 4.0 Notes Addendum"
+author: "Chris C"
 date: 2010-11-04
 categories: 
   - "code-examples"

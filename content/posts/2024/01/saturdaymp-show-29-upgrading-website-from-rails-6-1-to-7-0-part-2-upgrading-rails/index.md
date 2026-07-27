@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #29: Upgrading Website from Rails 6.1 to 7.0 Part 2: Upgrading Rails"
+author: "Chris C"
 date: 2024-01-24
 categories: 
   - "code-examples"

@@ -1,5 +1,6 @@
 ---
 title: "My Takeaway from Moneyball"
+author: "Chris C"
 date: 2019-01-14
 categories: 
   - "takeaways"

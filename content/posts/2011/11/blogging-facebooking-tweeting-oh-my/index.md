@@ -1,5 +1,6 @@
 ---
 title: "Blogging, facebooking, tweeting, oh my"
+author: "Ada CC"
 date: 2011-11-04
 categories: 
   - "business-side"

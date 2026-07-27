@@ -1,5 +1,6 @@
 ---
 title: "Notes: Upgrade NUnit.Xamarin to NUnit 3.8.1"
+author: "Chris C"
 date: 2017-09-21
 categories: 
   - "code-examples"

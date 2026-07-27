@@ -1,5 +1,6 @@
 ---
 title: "Sabbatical is Over, Looking for Work"
+author: "Chris C"
 date: 2017-09-07
 categories: 
   - "business-side"

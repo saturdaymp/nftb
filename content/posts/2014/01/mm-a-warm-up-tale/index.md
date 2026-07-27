@@ -1,5 +1,6 @@
 ---
 title: "MM - A warm up tale"
+author: "Ada CC"
 date: 2014-01-13
 categories: 
   - "mini-compressor-monday"

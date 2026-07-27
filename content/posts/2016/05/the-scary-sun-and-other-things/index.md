@@ -1,5 +1,6 @@
 ---
 title: "The Scary Sun and Other Things"
+author: "Ada CC"
 date: 2016-05-06
 categories: 
   - "fun"

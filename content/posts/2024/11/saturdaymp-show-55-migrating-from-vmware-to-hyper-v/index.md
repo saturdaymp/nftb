@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 55: Migrating from VMWare to Hyper-V"
+author: "Chris C"
 date: 2024-11-08
 coverImage: "SaturdayMP-Show-0055-Thumbnail.png"
 ---

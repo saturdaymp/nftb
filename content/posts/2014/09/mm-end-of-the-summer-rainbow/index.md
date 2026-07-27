@@ -1,5 +1,6 @@
 ---
 title: "MM - End of the Summer Rainbow"
+author: "Ada CC"
 date: 2014-09-08
 categories: 
   - "mini-compressor-monday"

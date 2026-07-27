@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 76: Hack the Box - Lock (Part 2 - Both Flags)"
+author: "Chris C"
 date: 2025-12-03
 categories: 
   - "saturday-mp-show"

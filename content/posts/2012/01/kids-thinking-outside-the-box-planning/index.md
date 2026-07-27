@@ -1,5 +1,6 @@
 ---
 title: "Kids Thinking Outside the Box – Planning"
+author: "Chris C"
 date: 2012-01-04
 categories: 
   - "kids-thinking-outside-the-box"

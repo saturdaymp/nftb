@@ -1,5 +1,6 @@
 ---
 title: "MM - Holiday Cheer"
+author: "Ada CC"
 date: 2013-12-23
 categories: 
   - "mini-compressor-monday"

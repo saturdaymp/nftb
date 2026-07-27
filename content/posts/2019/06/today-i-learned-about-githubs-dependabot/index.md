@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned About GitHub's Dependabot"
+author: "Chris C"
 date: 2019-06-24
 categories: 
   - "today-i-learned"

@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 95: Passkeys Primer w/ Aaron Yong"
+author: "Chris C"
 date: 2026-04-29
 categories: 
   - "saturday-mp-show"

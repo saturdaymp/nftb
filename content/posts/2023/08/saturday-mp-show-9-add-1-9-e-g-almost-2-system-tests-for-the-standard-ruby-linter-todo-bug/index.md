@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #9: Add 1.9 (e.g. almost 2) System Tests for the Standard Ruby Linter ToDo Bug"
+author: "Chris C"
 date: 2023-08-09
 categories: 
   - "code-examples"

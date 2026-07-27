@@ -1,5 +1,6 @@
 ---
 title: "SMALL BUSINESS AND THE THREE CONTRACTORS"
+author: "Chris C"
 date: 2021-01-08
 categories: 
   - "business-side"

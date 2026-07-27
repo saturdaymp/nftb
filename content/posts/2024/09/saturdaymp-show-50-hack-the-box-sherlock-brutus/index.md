@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 50: Hack the Box Sherlock (Brutus)"
+author: "Chris C"
 date: 2024-09-25
 categories: 
   - "saturday-mp-show"

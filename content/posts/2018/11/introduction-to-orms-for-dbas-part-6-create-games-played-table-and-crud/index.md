@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 6 - Create GamesPlayed Table and CRUD"
+author: "Chris C"
 date: 2018-11-02
 categories: 
   - "code-examples"

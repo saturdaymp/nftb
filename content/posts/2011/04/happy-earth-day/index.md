@@ -1,5 +1,6 @@
 ---
 title: "Happy Earth Day"
+author: "Ada CC"
 date: 2011-04-22
 categories: 
   - "business-side"

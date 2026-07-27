@@ -1,5 +1,6 @@
 ---
 title: "Thank you for Attending my SQL Saturday 840 Presentation - Create a Time Travelling Database"
+author: "Chris C"
 date: 2019-04-30
 ---
 

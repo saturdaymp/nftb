@@ -1,5 +1,6 @@
 ---
 title: "See you at BSides Edmonton 2023"
+author: "Chris C"
 date: 2023-09-22
 categories: 
   - "security"

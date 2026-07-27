@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 58: Human Resource Machine (Duplicate Machine Size Challenge)"
+author: "Chris C"
 date: 2024-11-27
 categories: 
   - "fun"

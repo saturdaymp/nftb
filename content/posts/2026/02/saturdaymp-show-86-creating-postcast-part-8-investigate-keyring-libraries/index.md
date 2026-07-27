@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 86: Creating PostCast (Part 8 – Investigate Keyring Libraries)"
+author: "Chris C"
 date: 2026-02-26
 categories: 
   - "code-examples"

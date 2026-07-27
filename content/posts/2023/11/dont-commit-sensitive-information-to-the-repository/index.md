@@ -1,5 +1,6 @@
 ---
 title: "Don't Commit Sensitive Information to the Repository"
+author: "Chris C"
 date: 2023-11-06
 categories: 
   - "security"

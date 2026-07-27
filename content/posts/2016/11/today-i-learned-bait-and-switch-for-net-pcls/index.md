@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned Bait and Switch for .NET PCL's"
+author: "Chris C"
 date: 2016-11-22
 categories: 
   - "today-i-learned"

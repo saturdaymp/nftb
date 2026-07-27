@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Secure the Delayed Job Page with Spree Users"
+author: "Chris C"
 date: 2020-09-04
 categories: 
   - "today-i-learned"

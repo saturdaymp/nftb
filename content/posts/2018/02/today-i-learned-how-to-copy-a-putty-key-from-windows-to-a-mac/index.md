@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Copy a Putty Key From Windows to a Mac"
+author: "Chris C"
 date: 2018-02-23
 categories: 
   - "network"

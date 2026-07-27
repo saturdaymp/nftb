@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 102: PostCast (Part 15 – Slack Channel Selection)"
+author: "Chris C"
 date: 2026-06-09
 categories: 
   - "saturday-mp-show"

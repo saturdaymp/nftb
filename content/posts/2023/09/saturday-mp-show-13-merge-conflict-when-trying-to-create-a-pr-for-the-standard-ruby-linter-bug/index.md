@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #13: Merge Conflict when trying to create a PR for the Standard Ruby Linter Bug"
+author: "Chris C"
 date: 2023-09-22
 categories: 
   - "saturday-mp-show"

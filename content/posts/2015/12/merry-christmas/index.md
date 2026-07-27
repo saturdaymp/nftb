@@ -1,5 +1,6 @@
 ---
 title: "Merry Christmas!"
+author: "Chris C"
 date: 2015-12-24
 ---
 

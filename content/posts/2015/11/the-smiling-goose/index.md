@@ -1,5 +1,6 @@
 ---
 title: "The Smiling Goose"
+author: "Ada CC"
 date: 2015-11-10
 categories: 
   - "fun"

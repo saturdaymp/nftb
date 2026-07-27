@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 101: Solved picoCTF No Padding, No Problem Challenge"
+author: "Chris C"
 date: 2026-06-02
 ---
 

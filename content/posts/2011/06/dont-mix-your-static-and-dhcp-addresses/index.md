@@ -1,5 +1,6 @@
 ---
 title: "Don't Mix your Static and DHCP Addresses"
+author: "Chris C"
 date: 2011-06-17
 categories: 
   - "network"

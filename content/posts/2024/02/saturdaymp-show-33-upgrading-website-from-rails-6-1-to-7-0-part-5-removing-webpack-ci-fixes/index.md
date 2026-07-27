@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #33: Upgrading Website from Rails 6.1 to 7.0 Part 5 (Removing Webpack CI Fixes)"
+author: "Chris C"
 date: 2024-02-21
 categories: 
   - "saturday-mp-show"

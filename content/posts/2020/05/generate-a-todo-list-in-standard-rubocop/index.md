@@ -1,5 +1,6 @@
 ---
 title: "Generate a Todo List in Standard (Rubocop)"
+author: "Chris C"
 date: 2020-05-11
 categories: 
   - "code-examples"

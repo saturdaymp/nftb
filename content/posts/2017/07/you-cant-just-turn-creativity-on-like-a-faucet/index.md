@@ -1,5 +1,6 @@
 ---
 title: "You Can't Just Turn Creativity On Like A Faucet"
+author: "Ada CC"
 date: 2017-07-17
 categories: 
   - "fun"

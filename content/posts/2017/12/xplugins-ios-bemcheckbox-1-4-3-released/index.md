@@ -1,5 +1,6 @@
 ---
 title: "XPlugins.iOS.BEMCheckBox 1.4.3 Released"
+author: "Chris C"
 date: 2017-12-22
 categories: 
   - "software-development"

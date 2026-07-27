@@ -1,5 +1,6 @@
 ---
 title: "Happy Holidays!"
+author: "Chris C"
 date: 2018-12-23
 categories: 
   - "fun"

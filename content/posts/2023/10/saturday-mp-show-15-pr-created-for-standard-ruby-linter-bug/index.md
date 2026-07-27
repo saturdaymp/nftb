@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #15: PR Created for Standard Ruby Linter Bug"
+author: "Chris C"
 date: 2023-10-19
 categories: 
   - "saturday-mp-show"

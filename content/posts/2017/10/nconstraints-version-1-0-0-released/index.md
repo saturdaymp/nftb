@@ -1,5 +1,6 @@
 ---
 title: "NConstraints Version 1.0.0 Released"
+author: "Chris C"
 date: 2017-10-17
 categories: 
   - "code-examples"

@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create a Xamarin iOS Binding for Objective-C Libraries - Part 2 Combining Libraries"
+author: "Chris C"
 date: 2017-08-09
 categories: 
   - "code-examples"

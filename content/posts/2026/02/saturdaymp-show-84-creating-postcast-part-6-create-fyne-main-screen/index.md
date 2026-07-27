@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 84: Creating PostCast (Part 6 – Create Fyne Main Screen)"
+author: "Chris C"
 date: 2026-02-11
 categories: 
   - "code-examples"

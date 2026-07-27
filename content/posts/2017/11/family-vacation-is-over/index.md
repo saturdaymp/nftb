@@ -1,5 +1,6 @@
 ---
 title: "Family Vacation is Over"
+author: "Chris C"
 date: 2017-11-30
 ---
 

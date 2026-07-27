@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 69: Migrate From Rails to Jekyll (Part 2)"
+author: "Chris C"
 date: 2025-10-08
 categories: 
   - "code-examples"

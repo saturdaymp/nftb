@@ -1,5 +1,6 @@
 ---
 title: "Operation Add Author Profile Pictures (OAAPP)"
+author: "Ada CC"
 date: 2016-12-07
 categories: 
   - "fun"

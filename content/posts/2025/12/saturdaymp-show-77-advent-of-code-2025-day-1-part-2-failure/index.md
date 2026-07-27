@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 77: Advent of Code 2025 (Day 1 - Part 2: Failure)"
+author: "Chris C"
 date: 2025-12-10
 categories: 
   - "code-examples"

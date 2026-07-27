@@ -1,5 +1,6 @@
 ---
 title: "Looking for Speakers for the Edmonton .NET User Group"
+author: "Chris C"
 date: 2017-08-28
 categories: 
   - "business-side"

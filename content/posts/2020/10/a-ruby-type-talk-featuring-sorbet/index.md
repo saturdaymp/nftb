@@ -1,5 +1,6 @@
 ---
 title: "A Ruby-Type Talk featuring Sorbet"
+author: "Chris C"
 date: 2020-10-10
 categories: 
   - "code-examples"

@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 66: picoCTF Format String 2 (Solved in One Long Video)"
+author: "Chris C"
 date: 2025-02-19
 categories: 
   - "code-examples"

@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 61: Advent of Code 2024 Day 12 (Part 1 - Python Import Difficulties)"
+author: "Chris C"
 date: 2025-01-08
 categories: 
   - "code-examples"

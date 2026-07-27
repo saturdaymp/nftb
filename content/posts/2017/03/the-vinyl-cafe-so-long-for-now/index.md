@@ -1,5 +1,6 @@
 ---
 title: "The Vinyl Cafe - So Long For Now"
+author: "Ada CC"
 date: 2017-03-12
 ---
 

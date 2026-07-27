@@ -1,5 +1,6 @@
 ---
 title: "Stack Overflow Developer Survey 2017"
+author: "Chris C"
 date: 2017-03-29
 categories: 
   - "software-development"

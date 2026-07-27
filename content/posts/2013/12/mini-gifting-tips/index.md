@@ -1,5 +1,6 @@
 ---
 title: "Mini-Gifting (Tips)"
+author: "Ada CC"
 date: 2013-12-02
 categories: 
   - "business-side"

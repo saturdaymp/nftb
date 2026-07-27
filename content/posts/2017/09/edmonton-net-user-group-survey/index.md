@@ -1,5 +1,6 @@
 ---
 title: "Edmonton .NET User Group Survey"
+author: "Chris C"
 date: 2017-09-08
 categories: 
   - "business-side"

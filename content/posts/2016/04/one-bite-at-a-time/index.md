@@ -1,5 +1,6 @@
 ---
 title: "Goals - One Bite at a Time"
+author: "Ada CC"
 date: 2016-04-17
 categories: 
   - "goal-app"

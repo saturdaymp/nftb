@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #16: Trying out Docker Compose Watch"
+author: "Chris C"
 date: 2023-10-25
 categories: 
   - "saturday-mp-show"

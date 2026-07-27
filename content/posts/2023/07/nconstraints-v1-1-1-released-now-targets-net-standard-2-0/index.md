@@ -1,5 +1,6 @@
 ---
 title: "NConstraints v1.1.1 Released Now Targets .NET Standard 2.0"
+author: "Chris C"
 date: 2023-07-19
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Create Rails Docker Container Without Ruby Installed"
+author: "Chris C"
 date: 2018-07-22
 categories: 
   - "code-examples"

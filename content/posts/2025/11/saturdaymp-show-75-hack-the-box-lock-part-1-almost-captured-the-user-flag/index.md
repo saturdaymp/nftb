@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 75: Hack the Box - Lock (Part 1, Almost Captured the User Flag)"
+author: "Chris C"
 date: 2025-11-26
 categories: 
   - "saturday-mp-show"

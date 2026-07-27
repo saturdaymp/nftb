@@ -1,5 +1,6 @@
 ---
 title: "Share a Keyboard Between a PC and a MacBook"
+author: "Chris C"
 date: 2011-07-18
 categories: 
   - "network"

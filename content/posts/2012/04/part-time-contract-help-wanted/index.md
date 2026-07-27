@@ -1,5 +1,6 @@
 ---
 title: "Part Time Contract Help Wanted"
+author: "Ada CC"
 date: 2012-04-13
 categories: 
   - "business-side"

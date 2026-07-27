@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create a Key Pair Using PuTTY"
+author: "Chris C"
 date: 2018-01-29
 categories: 
   - "software-development"

@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #92: Local LLM w/ Ollama"
+author: "Chris C"
 date: 2026-04-08
 categories: 
   - "saturday-mp-show"

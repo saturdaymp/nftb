@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Generate a ERD for Rails Application"
+author: "Chris C"
 date: 2018-11-18
 categories: 
   - "code-examples"

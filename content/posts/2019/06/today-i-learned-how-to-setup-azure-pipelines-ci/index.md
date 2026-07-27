@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Setup Azure Pipelines CI"
+author: "Chris C"
 date: 2019-06-17
 categories: 
   - "today-i-learned"

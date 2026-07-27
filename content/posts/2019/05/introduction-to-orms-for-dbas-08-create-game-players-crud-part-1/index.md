@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 8 - Create Game Players CRUD - Part 1"
+author: "Chris C"
 date: 2019-05-27
 categories: 
   - "introduction-to-orms-for-dbas"

@@ -1,5 +1,6 @@
 ---
 title: "What we did this summer (and two discoveries we made)"
+author: "Ada CC"
 date: 2012-09-11
 categories: 
   - "business-side"

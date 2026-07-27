@@ -1,5 +1,6 @@
 ---
 title: "Kids Thinking Outside the Box - Bed Comfiness"
+author: "Chris C"
 date: 2012-03-14
 categories: 
   - "kids-thinking-outside-the-box"

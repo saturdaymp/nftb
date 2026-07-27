@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 52: Human Resource Machine (Strings)"
+author: "Chris C"
 date: 2024-10-09
 categories: 
   - "fun"

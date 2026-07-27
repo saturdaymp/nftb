@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 85: Creating PostCast (Part 7 – Prompt for LinkedIn Credentials)"
+author: "Chris C"
 date: 2026-02-18
 categories: 
   - "saturday-mp-show"

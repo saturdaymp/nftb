@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #4: Duplicating the Standard (Ruby Linter) Existing ToDo List Bug"
+author: "Chris C"
 date: 2023-07-07
 categories: 
   - "saturday-mp-show"
