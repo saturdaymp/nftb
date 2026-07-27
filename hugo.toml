@@ -7,6 +7,11 @@ locale = 'en-us'
 [pagination]
   pagerSize = 5
 
+# Match the old WordPress permalinks: the slug at the site root, no date.
+[permalinks.page]
+  posts = '/:contentbasename/'
+  pages = '/:contentbasename/'
+
 # Class-based syntax highlighting styled by the theme's syntax.css.
 [markup.highlight]
   noClasses = false

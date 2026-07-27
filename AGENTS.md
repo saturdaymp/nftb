@@ -34,14 +34,20 @@ which never touches production. Non-obvious details:
 
 ## Non-obvious rules
 
-- PaperMod is a Hugo Module (see `go.mod`/`go.sum`), pinned by version — there
+- Beautiful Hugo is a Hugo Module (see `go.mod`/`go.sum`), pinned by version — there
   is no theme code in the repo. Do not edit theme files — override templates in
   the top-level `layouts/` directory instead. Update with
   `docker compose run --rm --entrypoint hugo build mod get -u ./...`.
 - `public/` is generated output and gitignored. Never edit or commit it.
-- Post URLs must keep the old WordPress permalink structure. Posts are page
-  bundles at `content/posts/YYYY/MM/slug/index.md` with images beside the
-  markdown — don't restructure paths or slugs.
+- Post URLs must keep the old WordPress permalinks, which are flat: the slug
+  at the site root (`/slug/`), no date. `[permalinks.page]` in `hugo.toml`
+  maps `posts` and `pages` to `/:contentbasename/` — the bundle directory
+  name is the WordPress slug, so the URL comes from the directory, never from
+  a `slug` in front matter. Don't add a `slug` and don't rename bundle
+  directories; either one breaks an existing link.
+- Posts are page bundles at `content/posts/YYYY/MM/slug/index.md` with images
+  beside the markdown. The `YYYY/MM` is organizational only — it doesn't
+  appear in the URL — but keep it so bundles stay grouped.
 - Drafts live in `content/posts/_drafts/id-NNNN/index.md` with `draft: true`
   and no date; the NNNN is the original WordPress post ID.
 - `backup/`, `plan.txt`, and `noisefromthebasement.WordPress.*.xml` are
