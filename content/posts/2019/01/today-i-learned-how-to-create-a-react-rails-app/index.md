@@ -115,17 +115,7 @@ Finally add the following line to the home view:
 
 Now run the add and navigate to the http://localhost:3000/home/index and you should see the React message:
 
-<figure>
-
 [![Greetings from React message.](images/Greetings-from-React-message.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/12/Greetings-from-React-message.png)
-
-<figcaption>
-
-In
-
-</figcaption>
-
-</figure>
 
 In [memory](https://twitter.com/WalkOffTheEarth/status/1079528087333814273?s=20) of [Walk of the Earth's](https://www.walkofftheearth.com/) [Beard Guy](https://www.youtube.com/watch?v=NeYMQaL7pUw) I present one my favourite songs Walk of the Earth songs:
 

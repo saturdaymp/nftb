@@ -99,7 +99,7 @@ In your emulator, assuming you continued after the breakpoint, you should see yo
 
 ## Potential Problem
 
-There is only one problem I've encountered.  Sometimes the uploading of the application to the emulator is very slow.  Like very, very, very slow.  So slow it's basically stuck.  During compile and deploy in Visual Studio you will get stuck at the "Installing <something>" line.
+There is only one problem I've encountered.  Sometimes the uploading of the application to the emulator is very slow.  Like very, very, very slow.  So slow it's basically stuck.  During compile and deploy in Visual Studio you will get stuck at the "Installing `<something>`" line.
 
 [![Android Emulator Stuck In Visual Studio](images/AndroidEmulatorStuckInVisualStudio-1024x592.webp)](http://nftb.saturdaymp.com/wp-content/uploads/2015/11/AndroidEmulatorStuckInVisualStudio.png)
 

@@ -38,7 +38,7 @@ To find the two builds you just created right click on the BEMCheckBox.framework
 
 [![Show Compiled Framework In Finder](images/ShowCompiledFrameworkInFinder.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/07/ShowCompiledFrameworkInFinder.png)
 
-You should see both a Release-iphoneos and Release-iphonesimulator folders.   You might also see Debug-<os> folders but you can ignore those.
+You should see both a Release-iphoneos and Release-iphonesimulator folders.   You might also see `Debug-<os>` folders but you can ignore those.
 
 [![Compiled Frameworks In Finder](images/CompiledFrameworksInFinder.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/07/CompiledFrameworksInFinder.png)
 

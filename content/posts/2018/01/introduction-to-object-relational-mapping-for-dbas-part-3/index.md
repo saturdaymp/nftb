@@ -208,9 +208,9 @@ Assuming you are working with a good developer keep the following in mind:
 
 1. Let the ORM generate schema changes but make sure to review them.  The developer might not realize that renaming the column caused the column to be dropped and recreated resulting in data loss.
 2. Let the ORM access the tables directly.  Only force access threw a  view or stored procedure if there is a good reason.
-3. Don't be afraid to adapt the ORM's naming schema.  An ORM will often assume things like ID is the primary key column, table names are plural, foreign keys are <tablename>ID, etc.  If you can't adopt the ORM's preferred naming scheme then at least be consistent in your naming.
+3. Don't be afraid to adapt the ORM's naming schema.  An ORM will often assume things like ID is the primary key column, table names are plural, foreign keys are `<tablename>ID`, etc.  If you can't adopt the ORM's preferred naming scheme then at least be consistent in your naming.
 4. Don't worry about being made redundant.  ORMs can do some of the work DBAs used to do but not all of it and as we pointed out above ORM generated SQL should still be reviewed.  Also ORMs can't do the A part of DBA (i.e. they don't backup your database, secure it, create RAID arrays, etc).
-5. If you work with bad developers try to educate them.  They might just be naive.  If you can't educate the developers and management won't help you don't be afraid to move on.  Life is too short to...<fill in the blank>.
+5. If you work with bad developers try to educate them.  They might just be naive.  If you can't educate the developers and management won't help you don't be afraid to move on.  Life is too short to...\<fill in the blank>.
 
 Remember "Teamwork makes the dream work".
 

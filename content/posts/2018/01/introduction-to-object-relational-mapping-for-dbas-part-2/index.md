@@ -48,7 +48,7 @@ Add-Migration CreatePlayerTable
 
 [![Add Player Table Migration](images/AddPlayerTableMigration.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/01/AddPlayerTableMigration.png)
 
-This creates the <timestamp>\_CreatePlayerTable file.  If we open it up we see it creates the Player table and also a foreign key relationship to the ApplicationUser which maps to the AspNetUsers table.
+This creates the `<timestamp>_CreatePlayerTable` file.  If we open it up we see it creates the Player table and also a foreign key relationship to the ApplicationUser which maps to the AspNetUsers table.
 
 [![Player Migration Create Table](images/PlayerMigrationCreateTable.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/01/PlayerMigrationCreateTable.png)
 

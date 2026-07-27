@@ -14,7 +14,7 @@ As the outdoor temperatures quickly drop, the Saturday MP basement dwellers are 
 
 We are proud to release [Migrator](https://bitbucket.org/saturdaymp/migrator) to the public!
 
-<Intentional dramatic pause>
+\<Intentional dramatic pause>
 
 Migrator is an easy-to-use, migration tool for SQL Server Databases, inspired by the [Ruby on Rails migration process](http://edgeguides.rubyonrails.org/active_record_migrations.html). Use it to migrate database changes between developers and then migrate those changes to the UAT, staging, and production databases.
 
