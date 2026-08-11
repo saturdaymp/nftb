@@ -1,5 +1,6 @@
 ---
 title: "Installing Synergy Update"
+author: "Chris C"
 date: 2012-01-12
 categories: 
   - "network"

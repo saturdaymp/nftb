@@ -1,5 +1,6 @@
 ---
 title: "Developper’s Hours"
+author: "Ada CC"
 date: 2011-10-07
 categories: 
   - "business-side"

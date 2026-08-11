@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compressor Monday: Fall Favourites"
+author: "Ada CC"
 date: 2013-10-22
 categories: 
   - "mini-compressor-monday"

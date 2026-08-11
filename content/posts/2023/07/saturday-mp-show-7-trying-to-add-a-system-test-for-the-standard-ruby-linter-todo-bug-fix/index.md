@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #7: Trying to Add a System Test for the Standard Ruby Linter ToDo Bug Fix"
+author: "Chris C"
 date: 2023-07-26
 categories: 
   - "code-examples"
@@ -15,7 +16,7 @@ I, Chris, try to add a system test for the todo bug fix in [episode 5](https://y
 
 On the plus side at the beginning of the video I do refactor the fix and the unit test.
 
-https://youtu.be/RnVacVOmEwg
+{{< youtube "RnVacVOmEwg" >}}
 
 Read about the bug being fixed [here](https://github.com/standardrb/standard/issues/565).
 

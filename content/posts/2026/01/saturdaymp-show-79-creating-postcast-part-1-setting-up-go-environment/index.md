@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 79: Creating PostCast (Part 1 – Setting up Go Environment)"
+author: "Chris C"
 date: 2026-01-07
 categories: 
   - "code-examples"
@@ -12,7 +13,7 @@ tags:
   - "saturdaympshow"
 ---
 
-https://youtu.be/lMT\_l2QjNFc
+{{< youtube "lMT_l2QjNFc" >}}
 
 Happy New Year everyone! In this video I start on the PostCast\* app, and this video turned out to be an hour of getting Go and Fyne set up. I've never used Go before, so it was a learning curve but not too bad.
 

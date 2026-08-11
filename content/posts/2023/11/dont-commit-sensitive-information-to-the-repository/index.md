@@ -1,5 +1,6 @@
 ---
 title: "Don't Commit Sensitive Information to the Repository"
+author: "Chris C"
 date: 2023-11-06
 categories: 
   - "security"
@@ -93,4 +94,4 @@ I don’t want to act like there’s tomorrow
 I don’t want to wait to do this one more time  
 One more time, one more, one more time, one more time_
 
-https://www.youtube.com/watch?v=fSKQRDq3RkM
+{{< youtube "fSKQRDq3RkM" >}}

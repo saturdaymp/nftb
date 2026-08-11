@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 51: Cyber Insecurity in the Wild"
+author: "Chris C"
 date: 2024-10-02
 categories: 
   - "saturday-mp-show"
@@ -12,7 +13,7 @@ coverImage: "SaturdayMP-Show-0051-Thumbnail.png"
 
 A presentation about security issues I've personally witnessed. The IRL presentation is Oct 3rd, 2024 for the [Dev Edmonton](https://devedmonton.com/) JavaScript, Ruby, and Python [Meetup](https://exchangejs.com/) in Edmonton.
 
-https://youtu.be/ciMa2m6iKbY
+{{< youtube "ciMa2m6iKbY" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

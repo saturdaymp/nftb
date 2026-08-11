@@ -1,5 +1,6 @@
 ---
 title: "Notes: Upgrade NUnit.Xamarin to NUnit 3.8.1"
+author: "Chris C"
 date: 2017-09-21
 categories: 
   - "code-examples"
@@ -13,7 +14,12 @@ tags:
 
 The notes I took when trying to upgrade the [NUnit Xamarin](https://github.com/nunit/nunit.xamarin) project to NUnit 3.8.1.  The reason I did this was to fix issue [#87](https://github.com/nunit/nunit.xamarin/issues/87).  When I try to us NUnit Xamarin on another project it fails with the following error:
 
-\[text\] D/Mono ( 2233): Assembly Loader probing location: 'System.Runtime.Loader'. F/monodroid-assembly( 2233): Could not load assembly 'System.Runtime.Loader' during startup registration. F/monodroid-assembly( 2233): This might be due to an invalid debug installation. \[/text\]
+```text
+ 
+D/Mono ( 2233): Assembly Loader probing location: 'System.Runtime.Loader'. 
+F/monodroid-assembly( 2233): Could not load assembly 'System.Runtime.Loader' during startup registration. 
+F/monodroid-assembly( 2233): This might be due to an invalid debug installation.
+```
 
 Remember these are just notes and lack the polish \[what polish? --Ed\] of my other [technical articles](https://nftb.saturdaymp.com/category/software-development/today-i-learned/).
 
@@ -55,7 +61,12 @@ It appears that the Droid project file was updated to Android 7.1 but the json f
 
 Lets try switching it to 6.0 and see what happens.  It sill no work but I have seen this error message before.  It's the initial bug I experienced in another project.
 
-\[text\] D/Mono ( 2233): Assembly Loader probing location: 'System.Runtime.Loader'. F/monodroid-assembly( 2233): Could not load assembly 'System.Runtime.Loader' during startup registration. F/monodroid-assembly( 2233): This might be due to an invalid debug installation. \[/text\]
+```text
+ 
+D/Mono ( 2233): Assembly Loader probing location: 'System.Runtime.Loader'.
+F/monodroid-assembly( 2233): Could not load assembly 'System.Runtime.Loader' during startup registration.
+F/monodroid-assembly( 2233): This might be due to an invalid debug installation.
+```
 
 Oh wait, there is a 3.8.1 branch in the repo that has already updated to Android 7.1.  At least there was an attempt but it looked like it [failed](https://github.com/nunit/nunit.xamarin/pull/101).  Do I stay with master or switch to the branch?
 
@@ -63,11 +74,28 @@ Oh wait, there is a 3.8.1 branch in the repo that has already updated to Android
 
 Lets stay on the master branch and work out a fix.  I'll then ask if it should be merged to master or the branch.  First things first lets updated to Android 7.1 and see what happens.  First in the project properties switch back to Use the Lastest Platform setting and then updated the json file.  I currently looks like:
 
-\[text\] { "dependencies": { "NUnit": "3.6.1", "Xamarin.Forms": "1.5.0.6447" }, "frameworks": { "monoandroid60": {} }, "runtimes": { "win": {} } } \[/text\]
+```text
+ 
+{
+ "dependencies": {
+ "NUnit": "3.6.1",
+ "Xamarin.Forms": "1.5.0.6447"
+ },
+ "frameworks": {
+ "monoandroid60": {}
+ },
+ "runtimes": {
+ "win": {}
+ }
+}
+```
 
 It links to an old Xamarin.Forms but lets leave that for now.  Hopefully upgrading to Android 7.1 will work with old version of Xamarin.  Lets upgrade the framework then run it.
 
-\[text\] "frameworks": { "monoandroid71": {} }, \[/text\]
+```text
+ "frameworks": { 
+   "monoandroid71": {} },
+```
 
 Well, got the same "Could not load assembly 'System.Runtime.Loader'" error.
 

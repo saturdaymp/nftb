@@ -1,5 +1,6 @@
 ---
 title: "Riding the Dinosaur: The Joys of Old Technology"
+author: "Ada CC"
 date: 2016-11-29
 categories: 
   - "fun"

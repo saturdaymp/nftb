@@ -1,5 +1,6 @@
 ---
 title: "Moving Pains"
+author: "Chris C"
 date: 2011-09-29
 categories: 
   - "support"

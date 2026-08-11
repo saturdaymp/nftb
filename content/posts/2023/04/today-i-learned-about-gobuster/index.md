@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned about Gobuster"
+author: "Chris C"
 date: 2023-04-12
 categories: 
   - "security"
@@ -38,4 +39,4 @@ So, what?
 So, what?  
 So, what?_
 
-https://www.youtube.com/watch?v=cqqqV50zaAc
+{{< youtube "cqqqV50zaAc" >}}

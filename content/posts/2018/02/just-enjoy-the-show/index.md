@@ -1,5 +1,6 @@
 ---
 title: "Just Enjoy the Show"
+author: "Chris C"
 date: 2018-02-28
 categories: 
   - "fun"
@@ -22,7 +23,7 @@ Imagine changing the conversation to focus on all the good things that happened 
 
 My inspiration for this post was the last [Burnie Vlog](http://roosterteeth.com/show/burnie-vlog) at [Rooster Teeth](http://roosterteeth.com/).  It is a, heavily edited, example of his day.  It does a great job of showing how a normal day is full of awesomeness.  Awesomeness that we often take for granted.  At least that is what I got out of it.
 
-https://www.youtube.com/watch?v=pO2-Dok4Lik
+{{< youtube "pO2-Dok4Lik" >}}
 
 The Vlog caused me reflect on my last Friday.  A day that contained many awesome moments that I didn't fully appreciate at the time:
 
@@ -54,4 +55,4 @@ _I'm just a little bit caught in the middle_ _Life is a maze and love is a riddl
 
 _I want my money back_ _I want my money back_ _I want my money back_ _Just enjoy the show_
 
-https://www.youtube.com/watch?v=p-rhrGB7hqY
+{{< youtube "p-rhrGB7hqY" >}}

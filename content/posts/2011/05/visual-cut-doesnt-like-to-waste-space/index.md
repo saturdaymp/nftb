@@ -1,5 +1,6 @@
 ---
 title: "Visual Cut Doesn't Like to Waste Space"
+author: "Chris C"
 date: 2011-05-18
 categories: 
   - "code-examples"

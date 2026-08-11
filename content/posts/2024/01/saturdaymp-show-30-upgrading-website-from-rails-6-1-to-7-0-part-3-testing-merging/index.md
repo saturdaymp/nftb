@@ -1,5 +1,6 @@
 ---
-title: "SaturdayMP Show #30: Upgrading Website from Rails 6.1 to 7.0 Part 3 (Testing &amp; Merging)"
+title: "SaturdayMP Show #30: Upgrading Website from Rails 6.1 to 7.0 Part 3 (Testing & Merging)"
+author: "Chris C"
 date: 2024-01-31
 categories: 
   - "saturday-mp-show"
@@ -16,7 +17,7 @@ In this episode I do some more testing, fix issues found during the CI, and merg
 
 Should have been a shorter video but I created a CI issue by changing they system tests from using "headless\_chrome" to just "chrome". If you know the reason for this issue let me know in the video comments or [email](ask@saturdaymp.com) me.
 
-https://youtu.be/ZkQfMQ4DimU
+{{< youtube "ZkQfMQ4DimU" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

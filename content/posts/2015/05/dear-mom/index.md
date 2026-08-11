@@ -1,5 +1,6 @@
 ---
 title: "Dear Mom..."
+author: "Ada CC"
 date: 2015-05-07
 ---
 

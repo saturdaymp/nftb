@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Secure the Delayed Job Page with Spree Users"
+author: "Chris C"
 date: 2020-09-04
 categories: 
   - "today-i-learned"
@@ -143,4 +144,4 @@ As I'm walkin', out the door
 Take this job and shove it  
 I ain't workin' here no more_
 
-https://www.youtube.com/watch?v=gj2iGAifSNI
+{{< youtube "gj2iGAifSNI" >}}

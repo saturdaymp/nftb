@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #29: Upgrading Website from Rails 6.1 to 7.0 Part 2: Upgrading Rails"
+author: "Chris C"
 date: 2024-01-24
 categories: 
   - "code-examples"
@@ -12,7 +13,7 @@ tags:
 
 In this episode I do the actual upgrade from Rails [6.1 to 7.0](https://guides.rubyonrails.org/upgrading_ruby_on_rails.html) for the [SaturdayMP](https://saturdaymp.com/) site. The upgrade actually goes pretty smooth aside from an issue setting up the system tests. Does not include removing [Webpacker](https://github.com/rails/webpacker) which I will be in a future video.
 
-https://youtu.be/bPNpEZIGeYE
+{{< youtube "bPNpEZIGeYE" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/).
 

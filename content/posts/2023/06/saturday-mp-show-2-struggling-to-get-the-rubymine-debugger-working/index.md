@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show 2: Struggling to get the RubyMine Debugger Working"
+author: "Chris C"
 date: 2023-06-24
 categories: 
   - "code-examples"
@@ -16,4 +17,4 @@ Chris fights to get the debugger working in [RubyMine](https://www.jetbrains.com
 
 If you have any questions you would like answered in a future show or have constructive feedback please DM me or send an email to [ask@saturdaymp.com](mailto:ask@saturdaymp.com).
 
-https://youtu.be/WiQFsJ0La9M
+{{< youtube "WiQFsJ0La9M" >}}

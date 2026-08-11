@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #11: Refactoring System Tests for the Standard Ruby Linter Todo Bug"
+author: "Chris C"
 date: 2023-08-21
 categories: 
   - "code-examples"
@@ -13,7 +14,7 @@ tags:
   - "standard-ruby"
 ---
 
-https://youtu.be/ObcBwXaFux0
+{{< youtube "ObcBwXaFux0" >}}
 
 The system test is finally working!! I go over, again, why it's important to make sure your tests fail. Now that the test is working I start refactoring it to remove duplicate code.
 

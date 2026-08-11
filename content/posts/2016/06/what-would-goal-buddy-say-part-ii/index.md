@@ -1,5 +1,6 @@
 ---
 title: "What Would Goal Buddy Say - Part II"
+author: "Ada CC"
 date: 2016-06-17
 categories: 
   - "fun"

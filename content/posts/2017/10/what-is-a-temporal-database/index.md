@@ -1,5 +1,6 @@
 ---
 title: "What is a Temporal Database?"
+author: "Chris C"
 date: 2017-10-27
 categories: 
   - "software-development"

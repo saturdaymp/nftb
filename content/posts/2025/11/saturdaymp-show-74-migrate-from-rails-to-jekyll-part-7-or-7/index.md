@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 74: Migrate From Rails to Jekyll (Part 7 or 7)"
+author: "Chris C"
 date: 2025-11-19
 categories: 
   - "saturday-mp-show"
@@ -12,7 +13,7 @@ tags:
 
 The final episode in porting the SaturdayMP website from Rails to Jekyll where I update the DNS entries to point to the GitHub Pages site.
 
-https://youtu.be/wX9jUd\_KVBE
+{{< youtube "wX9jUd_KVBE" >}}
 
 Playlist:  
 [https://www.youtube.com/playlist?list=PLYPcrKbLqwutOPHv6zimONxErY7ke9tWn](https://www.youtube.com/playlist?list=PLYPcrKbLqwutOPHv6zimONxErY7ke9tWn)

@@ -1,5 +1,6 @@
 ---
 title: "Do you Really Need Custom Software?"
+author: "Chris C"
 date: 2023-10-30
 categories: 
   - "business-side"

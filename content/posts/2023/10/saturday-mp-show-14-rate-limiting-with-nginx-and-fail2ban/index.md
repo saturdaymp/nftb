@@ -1,9 +1,10 @@
 ---
 title: "Saturday MP Show #14: Rate Limiting with NGINX and Fail2Ban"
+author: "Chris C"
 date: 2023-10-11
 ---
 
-https://youtu.be/gR4w9trH9pA
+{{< youtube "gR4w9trH9pA" >}}
 
 A rate limiting demonstration using [NGINX](https://www.nginx.com/) and [Fail2Ban](https://github.com/fail2ban/fail2ban) based on a presentation that I gave at [BSides Edmonton](https://www.bsidesedmonton.ca/) in 2022. Follow along with the GitHub repo [here](https://github.com/saturdaymp-examples/rate-limiting-with-nginx-fail2ban).
 

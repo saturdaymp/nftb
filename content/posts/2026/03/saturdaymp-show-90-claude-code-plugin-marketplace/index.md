@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #90: Claude Code Plugin Marketplace"
+author: "Chris C"
 date: 2026-03-25
 categories: 
   - "code-examples"
@@ -16,7 +17,7 @@ Join me as I finish creating a Claude Plugin Marketplace and my first plugin tha
 
 P.S. - The "Marketplace" logo was created using Claude. I usually use ChatGPT or Gemini as they create better images, in my opinion, but felt it appropriate to use Claude for this one.
 
-https://youtu.be/HehHEx3xKyA
+{{< youtube "HehHEx3xKyA" >}}
 
 SaturdayMP Claude Marketplace:  
 [https://github.com/saturdaymp/claude-plugins](<https://github.com/saturdaymp/claude-plugins >)

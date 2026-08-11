@@ -1,5 +1,6 @@
 ---
 title: "When the going gets tough, the tough have a training montage"
+author: "Ada CC"
 date: 2016-11-08
 categories: 
   - "fun"

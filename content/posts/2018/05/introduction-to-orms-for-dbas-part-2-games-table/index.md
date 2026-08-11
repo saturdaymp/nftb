@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 2 – Games Table"
+author: "Chris C"
 date: 2018-05-28
 categories: 
   - "introduction-to-orms-for-dbas"
@@ -26,25 +27,41 @@ _Your migration IDs will be different but you should have a player table._
 
 We will create the Games table the same way we created the Players table in part 1.  First create the Game model and add the Id and Name fields.  Since this is a simple database we will only track the name of the game.  No need to track the publisher, type, etc.
 
-\[csharp\] using System.ComponentModel.DataAnnotations; namespace SaturdayMP.GameTracker.Models { public class Game { public int Id { get; set; }
+```csharp
+using System.ComponentModel.DataAnnotations;
+namespace SaturdayMP.GameTracker.Models
+{
+  public class Game
+  {
+    public int Id { get; set; }
 
-\[MaxLength(50)\] public string Name { get; set; } } } \[/csharp\]
+    [MaxLength(50)]
+    public string Name { get; set; }
+  }
+}
+```
 
 [![Game Model](images/Game-Model.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/Game-Model.png)
 
 When setting up the Player table we intentionally forgot to set the max length of the field.  This time we won't forget and set it to 50 again.  If you get an error that MaxLength does not exist then make sure you have the following at the top your file:
 
-\[csharp\] using System.ComponentModel.DataAnnotations; \[/csharp\]
+```csharp
+using System.ComponentModel.DataAnnotations;
+```
 
 Now that the model exists we need to tell the database context about it.  Open up the GameTrackerContext and add our new Game model.
 
-\[csharp\] public DbSet&lt;Game&gt; Games { get; set; } \[/csharp\]
+```csharp
+public DbSet<Game> Games { get; set; }
+```
 
 [![Game Added To Database Context](images/Game-Added-To-Database-Context.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/Game-Added-To-Database-Context.png)
 
 Compile the application just to make sure there are no typos.  Now switch to the terminal and create the migration like we did in part 1.
 
-\[text\] dotnet ef migrations add CreateGamesTable \[/text\]
+```text
+dotnet ef migrations add CreateGamesTable
+```
 
 [![Create Game Table Migration](images/CreateGameTableMigration.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/CreateGameTableMigration.png)
 
@@ -54,7 +71,9 @@ Take a quick look at the migration to make sure it was created and is what we ex
 
 Back in lets apply the migration on the database.
 
-\[text\] dotnet ef database update \[/text\]
+```text
+dotnet ef database update
+```
 
 [![Run Game Table Migration](images/RunGameTableMigration.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/05/RunGameTableMigration.png)
 

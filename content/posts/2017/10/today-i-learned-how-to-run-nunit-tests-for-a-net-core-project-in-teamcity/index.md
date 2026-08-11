@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Run NUnit Tests for a .NET Core Project in TeamCity"
+author: "Chris C"
 date: 2017-10-12
 categories: 
   - "code-examples"
@@ -77,4 +78,4 @@ As I said at the beginning I'm sure the NUnit Runner will be updated to handle .
 
 P.S. - R.I.P. Tom Petty.
 
-https://www.youtube.com/watch?v=Y1D3a5eDJIs
+{{< youtube "Y1D3a5eDJIs" >}}

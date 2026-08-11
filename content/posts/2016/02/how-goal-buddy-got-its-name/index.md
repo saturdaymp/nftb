@@ -1,5 +1,6 @@
 ---
 title: "How Goal Buddy Got Its Name"
+author: "Ada CC"
 date: 2016-02-08
 categories: 
   - "fun"

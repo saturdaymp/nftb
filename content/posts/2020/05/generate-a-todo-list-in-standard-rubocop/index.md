@@ -1,5 +1,6 @@
 ---
 title: "Generate a Todo List in Standard (Rubocop)"
+author: "Chris C"
 date: 2020-05-11
 categories: 
   - "code-examples"
@@ -51,4 +52,4 @@ Too much oil money, not enough booze
 East of the rockies and west of the rest  
 Do my best to do my damnedest and that's just about all I guess_
 
-https://www.youtube.com/watch?v=3k5AlNdJnE4
+{{< youtube "3k5AlNdJnE4" >}}

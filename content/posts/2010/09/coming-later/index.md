@@ -1,5 +1,6 @@
 ---
 title: "Coming... Later"
+author: "Chris C"
 date: 2010-09-14
 categories: 
   - "fun"

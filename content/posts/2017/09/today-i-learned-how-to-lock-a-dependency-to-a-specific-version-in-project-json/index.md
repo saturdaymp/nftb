@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Lock a Dependency to a Specific Version in Project JSON"
+author: "Chris C"
 date: 2017-09-26
 ---
 
@@ -9,29 +10,51 @@ First lets review how NuGet [resolves dependencies](https://docs.microsoft.com/e
 
 For example the NuGet feed for NUnit has the following versions in it's feed:
 
-\[text\] 3.6.1 3.7.0 3.7.1 3.8.0 3.8.1 \[/text\]
+```text
+3.6.1
+3.7.0
+3.7.1
+3.8.0
+3.8.1
+```
 
 If you list version 3.7.1 in project.json file, as shown below, then NuGet uses version 3.7.1.  Duh.
 
-\[xml\] "dependencies": { "NUnit": "3.7.1" } \[/xml\]
+```xml
+"dependencies": {
+  "NUnit": "3.7.1"
+}
+```
 
 Now say you list version 3.7.99 as shown below.  Now 3.7.99 does not exist so NuGet find the next highest version, which is 3.8.0, and uses that version.
 
-\[xml\] "dependencies": { "NUnit": "3.7.99" } \[/xml\]
+```xml
+"dependencies": {
+ "NUnit": "3.7.99"
+}
+```
 
 When you compile you will see a message similar to the below.
 
-\[text\] Dependency specified was NUnit (&amp;amp;gt;= 3.7.99) but ended up with NUnit 3.8.0. \[/text\]
+```text
+Dependency specified was NUnit (>= 3.7.99) but ended up with NUnit 3.8.0.
+```
 
 [![NuGet Dependency Resolution Message](images/NuGet-Dependency-Resolution-Message.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/09/NuGet-Dependency-Resolution-Message.png)
 
 To tell NuGet to only use the version you specified you need to put square brackets around the version number.  This changes the logic from ">= Version#" to "= Version#".
 
-\[xml\] "dependencies": { "NUnit": "\[3.7.99\]" } \[/xml\]
+```xml
+"dependencies": {
+ "NUnit": "[3.7.99]" 
+}
+```
 
 Now when you try to build you will get an error because version 3.7.99 does not exist and NuGet will not try to find a newer version.
 
-\[text\] NuGet Package restore failed for project Runner\\nunit.runner.Droid for 'NUnit (= 3.7.99)'. \[/text\]
+```text
+NuGet Package restore failed for project Runner\nunit.runner.Droid for 'NUnit (= 3.7.99)'.
+```
 
 [![NuGet Dependency Error Message](images/NuGet-Dependency-Error-Message.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/09/NuGet-Dependency-Error-Message.png)
 
@@ -39,21 +62,39 @@ That's great you say, but why would you link to a version that does not exist? �
 
 Let's try something that might actually happen.  Your project references a project but another package links to a different version.  Say you have the following in your JSON file:
 
-\[xml\] "dependencies": { "NUnit": "\[3.6.1\]", "NUnitLite": "3.8.1" } \[/xml\]
+```xml
+"dependencies": {
+  "NUnit": "[3.6.1]",
+  "NUnitLite": "3.8.1" 
+}
+```
 
 NUnitLite 3.8.1 references to NUnit 3.8.1.  If you compile you get the following warning:
 
-\[text\] Detected package downgrade: NUnit from 3.8.1 to 3.6.1&amp;amp;nbsp;&amp;amp;nbsp; ClassLibrary1 (&amp;amp;gt;= 1.0.0) -&amp;amp;gt; NUnitLite (&amp;amp;gt;= 3.8.1) -&amp;amp;gt; NUnit (= 3.8.1)&amp;amp;nbsp;&amp;amp;nbsp; ClassLibrary1 (&amp;amp;gt;= 1.0.0) -&amp;amp;gt; NUnit (= 3.6.1) \[/text\]
+```text
+Detected package downgrade: NUnit from 3.8.1 to 3.6.1  
+ClassLibrary1 (>= 1.0.0) -> NUnitLite (>= 3.8.1) -> NUnit (= 3.8.1)  
+ClassLibrary1 (>= 1.0.0) -> NUnit (= 3.6.1)
+```
 
 [![NuGet Dependency Warning Message](images/NuGet-Dependency-Warning-Message.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/09/NuGet-Dependency-Warning-Message.png)
 
 That's good.  It's what we wanted.  Now what happens if we remove the square brackets from the NUnit dependency so our JSON file looks like:
 
-\[xml\] "dependencies": { "NUnit": "3.6.1", "NUnitLite": "3.8.1" } \[/xml\]
+```xml
+"dependencies": {
+ "NUnit": "3.6.1",
+ "NUnitLite": "3.8.1" 
+}
+```
 
 Will it use NUnit 3.6.1 that we reference in the project or NUnit 3.8.1 referenced by NUnitLite?
 
-\[text\] Detected package downgrade: NUnit from 3.8.1 to 3.6.1&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; ClassLibrary1 (&amp;amp;amp;gt;= 1.0.0) -&amp;amp;amp;gt; NUnitLite (&amp;amp;amp;gt;= 3.8.1) -&amp;amp;amp;gt; NUnit (= 3.8.1)&amp;amp;amp;nbsp;&amp;amp;amp;nbsp; ClassLibrary1 (&amp;amp;amp;gt;= 1.0.0) -&amp;amp;amp;gt; NUnit (= 3.6.1) \[/text\]
+```text
+Detected package downgrade: NUnit from 3.8.1 to 3.6.1  
+ClassLibrary1 (>= 1.0.0) -> NUnitLite (>= 3.8.1) -> NUnit (= 3.8.1)  
+ClassLibrary1 (>= 1.0.0) -> NUnit (= 3.6.1)
+```
 
 [![NuGet Dependency Warning Message](images/NuGet-Dependency-Warning-Message.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/09/NuGet-Dependency-Warning-Message.png)
 
@@ -65,4 +106,4 @@ P.S. - I'm glad [Barenaked Ladies](http://www.barenakedladies.com/) (it's a Can
 > 
 > I couldn't tell you That you were right So instead I looked in the mirror Watched TV, laid awake all night
 
-https://www.youtube.com/watch?v=\_i0yZTeTZ4Q
+{{< youtube "_i0yZTeTZ4Q" >}}

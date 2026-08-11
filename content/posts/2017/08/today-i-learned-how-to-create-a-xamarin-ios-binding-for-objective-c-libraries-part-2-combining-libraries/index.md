@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create a Xamarin iOS Binding for Objective-C Libraries - Part 2 Combining Libraries"
+author: "Chris C"
 date: 2017-08-09
 categories: 
   - "code-examples"
@@ -31,23 +32,37 @@ It actually doesn't matter if you copy the iphone or simulator folder.  Inside 
 
 Our goal is to replace the BEMCheckbox compiled library that only supports ARM with one that supports all the architectures.  This is where we use lipo.  Open up a terminal window on your Mac and navigate to the Products folder.  Then enter the following command:
 
-\[text\] lipo -create -output BEMCheckBox.framework/BEMCheckBox Release-iphoneos/BEMCheckBox.framework/BEMCheckBox Release-iphonesimulator/BEMCheckBox.framework/BEMCheckbox \[/text\]
+```text
+lipo -create -output BEMCheckBox.framework/BEMCheckBox Release-iphoneos/BEMCheckBox.framework/BEMCheckBox Release-iphonesimulator/BEMCheckBox.framework/BEMCheckbox
+```
 
 This will combine the iphone and simulator libraries into one library and replace the one we in the products folder with the combined one.  To make sure everything worked as expected run the file command as shown below.
 
-\[text\] file BEMCheckBox.framework/BEMCheckBox \[/text\]
+```text
+file BEMCheckBox.framework/BEMCheckBox
+```
 
 You should get the following output or something similar:
 
-\[text\] BEMCheckBox.framework/BEMCheckBox: Mach-0 universal binary with 4 architectures: \[i386: Mach-0 dynamically lined shared library i386\]&amp;nbsp;\[x86\_x64: Mach-0 dynamically lined shared library x86\_x64\]&amp;nbsp;\[arm\_v7: Mach-0 dynamically lined shared library arm\_v7\]&amp;nbsp;\[arm64: Mach-0 dynamically lined shared library arm64\] BEMCheckBox.framework/BEMCheckBox (for architecture i386): Mach-0 dynamically linked shared library i386 BEMCheckBox.framework/BEMCheckBox (for architecture x86\_x64): Mach-0 dynamically linked shared library x86\_x64 BEMCheckBox.framework/BEMCheckBox (for architecture arm\_v7): Mach-0 dynamically linked shared library arm\_v7 BEMCheckBox.framework/BEMCheckBox (for architecture arm64): Mach-0 dynamically linked shared library arm64 \[/text\]
+```text
+BEMCheckBox.framework/BEMCheckBox: Mach-0 universal binary with 4 architectures: [i386: Mach-0 dynamically lined shared library i386] [x86_x64: Mach-0 dynamically lined shared library x86_x64] [arm_v7: Mach-0 dynamically lined shared library arm_v7] [arm64: Mach-0 dynamically lined shared library arm64]
+BEMCheckBox.framework/BEMCheckBox (for architecture i386): Mach-0 dynamically linked shared library i386
+BEMCheckBox.framework/BEMCheckBox (for architecture x86_x64): Mach-0 dynamically linked shared library x86_x64
+BEMCheckBox.framework/BEMCheckBox (for architecture arm_v7): Mach-0 dynamically linked shared library arm_v7
+BEMCheckBox.framework/BEMCheckBox (for architecture arm64): Mach-0 dynamically linked shared library arm64
+```
 
 You can also use the lipo command tool to check the library.
 
-\[text\] lipo -info BEMCheckBox.framework/BEMCheckBox \[/text\]
+```text
+lipo -info BEMCheckBox.framework/BEMCheckBox
+```
 
 You should see something like:
 
-\[text\] Architectures in the fat file: BEMCheckBox.framework/BEMCheckBox are: i386, x86\_x64, arm7, arm64 \[/text\]
+```text
+Architectures in the fat file: BEMCheckBox.framework/BEMCheckBox are: i386, x86_x64, arm7, arm64
+```
 
 A screen show of all the commands looks like:
 
@@ -59,4 +74,4 @@ We now have one library that will work with Xamarin and both iOS simulators and 
 
 P.S. - Not a song this time but a cookie monster skit that makes me laugh.
 
-https://www.youtube.com/watch?v=k6OWSf8\_5J4
+{{< youtube "k6OWSf8_5J4" >}}

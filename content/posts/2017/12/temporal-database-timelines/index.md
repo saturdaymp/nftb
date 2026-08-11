@@ -1,5 +1,6 @@
 ---
 title: "Temporal Database Timelines"
+author: "Chris C"
 date: 2017-12-07
 categories: 
   - "software-development"

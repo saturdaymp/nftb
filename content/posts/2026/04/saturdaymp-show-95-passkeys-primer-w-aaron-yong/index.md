@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 95: Passkeys Primer w/ Aaron Yong"
+author: "Chris C"
 date: 2026-04-29
 categories: 
   - "saturday-mp-show"
@@ -14,7 +15,7 @@ In this episode Aaron Yong gives an overview of Passkeys and why you should use 
 
 Aaron runs Saikyo Softworks, a digital consultancy specializing in practical solutions for an ever-changing world. In his spare time he also runs the local Edmonton (YEG) Ruby, Python, and JavaScript meetup.
 
-https://youtu.be/-tdfTH4vMug
+{{< youtube "-tdfTH4vMug" >}}
 
 Passkeys IO:  
 [https://www.passkeys.io/](https://www.passkeys.io/)

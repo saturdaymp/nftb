@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create a Xamarin iOS Binding for Objective-C Libraries - Part 3 Using Sharpie to Create Binding Interface"
+author: "Chris C"
 date: 2017-08-14
 categories: 
   - "code-examples"
@@ -25,25 +26,39 @@ Remember this screen shot from Part 2 where we merged two libraries into one?
 
 This is the library we created that supports multiple architectures (x86, x64, Arm7, Arm64).  We need to run Sharpie on this the header files in this single framework.  Open up the terminal and run this command to see what sdk versions are installed.
 
-\[text\] sharpie xcode -sdks \[/text\]
+```text
+sharpie xcode -sdks
+```
 
 This will show something like:
 
-\[text\] sdk: appletvos10.2 arch: arm64 sdk: iphoneos10.3 arch: arm64 arm7 sdk: macosx10.12 arch: x86\_64 i386 sdk: watchos3.2 arch: arm7k \[/text\]
+```text
+sdk: appletvos10.2    arch: arm64
+sdk: iphoneos10.3     arch: arm64  arm7
+sdk: macosx10.12      arch: x86_64 i386
+sdk: watchos3.2       arch: arm7k
+```
 
 Once you know the iphone sdk version you can run the actual sharpie command.  Run this command against the header files in the BEMCheckBox framework folder.
 
-\[text\] sharpie bind -sdk iphoneos10.3 BEMCheckBox.framework/Headers/BEMCheckBox.h \[/text\]
+```text
+sharpie bind -sdk iphoneos10.3 BEMCheckBox.framework/Headers/BEMCheckBox.h
+```
 
 The output should look something like:
 
-\[text\] Parsing 1 header files...
+```text
+Parsing 1 header files...
 
-Binding... \[write\] ApiDefinitions.cs \[write\] StructsAndEnums.ca
+Binding...
+  [write] ApiDefinitions.cs
+  [write] StructsAndEnums.ca
 
-Submitting usage data to Xamarin... Submitted - thank you for helping to improve Objective Sharpie!
+Submitting usage data to Xamarin...
+  Submitted - thank you for helping to improve Objective Sharpie!
 
-Done. \[/text\]
+Done.
+```
 
 A screen shot of the commands is below.
 
@@ -55,25 +70,56 @@ Go ahead and look at the files now.  In the APIDefinitions file you will C# int
 
 API Definitions:
 
-\[csharp\] // @interface BEMCheckBox : UIControl <CAAnimationDelegate> \[BaseType(typeof(UIControl), Delegates = new string\[\] { "WeakDelegate" }, Events = new Type\[\] { typeof(BEMCheckBoxDelegate) })\] interface BEMCheckBox { \[Export("initWithFrame:")\] IntPtr Constructor(CGRect frame);
+```csharp
+// @interface BEMCheckBox : UIControl <CAAnimationDelegate>
+[BaseType(typeof(UIControl), Delegates = new string[] { "WeakDelegate" }, Events = new Type[] { typeof(BEMCheckBoxDelegate) })]
+interface BEMCheckBox
+{
+  [Export("initWithFrame:")]
+  IntPtr Constructor(CGRect frame);
 
-\[Wrap("WeakDelegate")\] \[NullAllowed\] BEMCheckBoxDelegate Delegate { get; set; }
+  [Wrap("WeakDelegate")]
+  [NullAllowed]
+  BEMCheckBoxDelegate Delegate { get; set; }
 
-// @property (nonatomic, weak) id<BEMCheckBoxDelegate> \_Nullable delegate \_\_attribute\_\_((iboutlet)); \[NullAllowed, Export("delegate", ArgumentSemantic.Assign)\] NSObject WeakDelegate { get; set; }
+  // @property (nonatomic, weak) id<BEMCheckBoxDelegate> _Nullable delegate __attribute__((iboutlet));
+  [NullAllowed, Export("delegate", ArgumentSemantic.Assign)]
+  NSObject WeakDelegate { get; set; }
 
-// @property (nonatomic) BOOL on; \[Export("on")\] bool On { get; set; }
+  // @property (nonatomic) BOOL on;
+  [Export("on")]
+  bool On { get; set; }
 
-// @property (nonatomic) CGFloat lineWidth; \[Export("lineWidth")\] nfloat LineWidth { get; set; }
+  // @property (nonatomic) CGFloat lineWidth;
+  [Export("lineWidth")]
+  nfloat LineWidth { get; set; }
 
-// Other methods...
+  // Other methods...
 
-} \[/csharp\]
+}
+```
 
 Structs:
 
-\[csharp\] \[Native\] public enum BEMBoxType : long { Circle, Square }
+```csharp
+[Native]
+public enum BEMBoxType : long
+{
+  Circle,
+  Square
+}
 
-\[Native\] public enum BEMAnimationType : long { Stroke, Fill, Bounce, Flat, OneStroke, Fade } \[/csharp\]
+[Native]
+public enum BEMAnimationType : long
+{
+  Stroke,
+  Fill,
+  Bounce,
+  Flat,
+  OneStroke,
+  Fade
+}
+```
 
 This is all well and good but an interface can't make calls to the underlying objective-c interface.  I'll discuss how Visual Studio auto-magically creates the wiring between the C# interface and the BEMCheckBox library in Part 4.  For now go ahead and get another cookie.  You deserve it.
 
@@ -83,6 +129,6 @@ Don't forget you can find a working example of BEMCheckBox in Xamarin iOS [here]
 
 P.S. - A classic Cookie Monster song about up and down.  Can you figure out what happened to Cookie Monster's cookie before the end of the song?
 
-https://www.youtube.com/watch?v=AGsKPE3dk4k
+{{< youtube "AGsKPE3dk4k" >}}
 
 Save

@@ -1,5 +1,6 @@
 ---
 title: "Closed for Family Vacation"
+author: "Chris C"
 date: 2017-11-07
 categories: 
   - "business-side"

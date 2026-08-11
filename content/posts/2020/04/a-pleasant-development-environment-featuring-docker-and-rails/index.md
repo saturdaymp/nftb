@@ -1,5 +1,6 @@
 ---
 title: "A Pleasant Development Environment featuring Docker and Rails"
+author: "Chris C"
 date: 2020-04-03
 categories: 
   - "code-examples"

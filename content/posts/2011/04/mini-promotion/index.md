@@ -1,5 +1,6 @@
 ---
 title: "Mini-Promotion"
+author: "Ada CC"
 date: 2011-04-18
 categories: 
   - "business-side"

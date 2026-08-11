@@ -1,5 +1,6 @@
 ---
 title: "My Takeaway from Reading David and Goliath"
+author: "Chris C"
 date: 2020-08-07
 categories: 
   - "takeaways"

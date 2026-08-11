@@ -1,5 +1,6 @@
 ---
 title: "Two Tips When Doing a Fresh Install of Windows 8"
+author: "Chris C"
 date: 2013-06-09
 ---
 

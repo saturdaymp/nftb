@@ -1,5 +1,6 @@
 ---
 title: "A Rails 6 Template and Then Some"
+author: "Chris C"
 date: 2020-01-24
 categories: 
   - "software-development"

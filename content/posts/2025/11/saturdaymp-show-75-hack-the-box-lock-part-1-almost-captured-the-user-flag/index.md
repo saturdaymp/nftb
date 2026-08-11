@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 75: Hack the Box - Lock (Part 1, Almost Captured the User Flag)"
+author: "Chris C"
 date: 2025-11-26
 categories: 
   - "saturday-mp-show"
@@ -10,7 +11,7 @@ tags:
   - "saturdaympshow"
 ---
 
-https://youtu.be/M6CMolFPnGs
+{{< youtube "M6CMolFPnGs" >}}
 
 In this episode I attempt the Lock machine on  [⁨@HackTheBox⁩](https://studio.youtube.com/channel/UCi67lRCd5qpaHwSXNJisuRQ) . Spoiler: I almost captured the user flag but ran out of time. Got delayed by installing items on my new Kali Linux WSL and learning new about MSFvemon, setting Python virtual environments, and the Cryptodome library.
 

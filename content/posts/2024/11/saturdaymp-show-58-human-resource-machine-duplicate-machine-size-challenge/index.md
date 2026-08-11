@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 58: Human Resource Machine (Duplicate Machine Size Challenge)"
+author: "Chris C"
 date: 2024-11-27
 categories: 
   - "fun"
@@ -14,7 +15,7 @@ In this episode I solve the [Human Resource Machine](https://tomorrowcorporation
 
 That said, I didn't solve the speed challenge. Any suggestions? Ideally a suggestion that is not just the answer as I'm sure I could search for the solution.
 
-https://youtu.be/ga99fYkwVJA
+{{< youtube "ga99fYkwVJA" >}}
 
 Found this video useful? Then help others find it by liking, [subscribing](https://www.youtube.com/@saturdaymp), sharing, and [sponsoring](https://github.com/sponsors/saturdaymp/). Have question you want answered in a future video? Pair on a problem? Constructive feedback? Send an email to [ask@saturdaymp.com](mailto:ask@saturdaymp.com).
 

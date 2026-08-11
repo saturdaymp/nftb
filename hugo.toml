@@ -1,4 +1,46 @@
 baseURL = 'https://nftb.saturdaymp.workers.dev/'
-title = 'Noise From the Basement'
-theme = 'github.com/adityatelange/hugo-PaperMod'
+title = 'Noise from the Basement'
+theme = 'github.com/halogenica/beautifulhugo'
+DefaultContentLanguage = 'en'
 locale = 'en-us'
+
+[pagination]
+  pagerSize = 5
+
+# Match the old WordPress permalinks: the slug at the site root, no date.
+[permalinks.page]
+  posts = '/:contentbasename/'
+  pages = '/:contentbasename/'
+
+# Class-based syntax highlighting styled by the theme's syntax.css.
+[markup.highlight]
+  noClasses = false
+
+[Params]
+  subtitle = "Behind the scenes of Saturday Morning Productions"
+  mainSections = ['posts']
+  dateFormat = ':date_long'
+  rss = true
+  readingTime = true
+  wordCount = true
+
+[Params.author]
+  name = 'Saturday Morning Productions'
+  youtube = 'https://www.youtube.com/@saturdaymp'
+  linkedin = 'https://www.linkedin.com/company/saturdaymp'
+  github = 'https://github.com/saturdaymp'
+  mastodon = 'https://hachyderm.io/@chrisc'
+[[menu.main]]
+  name = 'Tags'
+  url = 'tags/'
+  weight = 1
+
+[[menu.main]]
+  name = 'Categories'
+  url = 'categories/'
+  weight = 2
+
+[[menu.main]]
+  name = 'Archives'
+  url = 'archives/'
+  weight = 3

@@ -1,5 +1,6 @@
 ---
 title: "Simplify, Simplify..."
+author: "Ada CC"
 date: 2017-05-30
 categories: 
   - "fun"

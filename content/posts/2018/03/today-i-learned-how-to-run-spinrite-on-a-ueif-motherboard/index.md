@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Run SpinRite on a UEIF Motherboard"
+author: "Chris C"
 date: 2018-03-15
 categories: 
   - "hardware"
@@ -71,4 +72,4 @@ P.S.S. - I just learned that this song was written by [Shel Silverstein](https:/
 
 _And I think about him, now and then,_ _Every time I try and every time I win,_ _And if I ever have a son, I think I'm gonna name him..._
 
-https://www.youtube.com/watch?v=\_Gbtm-93oqE
+{{< youtube "_Gbtm-93oqE" >}}

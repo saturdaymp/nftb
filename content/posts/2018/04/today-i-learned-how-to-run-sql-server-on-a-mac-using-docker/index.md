@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Run SQL Server on a Mac using Docker"
+author: "Chris C"
 date: 2018-04-30
 categories: 
   - "software-development"
@@ -33,13 +34,19 @@ First install Docker for MacOS which you can find [here](https://www.docker.com/
 
 Next open up a terminal and pull down the SQL Server Docker image.
 
-\[text\] $ docker pull microsoft/mssql-server-linux \[/text\]
+```text
+ 
+$ docker pull microsoft/mssql-server-linux
+```
 
 [![Pull SQL Server Docker Image](images/Pull-SQL-Server-Docker-Image.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/04/Pull-SQL-Server-Docker-Image.png)
 
 Now run the Docker image.
 
-\[text\] $ docker run -e 'ACCEPT\_EULA=Y' -e 'SA\_PASSWORD=Password1234!' -p 1433:1433 --name SQLServerForDemo -d microsoft/mssql-server-linux:latest \[/text\]
+```text
+ 
+$ docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password1234!' -p 1433:1433 --name SQLServerForDemo -d microsoft/mssql-server-linux:latest
+```
 
 [![Run SQL Server Docker Container](images/Run-SQL-Server-Docker-Container.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/04/Run-SQL-Server-Docker-Container.png)
 
@@ -65,4 +72,4 @@ P.S. - Picked this song because Docker has a whale as it's mascot and this video
 
 _And we are far from home, but we're so happy_ _Far from home, all alone, but we're so happy_
 
-https://www.youtube.com/watch?v=H7Gr6HBMDu0
+{{< youtube "H7Gr6HBMDu0" >}}

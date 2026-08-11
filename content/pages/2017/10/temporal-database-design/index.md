@@ -1,5 +1,6 @@
 ---
 title: "Temporal Database Design"
+author: "Chris C"
 date: 2017-10-26
 ---
 

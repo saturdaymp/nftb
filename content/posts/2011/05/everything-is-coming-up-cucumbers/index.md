@@ -1,5 +1,6 @@
 ---
 title: "Everything is Coming Up Cucumbers"
+author: "Ada CC"
 date: 2011-05-21
 categories: 
   - "fun"

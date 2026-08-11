@@ -1,5 +1,6 @@
 ---
 title: "Do you Still Need to Compress Pictures?"
+author: "Chris C"
 date: 2017-08-30
 categories: 
   - "business-side"

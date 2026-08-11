@@ -1,0 +1,95 @@
+{{- /* Copy of the theme's footer.html — the theme has no hook for extra
+   footer content, so the whole partial is overridden just to add the
+   Saturday Morning Productions logo above the social icons. Keep in
+   sync with the theme when updating Beautiful Hugo. */ -}}
+{{- $data := dict -}}
+{{- if ge hugo.Version "0.156.0" -}}
+  {{- $data = hugo.Data -}}
+{{- else -}}
+  {{- $data = .Site.Data -}}
+{{- end -}}
+{{ if eq .Type "page" }}
+  {{ partial "page_meta.html" . }}
+{{ end }}
+<footer>
+  <div class="container">
+    {{ if .Site.Params.disclaimerText }}
+    <div class="row">
+      <div class="disclaimer">
+        <b>Disclaimer:</b> {{ .Site.Params.disclaimerText }}
+      </div>
+    </div>
+    {{ end }}
+    <div class="row">
+      <div class="col-md-10 offset-md-1 text-center">
+        <a href="https://saturdaymp.com" title="Saturday Morning Productions">
+          <img src="{{ "images/smp-logo.svg" | relURL }}" alt="Saturday Morning Productions" style="width: 100%; max-width: 250px; margin-bottom: 1.5rem;">
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <ul class="list-inline text-center footer-links">
+          {{ range $data.beautifulhugo.social.social_icons }}
+            {{- $social := . -}}
+            {{- with index $.Site.Params.author $social.id }}
+              <li class="list-inline-item" >
+		{{- $authorValue := . -}}
+		{{- if and (eq $social.id "linkedin") (not (findRE "/" $authorValue)) -}}
+		  {{- $authorValue = printf "in/%s" $authorValue -}}
+		{{- end -}}
+		{{- $href := or (and (or (hasPrefix $authorValue "http://") (hasPrefix $authorValue "https://")) $authorValue) (printf $social.url $authorValue) -}}
+		  <a rel="{{ with $social.rel }}{{ . }} {{ end }}noopener noreferrer" href="{{ $href }}" title="{{ $social.title }}" aria-label="{{ $social.title }}">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="{{ $social.icon }} fa-stack-1x fa-inverse" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </li>
+            {{- end }}
+          {{ end }}
+          {{ if .Site.Params.rss }}
+          {{ with .Site.Home.OutputFormats.Get "RSS" }}
+          <li class="list-inline-item">
+            <a href="{{ .RelPermalink }}" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          {{ end }}
+          {{ end }}
+        </ul>
+        <p class="credits copyright text-muted">
+          {{ if .Site.Params.author.name }}
+            {{ if .Site.Params.author.website }}
+              <a href="{{ .Site.Params.author.website }}">{{ .Site.Params.author.name }}</a>
+            {{ else }}
+              {{ .Site.Params.author.name }}
+            {{ end }}
+            &nbsp;&bull;&nbsp;
+          {{ end }}
+          &copy;
+          {{ if .Site.Params.since }}
+            {{ .Site.Params.since }} - {{ .Site.Lastmod.Format "2006" }}
+          {{ else }}
+            {{ .Site.Lastmod.Format "2006" }}
+          {{ end }}
+
+          {{ if and .Site.Params.author.name (or .Site.Params.homeTitle .Site.Title) }}
+            &nbsp;&bull;&nbsp;
+          {{ end }}
+          {{ if or .Site.Params.homeTitle .Site.Title }}
+            <a href="{{ "" | relLangURL }}">{{ .Site.Params.homeTitle | default .Site.Title }}</a>
+          {{ end }}
+        </p>
+        <!-- Please don't remove this, keep my open source work credited :) -->
+        <p class="credits theme-by text-muted">
+          {{ i18n "poweredBy" (dict "Version" hugo.Version) | safeHTML }}
+          {{ if and $.GitInfo .Site.Params.commit }}&nbsp;&bull;&nbsp;[<a href="{{ .Site.Params.commit }}{{ .GitInfo.Hash }}">{{ substr .GitInfo.Hash 0 8 }}</a>]{{ end }}
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

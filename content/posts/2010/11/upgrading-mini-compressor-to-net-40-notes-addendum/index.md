@@ -1,5 +1,6 @@
 ---
 title: "Upgrading Mini-Compressor to .NET 4.0 Notes Addendum"
+author: "Chris C"
 date: 2010-11-04
 categories: 
   - "code-examples"
@@ -50,11 +51,16 @@ Finally I noticed the [Dialog table](http://msdn.microsoft.com/en-us/library/aa3
 
 To automate the process I created a batch file that called both the MoveREP.js script I copied from the Connect bug report and the HideFilesInUse.js script I created.  Both files are listed below.  The batch file looks like:
 
-\[sourcecode\] cscript "%1HideFileInUseDialog.js" "%2" cscript "%1MoveREP.js" "%2" \[/sourcecode\]
+```text
+cscript "%1HideFileInUseDialog.js" "%2"
+cscript "%1MoveREP.js" "%2"
+```
 
 Then inside my VS Deployment project I set the PostBuildEvent to:
 
-\[sourcecode\] "$(ProjectDir)PostBuildEvent.bat" "$(ProjectDir)" "$(BuiltOuputPath)" \[/sourcecode\]
+```text
+"$(ProjectDir)PostBuildEvent.bat" "$(ProjectDir)" "$(BuiltOuputPath)"
+```
 
 My smoke test installs are passing and hopefully my entire test plan passes with the new installer.  Wish me luck.
 
@@ -64,52 +70,111 @@ Appendix A: Orca
 
 Appendix B: MoveREP.js
 
-\[sourcecode language="csharp" wraplines="false"\] // MoveREP.js <msi-file> // Performs a post-build fixup of an msi to run RemoveExistingProducts after InstallInitialize
+```csharp
+// MoveREP.js <msi-file>
+// Performs a post-build fixup of an msi to run RemoveExistingProducts after InstallInitialize
 
-// Workaround for a bug in VS2010 Setup projects that will remove the old version of Mini-Comp // installed via the VS2008 MSI but not replace it with the new version.  You can read more at: // // https://connect.microsoft.com/VisualStudio/feedback/details/559575/problem-with-installing-and-removing-previous-versions-after-upgrading-my-setup-project-to-vs2010#details
+// Workaround for a bug in VS2010 Setup projects that will remove the old version of Mini-Comp
+// installed via the VS2008 MSI but not replace it with the new version.  You can read more at:
+//
+// https://connect.microsoft.com/VisualStudio/feedback/details/559575/problem-with-installing-and-removing-previous-versions-after-upgrading-my-setup-project-to-vs2010#details
 
-// Where to move the RemoveExistingProducts to.  1525 is just after the // InstallInialize action. var newSequence = 1525;
+// Where to move the RemoveExistingProducts to.  1525 is just after the
+// InstallInialize action.
+var newSequence = 1525;
 
-// Constant values from Windows Installer var msiOpenDatabaseModeTransact = 1; var msiViewModifyReplace        = 4
+// Constant values from Windows Installer
+var msiOpenDatabaseModeTransact = 1;
+var msiViewModifyReplace        = 4
 
-if (WScript.Arguments.Length != 1) { WScript.StdErr.WriteLine(WScript.ScriptName + " file"); WScript.Quit(1); }
+if (WScript.Arguments.Length != 1)
+{
+    WScript.StdErr.WriteLine(WScript.ScriptName + " file");
+    WScript.Quit(1);
+}
 
-var filespec = WScript.Arguments(0); var installer = WScript.CreateObject("WindowsInstaller.Installer"); var database = installer.OpenDatabase(filespec, msiOpenDatabaseModeTransact);
+var filespec = WScript.Arguments(0);
+var installer = WScript.CreateObject("WindowsInstaller.Installer");
+var database = installer.OpenDatabase(filespec, msiOpenDatabaseModeTransact);
 
-var sql var view var record
+var sql
+var view
+var record
 
-try { WScript.Echo("Updating the InstallExecuteSequence table...");
+try
+{
+    WScript.Echo("Updating the InstallExecuteSequence table...");
 
-sql = "SELECT \`Action\`, \`Sequence\` FROM \`InstallExecuteSequence\` WHERE \`Action\`='RemoveExistingProducts'"; view = database.OpenView(sql); view.Execute(); record = view.Fetch();
+    sql = "SELECT `Action`, `Sequence` FROM `InstallExecuteSequence` WHERE `Action`='RemoveExistingProducts'";
+    view = database.OpenView(sql);
+    view.Execute();
+    record = view.Fetch();
 
-if (record.IntegerData(2) == newSequence) throw "REP sequence doesn't match expected value - this database appears to have been already modified by this script!";
+    if (record.IntegerData(2) == newSequence)
+    throw "REP sequence doesn't match expected value - this database appears to have been already modified by this script!";
 
-if (record.IntegerData(2) != 6550) throw "REP sequence doesn't match expected value - this database was either already modified by something else after build, or was not produced by Visual Studio 2010!";
+    if (record.IntegerData(2) != 6550)
+    throw "REP sequence doesn't match expected value - this database was either already modified by something else after build, or was not produced by Visual Studio 2010!";
 
-record.IntegerData(2) = newSequence;
+    record.IntegerData(2) = newSequence;
 
-view.Modify(msiViewModifyReplace, record); view.Close();
+    view.Modify(msiViewModifyReplace, record);
+    view.Close();
 
-database.Commit(); } catch(e) { WScript.StdErr.WriteLine(e); WScript.Quit(1); } \[/sourcecode\]
+    database.Commit();
+}
+catch(e)
+{
+    WScript.StdErr.WriteLine(e);
+    WScript.Quit(1);
+}
+```
 
 Appendix C: HideFileInUseDialog.js
 
-\[sourcecode language="csharp" wraplines="false"\] // HideFileInUseDialog <msi-file> // Performs a post-build fixup of an msi to disable the File In Use Dialog.
+```csharp
+// HideFileInUseDialog <msi-file>
+// Performs a post-build fixup of an msi to disable the File In Use Dialog.
 
-// Constant values from Windows Installer var msiOpenDatabaseModeTransact = 1; var msiViewModifyReplace        = 4
+// Constant values from Windows Installer
+var msiOpenDatabaseModeTransact = 1;
+var msiViewModifyReplace        = 4
 
-if (WScript.Arguments.Length != 1) { WScript.StdErr.WriteLine(WScript.ScriptName + " file"); WScript.Quit(1); }
+if (WScript.Arguments.Length != 1)
+{
+    WScript.StdErr.WriteLine(WScript.ScriptName + " file");
+    WScript.Quit(1);
+}
 
-var filespec = WScript.Arguments(0); var installer = WScript.CreateObject("WindowsInstaller.Installer"); var database = installer.OpenDatabase(filespec, msiOpenDatabaseModeTransact);
+var filespec = WScript.Arguments(0);
+var installer = WScript.CreateObject("WindowsInstaller.Installer");
+var database = installer.OpenDatabase(filespec, msiOpenDatabaseModeTransact);
 
-var sql var view var record
+var sql
+var view
+var record
 
-try { WScript.Echo("Updating the Dialog table...");
+try
+{
+    WScript.Echo("Updating the Dialog table...");
 
-sql = "SELECT \`Attributes\` FROM \`Dialog\` WHERE \`Dialog\`='FilesInUse'"; view = database.OpenView(sql); view.Execute(); record = view.Fetch();
+    sql = "SELECT `Attributes` FROM `Dialog` WHERE `Dialog`='FilesInUse'";
+    view = database.OpenView(sql);
+    view.Execute();
+    record = view.Fetch();
 
-// Setting the dialog attributes to zero hides the dialog when the MSI // is running. record.IntegerData(1) = 0;
+    // Setting the dialog attributes to zero hides the dialog when the MSI
+    // is running.
+    record.IntegerData(1) = 0;
 
-view.Modify(msiViewModifyReplace, record); view.Close();
+    view.Modify(msiViewModifyReplace, record);
+    view.Close();
 
-database.Commit(); } catch(e) { WScript.StdErr.WriteLine(e); WScript.Quit(1); } \[/sourcecode\]
+    database.Commit();
+}
+catch(e)
+{
+    WScript.StdErr.WriteLine(e);
+    WScript.Quit(1);
+}
+```

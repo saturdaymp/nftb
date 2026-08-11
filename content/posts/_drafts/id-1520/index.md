@@ -1,5 +1,6 @@
 ---
 title: "Make sure Your Consultants Compensation Aligns with Your Goals"
+author: "Chris C"
 draft: true
 ---
 

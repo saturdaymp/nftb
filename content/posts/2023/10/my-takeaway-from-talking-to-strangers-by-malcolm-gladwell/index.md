@@ -1,5 +1,6 @@
 ---
 title: "My Takeaway from Talking to Strangers by Malcolm Gladwell"
+author: "Chris C"
 date: 2023-10-23
 categories: 
   - "business-side"

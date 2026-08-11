@@ -1,5 +1,6 @@
 ---
 title: "XPlugins.iOS.BEMCheckBox version 8, 9, and 10 released!"
+author: "Chris C"
 date: 2025-12-01
 categories: 
   - "releases"

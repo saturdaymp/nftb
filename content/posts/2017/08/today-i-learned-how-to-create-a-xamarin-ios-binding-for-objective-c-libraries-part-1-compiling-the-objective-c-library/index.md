@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create a Xamarin iOS Binding for Objective-C Libraries - Part 1 Compiling the Objective-C Library"
+author: "Chris C"
 date: 2017-08-03
 categories: 
   - "code-examples"
@@ -38,7 +39,7 @@ To find the two builds you just created right click on the BEMCheckBox.framework
 
 [![Show Compiled Framework In Finder](images/ShowCompiledFrameworkInFinder.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/07/ShowCompiledFrameworkInFinder.png)
 
-You should see both a Release-iphoneos and Release-iphonesimulator folders.   You might also see Debug-<os> folders but you can ignore those.
+You should see both a Release-iphoneos and Release-iphonesimulator folders.   You might also see `Debug-<os>` folders but you can ignore those.
 
 [![Compiled Frameworks In Finder](images/CompiledFrameworksInFinder.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2017/07/CompiledFrameworksInFinder.png)
 
@@ -52,6 +53,6 @@ P.S.S. - [Why is desert and dessert so similar?](http://snarkygrammarguide.blogs
 
 Chocolate pudding It no phase me But you got cookie So share it maybe
 
-https://www.youtube.com/watch?v=-qTIGg3I5y8
+{{< youtube "-qTIGg3I5y8" >}}
 
 Save

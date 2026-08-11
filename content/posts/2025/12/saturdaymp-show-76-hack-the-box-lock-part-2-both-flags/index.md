@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 76: Hack the Box - Lock (Part 2 - Both Flags)"
+author: "Chris C"
 date: 2025-12-03
 categories: 
   - "saturday-mp-show"
@@ -10,12 +11,12 @@ tags:
   - "saturdaympshow"
 ---
 
-https://youtu.be/7EN\_NzzzRnM
+{{< youtube "7EN_NzzzRnM" >}}
 
 Part 2 of the Lock machine. I was able to capture both the user and system flags with the help of the walkthrough. My biggest learning was with the MSI Installer bug where you can use the installer repair action to elevate yourself from Guest to System Administrator.
 
 Part 1:  
-[https://youtu.be/M6CMolFPnGs](https://youtu.be/M6CMolFPnGs)
+{{< youtube "M6CMolFPnGs" >}}
 
 Hack the Box Lock Machine:  
 [https://app.hackthebox.com/machines/Lock](https://app.hackthebox.com/machines/Lock)

@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 71: Migrate From Rails to Jekyll (Part 4)"
+author: "Chris C"
 date: 2025-10-23
 categories: 
   - "code-examples"
@@ -16,10 +17,10 @@ coverImage: "SaturdayMP-Show-71-Thumbnail.png"
 
 In this episode I fixe the broken build from the last episode. I also created a Bootstrap plugin to find the Bootstrap SCSS path to load with the help of Claude Code. Spoiler: I'm still not done, so there will be a part 5. Will it ever end?
 
-https://youtu.be/eJbMn75dQKo
+{{< youtube "eJbMn75dQKo" >}}
 
 Previous video:  
-https://youtu.be/0s\_3jVIttnc
+{{< youtube "0s_3jVIttnc" >}}
 
 Jekyll:  
 https://jekyllrb.com/

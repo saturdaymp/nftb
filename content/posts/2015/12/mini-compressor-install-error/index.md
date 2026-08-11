@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compressor Install Error"
+author: "Chris C"
 date: 2015-12-22
 categories: 
   - "mini-compressor"

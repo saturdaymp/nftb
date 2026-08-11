@@ -1,5 +1,6 @@
 ---
 title: "Introduction to Object-Relational Mapping for DBAs – Part 3"
+author: "Chris C"
 date: 2018-01-17
 categories: 
   - "code-examples"
@@ -22,21 +23,69 @@ The first obvious reason developers use a ORM is it lets them create an applicat
 
 ORMs also write a lot of the repetitive SQL for the developer.  You know, the SQL for find a certain piece of data like a user or inventory item.  The SQL to update that piece of data or create it if it does not exist.  The boring repetitive CRUD SQL statements.  Without an ORM developers used to have write ADO.NET code which looked like:
 
-\[csharp\] using (SqlConnection conn = new SqlConnection(connString)) { // Query to load all the information about a customer. // province. Hopefully there are no typos in the SQL. // Use parameters so we don't have // SQL injection issues. var cmd = new SqlCommand(" Select c.\*, a.\*, p.Abbreviation From Customers c Inner Join on Addresses a Inner Join on Provinces p Where c.Id = @CustomerId" And a.AddressType = @HomeAddressType ); cmd.Parameters.AddWithValue("@CustomerId", customerId); cmd.Parameters.AddWithValue("@HomeAddressType", HOME\_ADDRESS\_TYPE);
+```csharp
+using (SqlConnection conn = new SqlConnection(connString))
+{
+  // Query to load all the information about a customer.
+  // province.  Hopefully there are no typos in the SQL.
+  // Use parameters so we don't have
+  // SQL injection issues.
+  var cmd = new SqlCommand("
+    Select c.*, a.*, p.Abbreviation
+    From Customers c 
+    Inner Join on Addresses a
+    Inner Join on Provinces p
+    Where c.Id = @CustomerId"
+    And a.AddressType = @HomeAddressType
+  ); 
+  cmd.Parameters.AddWithValue("@CustomerId", customerId);
+  cmd.Parameters.AddWithValue("@HomeAddressType", HOME_ADDRESS_TYPE);
 
-// The adapter to read the data from the database. var dataAdapater = new SqlDataAdapter(cmd, conn); // The dataset to fill with data. // I think in .NET Core 2 you can create a DataTable // instead of always using a DataSet. If true that would // have been great 20 years ago. var dataSet = new DataSet(); dataSet.Tables.Add();
+  // The adapter to read the data from the database.
+  var dataAdapater = new SqlDataAdapter(cmd, conn);
+  
+  // The dataset to fill with data.
+  // I think in .NET Core 2 you can create a DataTable
+  // instead of always using a DataSet.  If true that would
+  // have been great 20 years ago.
+  var dataSet = new DataSet();
+  dataSet.Tables.Add();
 
-// Read the data and fill the dataset. dataAdapter.Fill(dataset.Tables\[0\]); } // Connection to database is closed.
+  // Read the data and fill the dataset.
+  dataAdapter.Fill(dataset.Tables[0]);
+} // Connection to database is closed.
 
-// Show the data in the type unsafe dataset. Hope // you don't have a typo in the column names and // you correctly handle database nulls (not shown). Console.WriteLine{$"Name: {drow\["Name"\]} Street: {drow\["StreetAddress"\]} City: {drow\["City"\]} Province: {drow\["Abbreviation"\]}); \[/csharp\]
+// Show the data in the type unsafe dataset. Hope 
+// you don't have a typo in the column names and 
+// you correctly handle database nulls (not shown). 
+Console.WriteLine{$"Name: {drow["Name"]} 
+  Street: {drow["StreetAddress"]} 
+  City: {drow["City"]} 
+  Province: {drow["Abbreviation"]});
+```
 
 Actually, I'll tell you DBAs a secret.  Back in the ADO.NET days no developer ever wrote all the code in the first example.  Instead we usually created our own custom code library that handled all the work to fill a DataSet with data.  The problem is every development shop had it's own custom data access library with their own features and/or bugs.  But still, it was ugly code to write and would often break if the underlying database changed even a bit.
 
 Using [Entity Framework](https://msdn.microsoft.com/en-us/library/aa937723\(v=vs.113\).aspx), Microsoft's ORM, the above code looks like:
 
-\[csharp\] using (var ctx = new MyDbContext) { // No need to worry about typos. If Customers // is misspelled then a compile error will occur. // Also no need to worry about SQL injection. var customerToView = ctx.Customers .Include(customer => customer.Address) .ThenInclude(address => address.Province) .Where(customer => customer.Id.Equals("Id")) .ToList(); } // Connection to database is closed.
+```csharp
+using (var ctx = new MyDbContext)
+{
+  // No need to worry about typos.  If Customers
+  // is misspelled then a compile error will occur.
+  // Also no need to worry about SQL injection.
+  var customerToView = ctx.Customers
+    .Include(customer => customer.Address)
+    .ThenInclude(address => address.Province)
+    .Where(customer => customer.Id.Equals("Id"))
+    .ToList();
+} // Connection to database is closed.
 
-Console.WriteLine($"Name: {customerToView.Name} Street: {customerToView.Address.StreetAddress} City: {customerToView.Address.City} Province: {customerToView.Address.Province.Abbreviation}); \[/csharp\]
+Console.WriteLine($"Name: {customerToView.Name} 
+  Street: {customerToView.Address.StreetAddress} 
+  City: {customerToView.Address.City} 
+  Province: {customerToView.Address.Province.Abbreviation});
+```
 
 Wow, that is a lot less code and much easier to read.  The developer still needs to understand a bit of the underlying database structure but a lot of the grunt work is taken care of.
 
@@ -60,35 +109,85 @@ Not only do good developers lover abstractions but they also understand their we
 
 The most common mistake beginner ORM developers make is too turn on lazy loading and then do a loop.  The famous n+1 select problem.
 
-\[csharp\] using (var ctx = new MyDbContext) // Load all the customers // Select \* From Customers; customers = ctx.Customers.ToList();
+```csharp
+using (var ctx = new MyDbContext)
+  // Load all the customers
+  // Select * From Customers;
+  customers = ctx.Customers.ToList();
 
-// Print each customers city. foreach (var customer in customers) { Console.Writeline(customer.Name);
+  // Print each customers city.
+  foreach (var customer in customers)
+  {
+    Console.Writeline(customer.Name);
 
-// Select \* From Addresses where CustomerId = ? Console.Writeline(customer.Address.City); } } \[/csharp\]
+    // Select * From Addresses where CustomerId = ?
+    Console.Writeline(customer.Address.City);
+  }
+}
+```
 
 The above code will send one query to get all the customers then send a separate query to get the address information.  If would look like:
 
-\[csharp\] Select \* From Customers;
+```csharp
+Select * From Customers;
 
-Select \* From Address Where CustomerId = 1 Select \* From Address Where CustomerId = 2 Select \* From Address Where CustomerId = 3 Select \* From Address Where CustomerId = 4 Select \* From Address Where CustomerId = 5 ... \[/csharp\]
+Select * From Address Where CustomerId = 1
+Select * From Address Where CustomerId = 2
+Select * From Address Where CustomerId = 3
+Select * From Address Where CustomerId = 4
+Select * From Address Where CustomerId = 5
+...
+```
 
 This works great in test when there are only a couple of records but grinds to a halt in production.  Any DBAs seen something similar?
 
 Bad, or I guess naive is better word, developers like lazy loading because the data just "magically" appears.  Good developers turn off lazy loading and write their code to only send one query.
 
-\[csharp\] using (var ctx = new MyDbContext) { // Get all the customers and their addresses // in one query. // Select \* From Customers c // Inner Join Addresses a On c.Id = a.CustomerId var customers = ctx.Customers .Include(customer => customer.Address) .ToList(); }
+```csharp
+using (var ctx = new MyDbContext)
+{
+  // Get all the customers and their addresses
+  // in one query.
+  // Select * From Customers c
+  // Inner Join Addresses a On c.Id = a.CustomerId
+  var customers = ctx.Customers
+    .Include(customer => customer.Address)
+    .ToList();
+}
 
-// Print each customers city. foreach (var customer in customers) { Console.Writeline(customer.Name);
+// Print each customers city.
+foreach (var customer in customers) {
+  Console.Writeline(customer.Name);
 
-// No query, data is already in memory. Console.Writeline(customer.Address.City); } \[/csharp\]
+  // No query, data is already in memory.
+  Console.Writeline(customer.Address.City);
+}
+```
 
 Another common mistake when using ORMs is pulling back unnecessary data.  In the above example we only want the customer name and city but the generated query pulls back all the customer and address columns.  ORMs are great when you need all or most of the columns in a table but are not as useful when you only need one or two columns.
 
 We can re-write the above to only bring back the columns we are interested in:
 
-\[csharp\] using (var ctx = new MyDbContext) { // Get all the customers and their addresses // in one query. // Select c.Name, a.City From Customers c // Inner Join Addresses a On c.Id = a.CustomerId var customerCities = ctx.Customers .Include(customer => customer.Address) .Select(c => c.Name, c.Address.City) .ToList(); }
+```csharp
+using (var ctx = new MyDbContext)
+{
+  // Get all the customers and their addresses
+  // in one query.
+  // Select c.Name, a.City From Customers c
+  // Inner Join Addresses a On c.Id = a.CustomerId
+  var customerCities = ctx.Customers
+    .Include(customer => customer.Address)
+    .Select(c => c.Name, c.Address.City)
+    .ToList();
+}
 
-// Print each customers city. Notice the // data is flattened. foreach (var custCity in customerCities ) { Console.Writeline(customer.Name); Console.Writeline(custCity.City); } \[/csharp\]
+// Print each customers city.  Notice the
+// data is flattened.
+foreach (var custCity in customerCities ) {
+ Console.Writeline(customer.Name);
+ Console.Writeline(custCity.City);
+}
+```
 
 Another big weakness of ORMs is complex queries.  ORMs really don't handle joining lots of tables together or trying to have a complicated where and/or grouping.  These are best handled by writing SQL.  Needless to say reports should never use an ORM.  Instead use SQL or better yet a tool that helps you create reports.
 
@@ -110,9 +209,9 @@ Assuming you are working with a good developer keep the following in mind:
 
 1. Let the ORM generate schema changes but make sure to review them.  The developer might not realize that renaming the column caused the column to be dropped and recreated resulting in data loss.
 2. Let the ORM access the tables directly.  Only force access threw a  view or stored procedure if there is a good reason.
-3. Don't be afraid to adapt the ORM's naming schema.  An ORM will often assume things like ID is the primary key column, table names are plural, foreign keys are <tablename>ID, etc.  If you can't adopt the ORM's preferred naming scheme then at least be consistent in your naming.
+3. Don't be afraid to adapt the ORM's naming schema.  An ORM will often assume things like ID is the primary key column, table names are plural, foreign keys are `<tablename>ID`, etc.  If you can't adopt the ORM's preferred naming scheme then at least be consistent in your naming.
 4. Don't worry about being made redundant.  ORMs can do some of the work DBAs used to do but not all of it and as we pointed out above ORM generated SQL should still be reviewed.  Also ORMs can't do the A part of DBA (i.e. they don't backup your database, secure it, create RAID arrays, etc).
-5. If you work with bad developers try to educate them.  They might just be naive.  If you can't educate the developers and management won't help you don't be afraid to move on.  Life is too short to...<fill in the blank>.
+5. If you work with bad developers try to educate them.  They might just be naive.  If you can't educate the developers and management won't help you don't be afraid to move on.  Life is too short to...\<fill in the blank>.
 
 Remember "Teamwork makes the dream work".
 

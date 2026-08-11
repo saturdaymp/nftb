@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 78: Advent of Code 2025 (Day 1 - Part 2: Success)"
+author: "Chris C"
 date: 2025-12-18
 categories: 
   - "code-examples"
@@ -14,10 +15,10 @@ It took me two videos and over 2 hours, but I finally solved the Day 1 - Part 2 
 
 Apparently solving Advent of Code problems is not my strong suite. They remind me of university assignments which I never really liked and is a big reason for not perusing a Master’s or PhD. Hopefully someone will just give me an honorary Master’s or PhD one day.
 
-https://youtu.be/1qmdQy2FgA4
+{{< youtube "1qmdQy2FgA4" >}}
 
 Day 1 – Part 2: Failure:  
-[https://youtu.be/FCAHNP9kJ3U](https://youtu.be/FCAHNP9kJ3U)
+{{< youtube "FCAHNP9kJ3U" >}}
 
 Advent of Code 2025 – Day 1:  
 [https://adventofcode.com/2025/day/1](https://adventofcode.com/2025/day/1)

@@ -1,5 +1,6 @@
 ---
 title: "New Tools Require New Standards"
+author: "Chris C"
 date: 2010-09-03
 categories: 
   - "software-development"

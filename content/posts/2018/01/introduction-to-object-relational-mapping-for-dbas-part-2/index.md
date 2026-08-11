@@ -1,5 +1,6 @@
 ---
 title: "Introduction to Object-Relational Mapping for DBAs – Part 2"
+author: "Chris C"
 date: 2018-01-11
 categories: 
   - "code-examples"
@@ -40,13 +41,15 @@ Now the application knows that ApplicationUser has a one-to-one relationship to 
 
 Now Bud can create a new migration for his new Player model.
 
-\[text\] Add-Migration CreatePlayerTable \[/text\]
+```text
+Add-Migration CreatePlayerTable
+```
 
  
 
 [![Add Player Table Migration](images/AddPlayerTableMigration.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/01/AddPlayerTableMigration.png)
 
-This creates the <timestamp>\_CreatePlayerTable file.  If we open it up we see it creates the Player table and also a foreign key relationship to the ApplicationUser which maps to the AspNetUsers table.
+This creates the `<timestamp>_CreatePlayerTable` file.  If we open it up we see it creates the Player table and also a foreign key relationship to the ApplicationUser which maps to the AspNetUsers table.
 
 [![Player Migration Create Table](images/PlayerMigrationCreateTable.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/01/PlayerMigrationCreateTable.png)
 
@@ -54,7 +57,9 @@ This creates the <timestamp>\_CreatePlayerTable file.  If we open it up we see 
 
 Now that the migration file is created Bud runs the migration to add the Players table to his database.
 
-\[text\] Update-Database \[/text\]
+```text
+Update-Database
+```
 
  
 

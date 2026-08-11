@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 62: Advent of Code 2024 Day 12 (Part 2 - Area Calculated)"
+author: "Chris C"
 date: 2025-01-17
 categories: 
   - "code-examples"
@@ -14,7 +15,7 @@ coverImage: "SaturdayMP-Show-0062-Thumbnail.png"
 
 In this episode I actually make some progress on the [Advent of Code](https://adventofcode.com/2024) Day 12 problem and can calculate the area of a plot starting at a given point. Any feedback on my solution so far? Any Python tips for me?
 
-https://youtu.be/p9bSVRxkGlk
+{{< youtube "p9bSVRxkGlk" >}}
 
 You can find Part 1 here: [https://youtu.be/RhSQ49SVAtY](https://youtu.be/RhSQ49SVAtY)
 

@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Create Rails Docker Container Without Ruby Installed"
+author: "Chris C"
 date: 2018-07-22
 categories: 
   - "code-examples"
@@ -27,13 +28,26 @@ My main resource in setting up the image was [Docker Rails Quickstart Guide](htt
 
 I started off as they recommended and created an empty folder with Dockerfile.
 
-\[text\] FROM ruby:2.5 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs RUN mkdir /website WORKDIR /website COPY Gemfile /website/Gemfile COPY Gemfile.lock /website/Gemfile.lock RUN gem install bundler RUN bundle install COPY . /website \[/text\]
+```text
+FROM ruby:2.5
+RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
+RUN mkdir /website
+WORKDIR /website
+COPY Gemfile /website/Gemfile
+COPY Gemfile.lock /website/Gemfile.lock
+RUN gem install bundler
+RUN bundle install
+COPY . /website
+```
 
 [![Dockerfile for Rails Container](images/Dockerfile.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Dockerfile.png)
 
 I then created a basic Gemfile and empty Gemfile.lock file.
 
-\[text\] source 'https://rubygems.org' gem 'rails', '5.2.0' \[/text\]
+```text
+source 'https://rubygems.org'
+gem 'rails', '5.2.0'
+```
 
 [![Initial Gemfile](images/Initial-Gemfile.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Initial-Gemfile.png)
 
@@ -41,7 +55,27 @@ Finally I created the docker-compose file.
 
 You might have noticed this file is a bit different then the one in the Docker Quickstart.  I made these changes after the contain failed to build and/or I couldn't connect to it with RubyMine.
 
-\[text\] version: '2' services: db: image: postgres ports: - "5432:5432" environment: POSTGRES\_PASSWORD: password1234 volumes: - ./tmp/db:/var/lib/postgresql/data web: build: . command: bundle exec rails s -p 3000 -b '0.0.0.0' volumes: - .:/website ports: - "3000:3000" depends\_on: - db \[/text\]
+```text
+version: '2'
+services:
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password1234
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/website
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+```
 
 [![Docker Compose](images/Docker-Compose.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Docker-Compose.png)
 
@@ -49,7 +83,9 @@ The first change I made was downgrading the version from 3 to 2 as RubyMine cur
 
 I then created the rails application as recommended by the quickstart guide.  Since this is the first time running it pulls down the docker files.  Then I ran into the first of many permission errors.
 
-\[text\] docker-compose run web rails new . --force --database=postgresql \[/text\]
+```text
+docker-compose run web rails new . --force --database=postgresql
+```
 
 [![Creating new Rails App Cmd](images/Creating-new-Rails-App-Cmd.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Creating-new-Rails-App-Cmd.png)
 
@@ -61,7 +97,9 @@ This permission error was caused by the Postgres container.  The files created 
 
 After a while I figured out the way to fix this was to run the following command:
 
-\[text\] sudo chown -R $USER:$USER . \[/text\]
+```text
+sudo chown -R $USER:$USER .
+```
 
 I got several permission errors during my trails and error of setting up the Rails container.  Every time I would just run the above command to fix it.
 
@@ -71,7 +109,9 @@ Once the permission errors went away I was able to create a new rails applicatio
 
 Your newly created rails files might be owned by root.  In this case run the command you have probably become very familiar with:
 
-\[text\] sudo chown -R $USER:$USER . \[/text\]
+```text
+sudo chown -R $USER:$USER .
+```
 
 Notice that the Gemfile has been updated and populated with all the Gems needed to run a new rails application.
 
@@ -87,17 +127,23 @@ Now the web container is ready but our database isn't.  Open up the database co
 
 Now create the Rails databases.
 
-\[text\] docker-compose run web rake db:create \[/text\]
+```text
+docker-compose run web rake db:create
+```
 
 [![Create the Rails Databases](images/Create-the-Rails-Databases.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Create-the-Rails-Databases.png)
 
 Again if you get permission errors trying to create the databases run change permissions command.
 
-\[text\] sudo chown -R $USER:$USER . \[/text\]
+```text
+sudo chown -R $USER:$USER .
+```
 
 Now bring up the containers and you should be see the Welcome to Rails website.
 
-\[text\] docker-compose up \[/text\]
+```text
+docker-compose up
+```
 
 [![Docker Compose Up](images/Docker-Compose-Up.webp)](https://nftb.saturdaymp.com/wp-content/uploads/2018/07/Docker-Compose-Up.png)
 
@@ -117,7 +163,9 @@ Remove ByeBug from the Gemfile and add Ruby Debug IDE.  Your Gemfile will look 
 
 Now rebuild the Docker container so the new gems are installed.
 
-\[text\] docker-compose build \[/text\]
+```text
+docker-compose build
+```
 
 Then open up RubyMine and open up your project.  Once it's open we need to tell RubyMine about our Docker containers.  To this go to File-->Settings.  Then go the Build, Execution, Deployment-->Docker in the Settings dialog and make sure Docker is setup correctly.  If it is you should see something similar to the below.
 
@@ -157,4 +205,4 @@ P.S. - My wife recently introduced me to the band Walk of the Earth which we get
 
 _They said no way_ _I say I rule the world_ _(Ain't afraid of the walls, I'mma break them down)_ _They stay the same_ _Well, I'm feelin' high as a bird_ _(Ain't afraid of the ground, I'mma stand up)_
 
-https://www.youtube.com/watch?v=ukigjUvwAR4
+{{< youtube "ukigjUvwAR4" >}}

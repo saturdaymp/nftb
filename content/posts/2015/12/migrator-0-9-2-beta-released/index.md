@@ -1,5 +1,6 @@
 ---
 title: "Migrator 0.9.2 Beta Released"
+author: "Chris C"
 date: 2015-12-07
 categories: 
   - "migrator"

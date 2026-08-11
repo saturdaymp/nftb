@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Setup Azure Pipelines CI"
+author: "Chris C"
 date: 2019-06-17
 categories: 
   - "today-i-learned"
@@ -204,4 +205,4 @@ P.S. - For some reason I find [Angels and Airwaves](https://www.youtube.com/chan
 _D-d-do you wanna go back to where we started?  
 Back before we were broken hearted?_
 
-https://www.youtube.com/watch?v=zjh5XZsMb18
+{{< youtube "zjh5XZsMb18" >}}

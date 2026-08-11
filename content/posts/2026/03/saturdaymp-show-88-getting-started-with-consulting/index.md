@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 88: Getting Started with Consulting"
+author: "Chris C"
 date: 2026-03-11
 categories: 
   - "business-side"
@@ -14,7 +15,7 @@ No [Omar](https://www.ashour.ca/) this week, so I decided to answer a question I
 
 The feature image was generated using the free version of Google's Nano Banana. Took several prompts to get this image, which is not exactly what I wanted but close enough.
 
-https://youtu.be/se-de4IBzRQ
+{{< youtube "se-de4IBzRQ" >}}
 
 Have a question you want answered in a future video? A challenging or interesting problem you want to see solved? Constructive feedback? Then comment, DM me, or send an email to ask@saturdaymp.com.
 

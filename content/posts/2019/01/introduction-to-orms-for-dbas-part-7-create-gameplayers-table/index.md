@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 7 - Create GamePlayers Table"
+author: "Chris C"
 date: 2019-01-20
 categories: 
   - "code-examples"
@@ -31,27 +32,43 @@ In this post we will create the last table the GamePlayers. It's the table that 
 
 As usual we start with the model. The only thing different about this model is it joins three other tables so had three foreign keys. Remember to add a foreign key in Entity Framework you add the ID and the Class.
 
-\[csharp\] using System.ComponentModel.DataAnnotations.Schema;
+```csharp
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SaturdayMP.GameTracker.Models { \[Table("GamePlayers")\] public class GamePlayer { public int Id { get; set; }
+namespace SaturdayMP.GameTracker.Models
+{
+    [Table("GamePlayers")]
+    public class GamePlayer
+    {
+        public int Id { get; set; }
 
-public int GamePlayedId { get; set; } public GamePlayed GamePlayed { get; set; }
+        public int GamePlayedId { get; set; }
+        public GamePlayed GamePlayed { get; set; }
 
-public int PlayerId { get; set; } public Player Player { get; set; }
+        public int PlayerId { get; set; }
+        public Player Player { get; set; }
 
-public int GameResultTypeId { get; set; } public GameResultType GameResultType { get; set; } } } \[/csharp\]
+        public int GameResultTypeId { get; set; }
+        public GameResultType GameResultType { get; set; }
+    }
+}
+```
 
 ![](images/Game-Player-Model-1024x535.webp)
 
 You also need to add the other side the foreign key to the existing models. First the GamePlayed model:
 
-\[csharp\] public ICollection GamePlayers { get; set; } \[/csharp\]
+```csharp
+public ICollection<GamePlayer> GamePlayers { get; set; }
+```
 
 ![](images/Games-Played-Model-with-Game-Player-Foreign-Key-1024x491.webp)
 
 Then the Game model:
 
-\[csharp\] public ICollection GamesPlayed { get; set; } \[/csharp\]
+```csharp
+public ICollection<GamePlayed> GamesPlayed { get; set; }
+```
 
 ![](images/Game-Model-with-Game-Player-Foreign-Key-1024x491.webp)
 
@@ -59,23 +76,38 @@ Finally the GameResultType model: ....Actually we won't add the reference relati
 
 Say we did add the GameResultType->GamePlayer then in our code called that relationship:
 
-\[csharp\] myGamePlayed.GamesPlayed.Count \[/csharp\]
+```csharp
+myGamePlayed.GamesPlayed.Count
+```
 
 The above would load all the games played for the given type. Not a problem when your application is young and you only have a couple of games played. What happens when you have hundred or thousands of games played? Then it becomes a problem.
 
 When we do need to filter by the game results, such as who won, we would write it from the perspective of the player. For example:
 
-\[csharp\] var wins = \_context.Players .Where(p => p.Id == 1) .Select(p => new { PlayerName = p.Name, Wins = p.GamesPlayers.Where(gp => gp.GameResultType.KeyCode == 10).Count(), }) .First(); \[/csharp\]
+```csharp
+var wins = _context.Players
+  .Where(p => p.Id == 1)
+  .Select(p => new
+  {
+    PlayerName = p.Name,
+    Wins = p.GamesPlayers.Where(gp => gp.GameResultType.KeyCode == 10).Count(),
+  })
+  .First();
+```
 
 With that out of the way, let us get back to coding and add the new model to the context:
 
-\[csharp\] public DbSet GamePlayers { get; set; } \[/csharp\]
+```csharp
+public DbSet<GamePlayer> GamePlayers { get; set; }
+```
 
 ![](images/Add-GamePlayers-to-DB-Context-1024x547.webp)
 
 Now that the models are setup we can create the migration:
 
-\[text\] dotnet ef migrations add CreateGamePlayersTable \[/text\]
+```text
+dotnet ef migrations add CreateGamePlayersTable
+```
 
 ![](images/Create-GamePlayers-Migration.webp)
 
@@ -85,7 +117,9 @@ Check the migration file to make sure it looks reasonable:
 
 Now that the migration exists and looks correct we can run the migration on the database. Once the migration is complete you should be view the new GamePlayers table in the database.
 
-\[text\]dotnet ef database update\[/text\]
+```text
+dotnet ef database update
+```
 
 ![](images/Update-Database-with-GamePlayers-Table.webp)
 

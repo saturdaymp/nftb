@@ -1,5 +1,6 @@
 ---
 title: "Degree of Temporalness"
+author: "Chris C"
 date: 2017-10-31
 categories: 
   - "software-development"

@@ -1,5 +1,6 @@
 ---
 title: "Notes on Fixing Ubuntu 18.04 VM not Booting"
+author: "Chris C"
 date: 2019-06-18
 categories: 
   - "notes"
@@ -63,4 +64,4 @@ You're a sunflower, I think your love would be too much
 Or you'll be left in the dust, unless I stuck by ya  
 You're the sunflower, you're the sunflower_
 
-https://www.youtube.com/watch?v=ApXoWvfEYVU
+{{< youtube "ApXoWvfEYVU" >}}

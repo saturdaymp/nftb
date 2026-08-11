@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compressor Monday: Summer Continued"
+author: "Ada CC"
 date: 2013-10-07
 categories: 
   - "mini-compressor-monday"

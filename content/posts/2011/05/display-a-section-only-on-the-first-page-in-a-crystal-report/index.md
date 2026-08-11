@@ -1,5 +1,6 @@
 ---
 title: "Display a Section only on the First Page in a Crystal Report"
+author: "Chris C"
 date: 2011-05-20
 categories: 
   - "code-examples"

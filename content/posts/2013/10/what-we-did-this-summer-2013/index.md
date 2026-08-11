@@ -1,5 +1,6 @@
 ---
 title: "What we did this summer – 2013 edition (Mini-Compressor Monday part 1)"
+author: "Ada CC"
 date: 2013-10-01
 categories: 
   - "mini-compressor-monday"

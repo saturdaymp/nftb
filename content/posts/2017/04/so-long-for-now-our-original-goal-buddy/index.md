@@ -1,5 +1,6 @@
 ---
 title: "So Long For Now, Our Original Goal Buddy"
+author: "Ada CC"
 date: 2017-04-10
 categories: 
   - "fun"

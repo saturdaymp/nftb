@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 73: Migrate From Rails to Jekyll (Part 6)"
+author: "Chris C"
 draft: true
 ---
 
@@ -7,10 +8,10 @@ No major hiccups in this episode, just several small tasks such as migrating the
 
 Only one more step to update DNS entries, which I think I'll make a video for. If you want to see the DNS entries update video, let me know.
 
-https://youtu.be/bR1E1FdoTSM
+{{< youtube "bR1E1FdoTSM" >}}
 
 Part 5:  
-https://youtu.be/eRCGlsGHNNM
+{{< youtube "eRCGlsGHNNM" >}}
 
 Jekyll:  
 https://jekyllrb.com/
@@ -26,13 +27,13 @@ saturdaymp saturdaympshow jekyll claudecode visualstudiocode
 
 SaturdayMP Show 71: Migrate From Rails to Jekyll (Part 4)
 
-https://youtu.be/eJbMn75dQKo
+{{< youtube "eJbMn75dQKo" >}}
 
 In this episode I fixe the broken build from the last episode. I also created a Bootstrap plugin to find the Bootstrap SCSS path to load with the help of Claude Code. Spoiler: I'm still not done, so there will be a part 5. Will it ever end?
 
 Previous video:
 
-https://youtu.be/0s\_3jVIttnc
+{{< youtube "0s_3jVIttnc" >}}
 
 Jekyll:
 

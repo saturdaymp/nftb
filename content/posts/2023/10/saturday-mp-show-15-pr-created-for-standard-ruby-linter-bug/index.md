@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #15: PR Created for Standard Ruby Linter Bug"
+author: "Chris C"
 date: 2023-10-19
 categories: 
   - "saturday-mp-show"
@@ -14,7 +15,7 @@ tags:
 
 I finally create the PR for [Standard](https://github.com/standardrb/standard) Ruby Linter Bug I've been working on the base several videos and months. I also fix the merge conflict noticed in the previous video.
 
-https://youtu.be/e-uCloSaLGE
+{{< youtube "e-uCloSaLGE" >}}
 
 Read about the bug I'm trying to fix [here](https://github.com/standardrb/standard/issues/565) and the PR [here](https://github.com/standardrb/standard/pull/587).
 

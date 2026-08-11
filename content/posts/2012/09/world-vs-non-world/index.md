@@ -1,5 +1,6 @@
 ---
 title: "World vs. Non-World"
+author: "Ada CC"
 date: 2012-09-15
 categories: 
   - "business-side"

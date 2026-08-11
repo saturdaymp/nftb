@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #22: Adding Basic Auth to NGINX Passenger Docker (Part 2)"
+author: "Chris C"
 date: 2023-12-04
 categories: 
   - "code-examples"
@@ -16,11 +17,11 @@ tags:
 
 In this episode I get the Basic Authentication NGINX [configuration](https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/) working using the [envsubst](https://www.baeldung.com/linux/envsubst-command) tool to replace environment variables in the config file. Ran out of time to test the fix in actual staging. That will hopefully be done in the 3rd part of this series.
 
-https://youtu.be/i0W\_3Q55gro
+{{< youtube "i0W_3Q55gro" >}}
 
 Watch the previous video in the series:
 
-https://youtu.be/H9lZ247oIgc
+{{< youtube "H9lZ247oIgc" >}}
 
 Found this video useful? Then help others find it by liking, subscribing, and sharing.
 

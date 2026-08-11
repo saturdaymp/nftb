@@ -1,5 +1,6 @@
 ---
 title: "What Would Goal Buddy Say?"
+author: "Ada CC"
 date: 2016-05-20
 categories: 
   - "fun"

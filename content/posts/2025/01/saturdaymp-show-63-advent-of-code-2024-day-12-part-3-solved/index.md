@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 63: Advent of Code 2024 Day 12 (Part 3 - Solved!)"
+author: "Chris C"
 date: 2025-01-22
 categories: 
   - "code-examples"
@@ -14,7 +15,7 @@ coverImage: "SaturdayMP-Show-0063-Thumbnail.png"
 
 In this episode I finish the [Advent of Code](https://adventofcode.com/2024) 2024 Day 12 problem! I also figured out how to do parameterized tests in Python. Any constructive feedback on my solution? How would you have solved it differently?
 
-https://youtu.be/jOh7NLj7BxI
+{{< youtube "jOh7NLj7BxI" >}}
 
 You can find Part 2 here: [https://youtu.be/p9bSVRxkGlk](https://youtu.be/p9bSVRxkGlk)
 

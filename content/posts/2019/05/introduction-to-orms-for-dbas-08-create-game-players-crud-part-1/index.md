@@ -1,5 +1,6 @@
 ---
 title: "Introduction to ORMs for DBAs: Part 8 - Create Game Players CRUD - Part 1"
+author: "Chris C"
 date: 2019-05-27
 categories: 
   - "introduction-to-orms-for-dbas"
@@ -72,13 +73,24 @@ Test by running the application and clicking on the button and you should be red
 
 That works. The next step is let the user enter some players as outlined in our mockup at the top of this post. Let's start by adding the controls to add players to an existing game. Do this by opening the Games Played Edit page (Views/GamesPlayed/Edit.cshtml) and adding the following:
 
-\[csharp\]
-
-Player
-
-Results
-
-\[/csharp\]
+```csharp
+<div class="col-md-4">
+        <form asp-action="CreateGamePlayer">
+            <input type="hidden" id="GamePlayedId" name="GamePlayedId" value="@Model.Id">
+            <div class="form-group">
+                <label class="control-label">Player</label>
+                <select id="PlayerId" name="PlayerId" class="form-control" asp-items="ViewBag.Players"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Results</label>
+                <select id="GameResultTypeId" name="GameResultTypeId" class="form-control" asp-items="ViewBag.GameResults"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Player" class="btn btn-default">
+            </div>
+        </form>
+    </div>
+```
 
 ![](images/Games-Played-Edit-Adding-New-Player-Controls-1024x438.webp)
 
@@ -90,21 +102,31 @@ Lets get some data in the drop-downs. If you look at the code in the Games Playe
 
 Notice we already load data for the Game drop-down? It's this line:
 
-\[csharp\] ViewData\["GameId"\] = new SelectList(\_context.Games, "Id", "Name", gamePlayed.GameId); \[/csharp\]
+```csharp
+ViewData["GameId"] = new SelectList(_context.Games, "Id", "Name", gamePlayed.GameId);
+```
 
 ![](images/Games-Played-Controller-Existing-ViewBag-Games-Populate-1024x463.webp)
 
 Let's add a couple more lines to load the data for the Player and Results drop-downs. If we where writing SQL statements the queries would be simple. Get all the players and all the game result types (i.e. win, lose, etc).
 
-\[sql\] Select \* From Players; Select \* From GameResultTypes; \[/sql\]
+```sql
+Select * From Players;
+Select * From GameResultTypes;
+```
 
 Since we are using Entity Framework ORM we write a query to get all records from a table as:
 
-\[csharp\]\_context.Players\[/csharp\]
+```csharp
+_context.Players
+```
 
 We combine the ORM lookup with a helper method to populate the drop-down and we get:
 
-\[csharp\] ViewData\["Players"\] = new SelectList(\_context.Players, "Id", "Name"); ViewData\["GameResults"\] = new SelectList(\_context.GameResultTypes, "Id", "Type"); \[/csharp\]
+```csharp
+ViewData["Players"] = new SelectList(_context.Players, "Id", "Name");
+ViewData["GameResults"] = new SelectList(_context.GameResultTypes, "Id", "Type");
+```
 
 ![](images/Games-Played-Controller-ViewBag-Populate-1024x463.webp)
 
@@ -114,9 +136,16 @@ Now when you run the app the drop-downs should be populated.
 
 The Add Player button still does nothing so lets fix that. Notice the in code we added to Games Played Edit view there is a form tag. In the form tag is the action that will executed when the Add Player button is clicked. In this case the CreateGamePlayer method will be called on the GamesPlayedController. The button does nothing because that method does not exist yet so lets create it.
 
-\[csharp\] \[HttpPost\] public async Task CreateGamePlayer(\[Bind("GamePlayedId,PlayerId,GameResultTypeId")\] GamePlayer gamePlayer) { \_context.Add(gamePlayer); await \_context.SaveChangesAsync();
+```csharp
+[HttpPost]
+public async Task<IActionResult> CreateGamePlayer([Bind("GamePlayedId,PlayerId,GameResultTypeId")] GamePlayer gamePlayer)
+{
+    _context.Add(gamePlayer);
+    await _context.SaveChangesAsync();
 
-return RedirectToAction(nameof(Edit), new { id = gamePlayer.GamePlayedId}); } \[/csharp\]
+    return RedirectToAction(nameof(Edit), new { id = gamePlayer.GamePlayedId});
+}
+```
 
 ![](images/Game-Players-Controller-Create-Game-Player-Method-1024x394.webp)
 
@@ -124,15 +153,21 @@ The `Bind("GamePlayedId,PlayerId,GameResultTypeId")`populates the gamePlayer arg
 
 The first two lines of the method insert the new GamePlayer record. The first statement queues new GamePlayer record to inserted.
 
-\[csharp\]\_context.Add(gamePlayer);\[/csharp\]
+```csharp
+_context.Add(gamePlayer);
+```
 
 The second line saves all the changes contained in the context. In this case it's just the new GamePlayer record.
 
-\[csharp\]await \_context.SaveChangesAsync();\[/csharp\]
+```csharp
+await _context.SaveChangesAsync();
+```
 
 The final line redirects us back to the Games Played Edit page.
 
-\[csharp\] return RedirectToAction(nameof(Edit), new { id = gamePlayer.GamePlayedId });\[csharp\]
+```csharp
+ return RedirectToAction(nameof(Edit), new { id = gamePlayer.GamePlayedId });
+```
 
 Try it out and make sure new results are added to the database. Since we currently don't show adding new game players on the page we need to check the database.
 

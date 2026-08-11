@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #94: Debugging Git HTTP 400 curl 22 Error"
+author: "Chris C"
 date: 2026-04-22
 categories: 
   - "saturday-mp-show"
@@ -15,7 +16,7 @@ In our first ever completely live episode, Omar and myself debug a GitHub push e
 
 The tl;dw (to-long;didn't-watch) is the image was larger than the Git post buffer size. The fix was to compress the image, which is something we are doing for the Weekly Dev Chat website. Another fix is to increase the Git post buffer size.
 
-https://youtube.com/live/D85HmPksOcs
+{{< youtube "D85HmPksOcs" >}}
 
 StackOverflow Answer:  
 [https://stackoverflow.com/questions/77856025/git-error-rpc-failed-http-400-curl-22-the-requested-url-returned-error-400-se](https://stackoverflow.com/questions/77856025/git-error-rpc-failed-http-400-curl-22-the-requested-url-returned-error-400-se)

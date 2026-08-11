@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP celebrates its 6th Birthday!"
+author: "Ada CC"
 date: 2014-02-11
 categories: 
   - "business-side"

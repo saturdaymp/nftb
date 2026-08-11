@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned Altering a SQL Column Removes it's Default Value"
+author: "Chris C"
 date: 2020-01-12
 categories: 
   - "today-i-learned"
@@ -45,4 +46,4 @@ Lesson learned? Luck comes to those who are prepared (i.e. have automated tests)
 
 P.S. - No lyrical reason for picking this song. It just has the word lucky in it and it's catchy. I had trouble finding a song about plain old luck and not lucky in love/lust.
 
-https://www.youtube.com/watch?v=5NV6Rdv1a3I
+{{< youtube "5NV6Rdv1a3I" >}}

@@ -1,5 +1,6 @@
 ---
 title: "BEMCheckBox v2.2.0 Released!"
+author: "Chris C"
 date: 2025-11-13
 categories: 
   - "releases"

@@ -1,5 +1,6 @@
 ---
 title: "8 in One Blow"
+author: "Ada CC"
 date: 2011-04-15
 categories: 
   - "business-side"

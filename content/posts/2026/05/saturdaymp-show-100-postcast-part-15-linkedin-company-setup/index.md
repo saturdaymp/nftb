@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 100: PostCast Part 15 (LinkedIn Company Setup)"
+author: "Chris C"
 date: 2026-05-26
 categories: 
   - "saturday-mp-show"
@@ -15,7 +16,7 @@ Our 100th episode! Not the episode we wanted as we forgot we needed to register 
 
 That said, a janky 100th episode fits with the theme of the SaturdayMP Show where we show our struggles and warts beside our successes.
 
-https://youtube.com/live/wMCDeNvKe\_M
+{{< youtube "wMCDeNvKe_M" >}}
 
 Thank you to YouTube for letting me post these long videos for free. I know they make money of ads and other data, but it's still nice of them.
 

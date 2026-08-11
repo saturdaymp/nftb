@@ -1,5 +1,6 @@
 ---
 title: "Saturday Mo-rning’s Mo"
+author: "Chris C"
 date: 2012-11-13
 categories: 
   - "fun"

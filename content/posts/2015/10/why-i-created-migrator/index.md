@@ -1,5 +1,6 @@
 ---
 title: "Why I Created Migrator"
+author: "Chris C"
 date: 2015-10-27
 categories: 
   - "software-development"

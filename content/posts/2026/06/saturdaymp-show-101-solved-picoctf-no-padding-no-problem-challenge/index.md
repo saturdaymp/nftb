@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 101: Solved picoCTF No Padding, No Problem Challenge"
+author: "Chris C"
 date: 2026-06-02
 ---
 
@@ -9,7 +10,7 @@ We leave our struggles in the video so people don't feel like they are the only 
 
 Is there a better way to solve this problem? Let us know in the comments.
 
-https://youtube.com/live/Xm0E2Ut70j0
+{{< youtube "Xm0E2Ut70j0" >}}
 
 GitHub repo of the solution: [https://github.com/mrbiggred/picoCTF/tree/main/no\_padding\_no\_problem](https://github.com/mrbiggred/picoCTF/tree/main/no_padding_no_problem)
 

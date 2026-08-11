@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #25: TPS Report Uploader CFT Walkthrough (Vulnerable Blazor Application)"
+author: "Chris C"
 date: 2023-12-27
 categories: 
   - "saturday-mp-show"
@@ -19,7 +20,7 @@ Happy Holidays!
 
 In this episode I do a walkthrough of the [TPS Report Uploader](https://github.com/saturdaymp-examples/tps-report-uploader) capture the flag (CTF) I created. The walkthrough includes how to exploit the vulnerabilities and how to fix them in this .NET 8 [Blazor](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) application. You can try the CTF, or just follow along with the video, by downloading the TPS Report Uploader [repo](https://github.com/saturdaymp-examples/tps-report-uploader).
 
-https://youtu.be/uBnua-JZrec
+{{< youtube "uBnua-JZrec" >}}
 
 Tools used in this walkthrough:
 

@@ -1,5 +1,6 @@
 ---
 title: "Connect to Android Emulator from VirtualBox"
+author: "Chris C"
 date: 2016-02-23
 categories: 
   - "code-examples"
@@ -60,7 +61,9 @@ Now start up your development virtual machine.  In my case it's a Windows 10 wi
 
 Then type
 
-\[text\] adb connect <IP address to Android emulator> \[/text\]
+```text
+adb connect <IP address to Android emulator>
+```
 
 To determine the IP address of the Xamarin Android Player click the gear icon.
 
@@ -74,7 +77,10 @@ To get the Genymotion IP address you need to go to the VirtualBox interface, sel
 
 After you run the adb connect command you should see something like:
 
-\[text\] $>adb connect 10.71.34.101 connected to 10.71.34.101:5555 \[/text\]
+```text
+$>adb connect 10.71.34.101
+connected to 10.71.34.101:5555
+```
 
 As you can see it uses port 5555.  If you can't connect make sure port 5555 on your host machine is open.  In Windows you need to open this port in your public networks firewall.
 
@@ -94,13 +100,16 @@ In your emulator, assuming you continued after the breakpoint, you should see yo
 
 ## Potential Problem
 
-There is only one problem I've encountered.  Sometimes the uploading of the application to the emulator is very slow.  Like very, very, very slow.  So slow it's basically stuck.  During compile and deploy in Visual Studio you will get stuck at the "Installing <something>" line.
+There is only one problem I've encountered.  Sometimes the uploading of the application to the emulator is very slow.  Like very, very, very slow.  So slow it's basically stuck.  During compile and deploy in Visual Studio you will get stuck at the "Installing `<something>`" line.
 
 [![Android Emulator Stuck In Visual Studio](images/AndroidEmulatorStuckInVisualStudio-1024x592.webp)](http://nftb.saturdaymp.com/wp-content/uploads/2015/11/AndroidEmulatorStuckInVisualStudio.png)
 
 You can also see the problem if you try to adb push something.  It will look like:
 
-\[text\] adb push -p <\*.apk> /data/app Transfering: 327680/16414148 (1%) \[/text\]
+```text
+adb push -p <*.apk> /data/app
+Transfering: 327680/16414148 (1%)
+```
 
 It will be stuck at some low percentage and might move up a percent in a couple minutes. For some reason if you do a pull of a large file it won't get stuck and will be downloaded from the emulator in a couple seconds.
 

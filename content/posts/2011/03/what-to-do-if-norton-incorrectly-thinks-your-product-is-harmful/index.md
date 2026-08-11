@@ -1,5 +1,6 @@
 ---
 title: "What to do if Norton Incorrectly Thinks Your Product is Harmful"
+author: "Chris C"
 date: 2011-03-23
 categories: 
   - "support"

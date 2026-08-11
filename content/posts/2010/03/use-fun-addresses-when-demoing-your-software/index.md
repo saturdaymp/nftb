@@ -1,5 +1,6 @@
 ---
 title: "Use Fun Addresses when Demoing your Software"
+author: "Chris C"
 date: 2010-03-25
 categories: 
   - "fun"

@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #92: Local LLM w/ Ollama"
+author: "Chris C"
 date: 2026-04-08
 categories: 
   - "saturday-mp-show"
@@ -14,7 +15,7 @@ tags:
 
 In this episode I show how to run a local LLM, in this case Gemma4, using Ollama. Thanks to the Weekly Dev Chat folks for the help and inspiration.
 
-https://youtu.be/ppGwcLcgeNk
+{{< youtube "ppGwcLcgeNk" >}}
 
 Ollama:  
 [https://ollama.com/](https://ollama.com/)

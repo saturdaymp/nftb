@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #10: Finally get the System Test Working for the Standard Ruby Linter ToDo Bug"
+author: "Chris C"
 date: 2023-08-17
 categories: 
   - "code-examples"
@@ -15,7 +16,7 @@ tags:
 
 I get my system test working at the start of video but the problem is it works so well that it still passes even after I re-introduce the bug when it should have failed. Crap! That means my test is not working correctly.
 
-https://youtu.be/DWhabjiqc4o
+{{< youtube "DWhabjiqc4o" >}}
 
 I spend the rest of the video trying to figure out why the test is not failing when it should and get very frustrated. So frustrated this became my longest video yet at over two hours! End up digging into the [RuboCop](https://rubocop.org/) code to try and figure out what is going on. I do figure out the problem at the end of the video in a ah-ha moment. Spoiler: the problem was I didn't link to the [Standard](https://github.com/standardrb/standard) config file correctly.
 

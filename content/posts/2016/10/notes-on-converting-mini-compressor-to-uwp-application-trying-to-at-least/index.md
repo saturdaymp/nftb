@@ -1,5 +1,6 @@
 ---
 title: "Notes on Converting Mini-Compressor to UWP Application (Trying to at Least)"
+author: "Chris C"
 date: 2016-10-23
 categories: 
   - "business-side"
@@ -98,9 +99,11 @@ I am using an old version of Advanced Installer (version 9.9, current version is
 
 Download the [Desktop App Converter and the wim image](https://www.microsoft.com/en-us/download/details.aspx?id=51691).  Then open a [PowerShell](https://msdn.microsoft.com/en-us/powershell/mt173057.aspx?f=255&MSPPError=-2147217396) as admin and type the following to setup the image:
 
-\[text\] PS C:\\&amp;amp;amp;gt; Set-ExecutionPolicy bypass
+```text
+PS C:\> Set-ExecutionPolicy bypass
 
-PS C:\\&amp;amp;amp;gt; .\\DesktopAppConverter.ps1 -Setup -BaseImage .\\BaseImage-1XXXX.wim –Verbose \[/text\]
+PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim –Verbose
+```
 
 This can take a while and only needs to be done once.
 
@@ -108,7 +111,16 @@ This can take a while and only needs to be done once.
 
 Again in PowerShell run the following command:
 
-\[text\] PS C:&amp;amp;gt;.\\DesktopAppConverter.ps1 -Installer "&amp;amp;lt;path&amp;amp;gt;\\Mini-Compressor-9.9.9.9.exe" -InstallerArguments "/qn" -Destination "&amp;amp;lt;path&amp;amp;gt;\\MiniCompConverted" -PackageName "MiniCompressor" -Publisher "&amp;amp;lt;Full publisher name on your code signing certificate&amp;amp;gt;" -Version 9.9.9.9 -MakeAppx –Verbose \[/text\]
+```text
+PS C:>.\DesktopAppConverter.ps1 
+-Installer "<path>\Mini-Compressor-9.9.9.9.exe" 
+-InstallerArguments "/qn" 
+-Destination "<path>\MiniCompConverted" 
+-PackageName "MiniCompressor" 
+-Publisher "<Full publisher name on your code signing certificate>" 
+-Version 9.9.9.9 
+-MakeAppx –Verbose
+```
 
 This command takes the existing installer exe and installs it in the wim image you setup earlier.  The process runs some tests on the install process and also notes what file and other install actions are taken.  It then creates a AppX install file.
 
@@ -118,7 +130,13 @@ This command takes the existing installer exe and installs it in the wim image y
 
 Sign the Appx package.  Do this using the [Visual Studio command line](https://msdn.microsoft.com/en-CA/library/ms229859\(v=vs.110\).aspx) and the Saturday MP cert.
 
-\[text\] PS C:&gt;signtool.exe sign -f saturdaymp.pfx -p &lt;password&gt; -fd SHA256 –v MiniCompressor.appx \[/text\]
+```text
+PS C:>signtool.exe sign 
+-f saturdaymp.pfx 
+-p <password>
+-fd SHA256 
+–v MiniCompressor.appx
+```
 
 If you don't have a code signing certificate then you can [create your own certificate](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-signing).
 

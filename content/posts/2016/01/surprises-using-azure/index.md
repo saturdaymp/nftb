@@ -1,5 +1,6 @@
 ---
 title: "Surprises Using Azure"
+author: "Chris C"
 date: 2016-01-22
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Create a Key Pair Using PuTTY"
+author: "Chris C"
 date: 2018-01-29
 categories: 
   - "software-development"
@@ -72,4 +73,4 @@ P.S. - I couldn't find any good songs about keys but keys are encryption and enc
 
 _I've done the math enough to know the dangers of our second guessing Doomed to crumble unless we grow, and strengthen our communication_
 
-https://www.youtube.com/watch?v=\_yNAABKD4IA
+{{< youtube "_yNAABKD4IA" >}}

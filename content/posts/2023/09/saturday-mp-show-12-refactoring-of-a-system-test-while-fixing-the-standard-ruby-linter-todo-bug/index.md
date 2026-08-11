@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #12: Refactoring of a System Test While Fixing the Standard Ruby Linter ToDo Bug"
+author: "Chris C"
 date: 2023-09-15
 categories: 
   - "code-examples"
@@ -14,7 +15,7 @@ tags:
   - "system-tests"
 ---
 
-https://youtu.be/m-twGm7KMbI
+{{< youtube "m-twGm7KMbI" >}}
 
 Getting to the end of fixing the [Standard Ruby Linter](https://github.com/standardrb/standard) ToDo bug. In this video I refactor and remove duplicate code from a system tests that are similar. It goes well for the most part. The only hiccup is the trying to figure a way to run setup code once for all the tests in the file.
 

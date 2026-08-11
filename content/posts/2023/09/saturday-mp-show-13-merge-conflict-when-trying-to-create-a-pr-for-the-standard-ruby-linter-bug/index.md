@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #13: Merge Conflict when trying to create a PR for the Standard Ruby Linter Bug"
+author: "Chris C"
 date: 2023-09-22
 categories: 
   - "saturday-mp-show"
@@ -14,7 +15,7 @@ tags:
 
 I attempted to create a pull request (PR) for the Standard Ruby Linter bug I've fixed but ran into a merge conflict. Didn't create the PR but did figure out the solution to the merge conflict that will be fixed in the next video.
 
-https://youtu.be/3EPNI5ge90g
+{{< youtube "3EPNI5ge90g" >}}
 
 Read about the bug I'm trying to fix [here](https://github.com/standardrb/standard/issues/565). Other videos fixing the Standard Ruby Linter Todo Bug:
 

@@ -1,5 +1,6 @@
 ---
 title: "BIG Announcement (and Cookie Time)"
+author: "Ada CC"
 date: 2015-09-16
 categories: 
   - "business-side"

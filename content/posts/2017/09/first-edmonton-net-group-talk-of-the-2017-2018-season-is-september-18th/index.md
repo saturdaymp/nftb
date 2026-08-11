@@ -1,5 +1,6 @@
 ---
 title: "First Edmonton .NET Group Talk of the 2017-2018 Season is September 18th"
+author: "Chris C"
 date: 2017-09-13
 categories: 
   - "edmonton-net-user-group"

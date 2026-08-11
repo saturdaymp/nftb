@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compressor - ing"
+author: "Ada CC"
 date: 2011-05-05
 categories: 
   - "business-side"

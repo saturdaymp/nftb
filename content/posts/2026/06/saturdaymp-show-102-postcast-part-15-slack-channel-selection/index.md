@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show 102: PostCast (Part 15 – Slack Channel Selection)"
+author: "Chris C"
 date: 2026-06-09
 categories: 
   - "saturday-mp-show"
@@ -13,7 +14,7 @@ tags:
 
 In this episode Omar and I update PostCast so you can set the Slack channel instead of it being hardcoded. Progress at its finest.
 
-https://youtube.com/live/zsAPbkZS9sA
+{{< youtube "zsAPbkZS9sA" >}}
 
 We try out Figma for some design ideas, it goes OK. Then we try the design idea, find out we don't like it and switch back to our original design. We also spend some more time figuring out how to do nested dialog calls in Fyne. It's not intuitive, at least not to me.
 

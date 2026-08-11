@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned How to Automate Objective-c Builds in TeamCity"
+author: "Chris C"
 date: 2017-09-15
 categories: 
   - "today-i-learned"
@@ -55,7 +56,10 @@ First up compiling for the iphone.  In my example we want a target based build 
 
 To test this step run your build then look for a BEMCheckBox.framework folder in the build/Release-iphoneos folder on you Mac build machine.  The full path on my build machine is:
 
-\[text\] /Users/username/BuildAgent/work/GUID/Sample Project/build/Release-iphoneos/BEMCheckBox.framework \[/text\]
+```text
+ 
+/Users/username/BuildAgent/work/GUID/Sample Project/build/Release-iphoneos/BEMCheckBox.framework
+```
 
 ## Build Step 2 - Compile to Simulator
 
@@ -65,7 +69,9 @@ Now create another build step for the simulator build.  It will be similar to t
 
 Again you can test this build step by looking for the BEMCheckBox.framework folder in the Release-iphonesimulator.
 
-\[text\] /Users/username/BuildAgent/work/GUID/Sample Project/build/Release-iphonesimulator/BEMCheckBox.framework \[/text\]
+```text
+/Users/username/BuildAgent/work/GUID/Sample Project/build/Release-iphonesimulator/BEMCheckBox.framework
+```
 
 ## Build Step 3 - Combine Frameworks
 
@@ -77,27 +83,46 @@ The final step is to combine the two builds into one so the framework can be con
 
 The full command line looks like:
 
-\[text\] cp -r Sample\\ Project/build/Release-iphoneos/BEMCheckBox.framework . lipo -create -output BEMCheckBox.framework/BEMCheckBox Sample\\ Project/build/Release-iphoneos/BEMCheckBox.framework/BEMCheckBox Sample\\ Project/build/Release-iphonesimulator/BEMCheckBox.framework/BEMCheckBox \[/text\]
+```text
+ 
+cp -r Sample\ Project/build/Release-iphoneos/BEMCheckBox.framework .
+lipo -create -output BEMCheckBox.framework/BEMCheckBox Sample\ Project/build/Release-iphoneos/BEMCheckBox.framework/BEMCheckBox Sample\ Project/build/Release-iphonesimulator/BEMCheckBox.framework/BEMCheckBox
+```
 
 To test this step run the build and look a BEMCheckBox.framework folder in root of the work/GUID folder.  In my case the folder can be found at:
 
-\[text\] /Users/username/BuildAgent/work/GUID/BEMCheckBox.framework \[/text\]
+```text
+/Users/username/BuildAgent/work/GUID/BEMCheckBox.framework
+```
 
 Then run a file command to make sure all 4 architectures are supported.
 
-\[text\] file BEMCheckBox.framework/BEMCheckBox \[/text\]
+```text
+ 
+file BEMCheckBox.framework/BEMCheckBox
+```
 
 You should get the following output or something similar:
 
-\[text\] BEMCheckBox.framework/BEMCheckBox: Mach-0 universal binary with 4 architectures: \[i386: Mach-0 dynamically lined shared library i386\]&amp;amp;nbsp;\[x86\_x64: Mach-0 dynamically lined shared library x86\_x64\]&amp;amp;nbsp;\[arm\_v7: Mach-0 dynamically lined shared library arm\_v7\]&amp;amp;nbsp;\[arm64: Mach-0 dynamically lined shared library arm64\] BEMCheckBox.framework/BEMCheckBox (for architecture i386): Mach-0 dynamically linked shared library i386 BEMCheckBox.framework/BEMCheckBox (for architecture x86\_x64): Mach-0 dynamically linked shared library x86\_x64 BEMCheckBox.framework/BEMCheckBox (for architecture arm\_v7): Mach-0 dynamically linked shared library arm\_v7 BEMCheckBox.framework/BEMCheckBox (for architecture arm64): Mach-0 dynamically linked shared library arm64 \[/text\]
+```text
+BEMCheckBox.framework/BEMCheckBox: Mach-0 universal binary with 4 architectures: [i386: Mach-0 dynamically lined shared library i386] [x86_x64: Mach-0 dynamically lined shared library x86_x64] [arm_v7: Mach-0 dynamically lined shared library arm_v7] [arm64: Mach-0 dynamically lined shared library arm64]
+BEMCheckBox.framework/BEMCheckBox (for architecture i386): Mach-0 dynamically linked shared library i386
+BEMCheckBox.framework/BEMCheckBox (for architecture x86_x64): Mach-0 dynamically linked shared library x86_x64
+BEMCheckBox.framework/BEMCheckBox (for architecture arm_v7): Mach-0 dynamically linked shared library arm_v7
+BEMCheckBox.framework/BEMCheckBox (for architecture arm64): Mach-0 dynamically linked shared library arm64
+```
 
 You can also use the lipo command tool to check the library.
 
-\[text\] lipo -info BEMCheckBox.framework/BEMCheckBox \[/text\]
+```text
+lipo -info BEMCheckBox.framework/BEMCheckBox
+```
 
 You should see something like:
 
-\[text\] Architectures in the fat file: BEMCheckBox.framework/BEMCheckBox are: i386, x86\_x64, arm7, arm64 \[/text\]
+```text
+Architectures in the fat file: BEMCheckBox.framework/BEMCheckBox are: i386, x86_x64, arm7, arm64
+```
 
 In both cases you should see 4 architectures listed.  If you only see two then there is something with this build step.
 
@@ -121,4 +146,4 @@ You can read how to manually use BEMCheckBox in Xamarin in [part 3](https://nftb
 
 P.S. - I'm re-watching [Stranger Things Season 1](https://www.youtube.com/watch?v=XWxyRG_tckY) in anticipation of [season 2](https://www.youtube.com/watch?v=vgS2L7WPIO4).  One of the more memorable scenes is the [end of episode 3 (spoilers)](https://www.youtube.com/watch?v=oqWKNn59JgQ) when the Heroes song plays.  In the show the song is preformed by [Peter Gabriel](https://en.wikipedia.org/wiki/Scratch_My_Back) but below is the original extended version sung by [David Bowie](https://en.wikipedia.org/wiki/%22Heroes%22_\(David_Bowie_song\)).
 
-https://www.youtube.com/watch?v=jBuwC4VJi50
+{{< youtube "jBuwC4VJi50" >}}

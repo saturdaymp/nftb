@@ -1,5 +1,6 @@
 ---
 title: "Kids Thinking Outside the Box - Favourite Cheese"
+author: "Chris C"
 date: 2017-08-13
 categories: 
   - "fun"

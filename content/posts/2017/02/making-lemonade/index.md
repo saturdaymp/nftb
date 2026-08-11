@@ -1,5 +1,6 @@
 ---
 title: "Making Lemonade..."
+author: "Ada CC"
 date: 2017-02-11
 categories: 
   - "fun"

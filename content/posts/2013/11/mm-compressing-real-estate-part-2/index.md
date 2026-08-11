@@ -1,5 +1,6 @@
 ---
 title: "MM – Compressing Real Estate Part 2"
+author: "Ada CC"
 date: 2013-11-18
 categories: 
   - "mini-compressor-monday"

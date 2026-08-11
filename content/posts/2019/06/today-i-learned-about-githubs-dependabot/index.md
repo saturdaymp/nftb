@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned About GitHub's Dependabot"
+author: "Chris C"
 date: 2019-06-24
 categories: 
   - "today-i-learned"
@@ -52,4 +53,4 @@ Now we can squash and merge this commit and we are all done. At least for exampl
 
 P.S. - Robot Rock.
 
-https://www.youtube.com/watch?v=HdeYwObD-j4
+{{< youtube "HdeYwObD-j4" >}}

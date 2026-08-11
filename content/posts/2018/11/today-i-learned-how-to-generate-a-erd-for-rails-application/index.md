@@ -1,5 +1,6 @@
 ---
 title: "Today I Learned how to Generate a ERD for Rails Application"
+author: "Chris C"
 date: 2018-11-18
 categories: 
   - "code-examples"
@@ -41,9 +42,11 @@ Then rebuild the container to install Graphviz and the Rails-ERD gem.
 
 Since we are using Docker we first need to spin up our container then ran the rake command to create the ERD.
 
-\[text\] docker-compose run web bash up
+```text
+docker-compose run web bash up
 
-rake erd \[/text\]
+rake erd
+```
 
 ![](images/Generate-ERD-Command.webp)
 
@@ -53,7 +56,9 @@ This will create a PDF version of your ERD.  If you have a small ERD, like my w
 
 If you have a larger ERD, like the client code I can't show you, then you are not done as the ERD will be unreadably small if you print it.  Printing things is something old men with bad eyes like to do.  What you can do is break up the database into sections.  For example, we could just show the product part of my database with the following command:
 
-\[text\] rake erd filename="products\_erd" title="Saturday MP Products ERD" only="Product,ProductVersion" \[/text\]
+```text
+rake erd filename="products_erd" title="Saturday MP Products ERD" only="Product,ProductVersion"
+```
 
 ![](images/Generate-Products-ERD-Command.webp)
 
@@ -61,7 +66,11 @@ If you have a larger ERD, like the client code I can't show you, then you are no
 
 What I like to do is create a batch file that will generate all the ERDs and but it in the databases folder.  Then you can run this batch file whenever you update the database to generate updated ERDs.
 
-\[bash\] #!/usr/bin/env bash rake erd filename="erd" title="Saturday MP ERD" rake erd filename="products\_erd" title="Saturday MP Products ERD" only="Product,ProductVersion" \[/bash\]
+```bash
+#!/usr/bin/env bash
+rake erd filename="erd" title="Saturday MP ERD"
+rake erd filename="products_erd" title="Saturday MP Products ERD" only="Product,ProductVersion"
+```
 
 ![](images/Generate-ERD-Bash-File.webp)
 
@@ -75,4 +84,4 @@ _And sometimes love bloomed and sometimes dreams die
 By the glow of the kerosene light._  
 _By the glow of the kerosene light._
 
-https://www.youtube.com/watch?v=Ij2Oq54nlec
+{{< youtube "Ij2Oq54nlec" >}}

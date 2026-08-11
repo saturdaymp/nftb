@@ -1,5 +1,6 @@
 ---
 title: "Mini-Compressor Monday - Hallowe'en Edition"
+author: "Ada CC"
 date: 2013-10-28
 categories: 
   - "mini-compressor-monday"

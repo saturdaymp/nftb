@@ -1,5 +1,6 @@
 ---
 title: "Saturday MP Show #19: Comparing Docker Volumes to Docker Compose Watch"
+author: "Chris C"
 date: 2023-11-15
 categories: 
   - "saturday-mp-show"
@@ -13,7 +14,7 @@ coverImage: "SaturdayMP-Show-0019-2023-11-13-Thumbnail.png"
 
 In this episode I answer a viewer question from episode #16: Are [Docker Volumes](https://docs.docker.com/storage/volumes/) are a two way sync?. The answer is kind-of.
 
-https://youtu.be/eHdb93jhBYs
+{{< youtube "eHdb93jhBYs" >}}
 
 You can view the question in the comments section of [episode #16](https://youtu.be/U8YmtsiNjyA) where I try out [Docker Compose Watch](https://docs.docker.com/compose/file-watch/) for the first time.
 

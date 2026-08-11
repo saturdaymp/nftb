@@ -1,5 +1,6 @@
 ---
 title: "Happy Holidays!"
+author: "Chris C"
 date: 2018-12-23
 categories: 
   - "fun"
@@ -17,4 +18,4 @@ P.S. - My daughter wanted a record player for Christmas.  I know, everything ol
 
 In honour of the great gift I present my daughters 2nd favourite Christmas song.
 
-https://www.youtube.com/watch?v=x6zypc\_LhnM
+{{< youtube "x6zypc_LhnM" >}}

@@ -1,5 +1,6 @@
 ---
 title: "MM – More Winter Fun"
+author: "Ada CC"
 date: 2014-02-10
 categories: 
   - "mini-compressor-monday"

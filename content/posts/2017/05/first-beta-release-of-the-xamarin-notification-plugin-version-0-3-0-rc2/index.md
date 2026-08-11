@@ -1,5 +1,6 @@
 ---
 title: "First Beta Release of the Xamarin Notification Plugin (Version 0.3.0-RC2)"
+author: "Chris C"
 date: 2017-05-24
 ---
 

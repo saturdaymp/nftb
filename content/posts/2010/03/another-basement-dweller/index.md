@@ -1,5 +1,6 @@
 ---
 title: "Another Basement Dweller?"
+author: "Ada CC"
 date: 2010-03-17
 tags: 
   - "canadian-eh"

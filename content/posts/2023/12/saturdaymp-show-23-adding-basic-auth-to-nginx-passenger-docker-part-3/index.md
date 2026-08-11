@@ -1,5 +1,6 @@
 ---
 title: "SaturdayMP Show #23: Adding Basic Auth to NGINX Passenger Docker (Part 3)"
+author: "Chris C"
 date: 2023-12-15
 categories: 
   - "saturday-mp-show"
@@ -24,7 +25,7 @@ Spoiler: When using the Passenger Docker image it's really important you don't [
 RUN rm -f /etc/service/nginx/down
 ```
 
-https://youtu.be/IL6jnyoLwYw
+{{< youtube "IL6jnyoLwYw" >}}
 
 Found this video useful? Then help others find it by liking, subscribing, and sharing.
 

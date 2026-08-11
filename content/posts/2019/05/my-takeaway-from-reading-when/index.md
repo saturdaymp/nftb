@@ -1,5 +1,6 @@
 ---
 title: "My Takeaway from Reading When"
+author: "Chris C"
 date: 2019-05-13
 categories: 
   - "takeaways"

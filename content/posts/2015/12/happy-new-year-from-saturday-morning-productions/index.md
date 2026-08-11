@@ -1,5 +1,6 @@
 ---
 title: "Happy New Year from Saturday Morning Productions!"
+author: "Ada CC"
 date: 2015-12-30
 categories: 
   - "fun"
