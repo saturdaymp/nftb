@@ -1,7 +1,7 @@
 ---
 title: "SaturdayMP Show 107: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 3)"
 author: "Chris C"
-date: 2026-07-23T13:36:11
+date: 2026-07-23
 categories: 
   - "saturday-mp-show"
 tags: 
