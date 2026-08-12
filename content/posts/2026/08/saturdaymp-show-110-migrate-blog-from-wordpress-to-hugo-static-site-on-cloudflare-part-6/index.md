@@ -1,7 +1,7 @@
 ---
-title: "SaturdayMP Show 109: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 5)"
+title: "SaturdayMP Show 110: Migrate Blog from WordPress to Hugo Static Site on Cloudflare (Part 6)"
 author: "Chris C"
-date: 2026-08-06
+date: 2026-08-12
 categories: 
   - "saturday-mp-show"
 tags: 
@@ -15,9 +15,11 @@ tags:
   - "wordpress"
 ---
 
-This episode is a continuation of episode 108 recorded later that day but broken up into two parts. I try to point the nftb subdomain to my Cloudflare Worker but, spoiler alert, fail. Takes me a while to figure out that Cloudflare Workers don't support custom domains outside of Cloudflare zones.
+The final episode of the series.  I get the Noise from the Basement (NFTB) DNS working by setting nameservers to Cloudflare  but keeping EasyDNS as my registrar.  As I write this, everything is working, including my email.  I'll have to check if this is true in 24 hours.
 
-{{< youtube "Dd1I0IXKpVU" >}}
+Do you have thoughts about hosting static sites on Cloudflare and/or using Hugo?  Any improvements I should make?  Let me know.
+
+{{< youtube "Lu7izJ8a4rk" >}}
 
 Migration Playlist:  
 [https://www.youtube.com/playlist?list=PLOaCY0HmoDNU](https://www.youtube.com/playlist?list=PLOaCY0HmoDNU)
