@@ -15,7 +15,7 @@ tags:
   - "wordpress"
 ---
 
-The final episode of the series.  I get the Noise from the Basement (NFTB) DNS working by setting nameservers to Cloudflare  but keeping EasyDNS as my registrar.  As I write this, everything is working, including my email.  I'll have to check if this is true in 24 hours.
+The final episode of the series. I get the Noise from the Basement (NFTB) DNS working by setting nameservers to Cloudflare, but keeping EasyDNS as my registrar. As I write this, everything is working, including my email. I'll have to check if this is true in 24 hours.
 
 Do you have thoughts about hosting static sites on Cloudflare and/or using Hugo?  Any improvements I should make?  Let me know.
 
