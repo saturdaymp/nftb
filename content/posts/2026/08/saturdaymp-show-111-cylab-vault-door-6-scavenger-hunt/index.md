@@ -20,7 +20,7 @@ In this episode I solve two CyLab, previously picoCTF, challenges: Vault Door 6 
 CyLab Security Academy (previously picoCTF):  
 [https://cylabacademy.org/](https://cylabacademy.org/)
 
-Cyber Chef:  
+CyberChef:  
 [https://gchq.github.io/CyberChef/](https://gchq.github.io/CyberChef/)
 
 Write-up of solutions:  
