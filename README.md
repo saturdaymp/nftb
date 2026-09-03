@@ -2,7 +2,7 @@
 
 Source for [Noise From the Basement](https://nftb.saturdaymp.workers.dev/), a
 static blog built with [Hugo](https://gohugo.io/) and the
-[PaperMod](https://github.com/adityatelange/hugo-PaperMod) theme, hosted on
+[Beautiful Hugo](https://github.com/halogenica/beautifulhugo) theme, hosted on
 Cloudflare Workers (static assets). The content was migrated from a
 WordPress site.
 
@@ -65,7 +65,7 @@ docker compose run --rm optimize-images --dry-run  # preview, no changes
 
 ## Theme
 
-PaperMod is a Hugo Module pinned in `go.mod`/`go.sum` — there is no theme
+Beautiful Hugo is a Hugo Module pinned in `go.mod`/`go.sum` — there is no theme
 code in this repo. Never edit theme files; override templates by placing
 files in the top-level `layouts/` directory. To update the theme:
 
