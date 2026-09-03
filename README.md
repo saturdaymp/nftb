@@ -1,7 +1,7 @@
 # Noise From the Basement (NFTB) Blog
 
 [![Deploy](https://github.com/saturdaymp/nftb/actions/workflows/deploy.yml/badge.svg)](https://github.com/saturdaymp/nftb/actions/workflows/deploy.yml)
-[![Sponsor](https://img.shields.io/static/v1?label=Sponsor&message=%E2%9D%A4&logo=GitHub&color=fe8e86)](https://github.com/sponsors/saturdaymp)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/saturdaymp?label=Sponsors&logo=githubsponsors&labelColor=3C444C)](https://github.com/sponsors/saturdaymp)
 
 Source for [Noise From the Basement](https://nftb.saturdaymp.workers.dev/), a
 static blog built with [Hugo](https://gohugo.io/) and the
