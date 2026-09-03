@@ -1,9 +1,12 @@
 # Noise From the Basement (NFTB) Blog
 
+[![Deploy](https://github.com/saturdaymp/nftb/actions/workflows/deploy.yml/badge.svg)](https://github.com/saturdaymp/nftb/actions/workflows/deploy.yml)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/saturdaymp?label=Sponsors&logo=githubsponsors&labelColor=3C444C)](https://github.com/sponsors/saturdaymp)
+
 Source for [Noise From the Basement](https://nftb.saturdaymp.workers.dev/), a
 static blog built with [Hugo](https://gohugo.io/) and the
 [Beautiful Hugo](https://github.com/halogenica/beautifulhugo) theme, hosted on
-Cloudflare Workers (static assets). The content was migrated from a
+Cloudflare Workers (static assets). The content was [migrated](https://www.youtube.com/playlist?list=PLOaCY0HmoDNU) from a
 WordPress site.
 
 ## Running locally
@@ -72,9 +75,3 @@ files in the top-level `layouts/` directory. To update the theme:
 ```sh
 docker compose run --rm --entrypoint hugo build mod get -u ./...
 ```
-
-## Migration leftovers
-
-`backup/`, `plan.txt`, and `noisefromthebasement.WordPress.*.xml` are
-temporary WordPress migration artifacts (gitignored). Don't build anything on
-them; they'll be deleted once the migration is verified.
