@@ -6,7 +6,7 @@
 Source for [Noise From the Basement](https://nftb.saturdaymp.workers.dev/), a
 static blog built with [Hugo](https://gohugo.io/) and the
 [Beautiful Hugo](https://github.com/halogenica/beautifulhugo) theme, hosted on
-Cloudflare Workers (static assets). The content was [migrated](<https://www.youtube.com/playlist?list=PLOaCY0HmoDNU)>) from a
+Cloudflare Workers (static assets). The content was [migrated](https://www.youtube.com/playlist?list=PLOaCY0HmoDNU) from a
 WordPress site.
 
 ## Running locally
