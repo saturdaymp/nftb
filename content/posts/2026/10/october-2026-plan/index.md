@@ -1,5 +1,5 @@
 ---
-title: "September 2006 Summary and October plan"
+title: "September 2026 Summary and October Plan"
 author: "Chris C"
 date: 2026-10-13
 categories: 
